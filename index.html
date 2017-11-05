@@ -1,23 +1,208 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="home">
+  <!--HEAD STARTS HERE-->
+  <head>
+    <meta charset="utf-8">
+    <!-- Link to custom js files and bootstrap files  -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 
-  <h1 class="page-heading">Posts</h1>
+    <!-- Link to custom css files and bootstrap files -->
+    <link href="CSS/custom.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa|Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
+    <title>Alexander</title>
+  </head>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+  <!--BODY STARTS HERE-->
+  <body>
+    <!-- Navbar start -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">ALEXANDER LUNA</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-</div>
+      <!-- navbar links -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="mailto:mycroft1891@gmail.com?Subject=Hello" target="_top">Send me an Email</a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav  ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#who">Who am I ?</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#what">What did I do ?</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#why">Why should you hire me ?</a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Top image jumbotron -->
+    <div class="jumbotron">
+      <h1 class="display-3">Good software like <br>wine, takes time</h1>
+      <br>
+      <p class="center">
+        <a class="btn btn-info btn-lg" href="https://stackoverflow.com/users/5281693/alexander-luna" target="_blank">Stack Overflow</a>
+        <a class="btn btn-info btn-lg" href="https://twitter.com/mr_moon95" target="_blank">Twitter</a>
+        <a class="btn btn-info btn-lg" href="https://github.com/Mycroft1891" target="_blank">Github</a>
+        <a class="btn btn-info btn-lg" href="https://www.freecodecamp.org/mycroft1891" target="_blank">freeCodeCamp</a>
+      </p>
+    </div>
+
+    <div class="container">
+      <div class="row">
+
+        <!-- Main view -->
+        <main class="bg-light offset-md-2 col-12 col-md-10 col-xl-8">
+
+          <div class="center">
+            <img class="rounded-circle" src="https://secure.gravatar.com/avatar/cdb4e695d991e714c13217008d099074" alt="me">
+            <h1 class="pacifico-font">Alexander Luna</h1>
+          </div>
+
+          <hr><br><br>
+
+          <!-- link for who goes here -->
+          <h2 id="who" class="pacifico-font">Who am I ?</h2>
+
+          <p>Berlin-Based Web Developer, iOS Developer and Programming nerd and student.<br>
+          I was born Bremen, Germany and I learned to love computers with my first acer laptop
+          when I was 12 years old.</p>
+          <p>As I was sumerged in the computer and technology world, I started to learn to code
+          at age 18 in python. HTML and the web was still unxplored terrain for until I took a course
+          on Nettuts+. It wasn't until my first part-time job 1 year ago that I learned more deeply
+          about web development using Rails and experimenting with Django, Sinatra and Node/Express.</p>
+          <hr><br><br>
+
+          <!-- link for what goes here -->
+          <h2 id="what" class="pacifico-font">What did I do ?</h2>
+
+          <p>As far as pogramming languages goes, I tried a lot and learned a lot from each language.
+          If there is something I noticed, it is that most language are very similar but over the past 2 years
+          I sticked with Ruby, Swift and Javascript.</p>
+          <p>I had a lot of fun and build some projects along the way. The list includes but isn't limited to:</p>
+          <p class="text-muted">(If you are on a smartphone, click on the list items below to navigate the projects easier)</p>
+
+          <div class="list-group">
+            <a href="#1" class="list-group-item list-group-item-action">Ping Pong game</a>
+            <a href="#2" class="list-group-item list-group-item-action">Snake game</a>
+            <a href="#3" class="list-group-item list-group-item-action">Angular 4 Site</a>
+            <a href="#4" class="list-group-item list-group-item-action">Social Media Site</a>
+            <a href="#5" class="list-group-item list-group-item-action">Japanese learning App</a>
+            <a href="#6" class="list-group-item list-group-item-action">Bible Verse App</a>
+            <a href="#7" class="list-group-item list-group-item-action">E-commerce App mockups</a>
+            <a href="https://github.com/Mycroft1891" target="_blank" class="list-group-item list-group-item-action">and more ...</a>
+          </div><br>
+
+          <!-- display projects in cards -->
+          <div class="card-group">
+            <div class="card" id="1">
+              <img class="card-img-top" src="https://image.freepik.com/free-icon/bat-and-ball-ping-pong_318-9928.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Ping Pong</h4>
+                <p class="card-text">A retro ping pong game I made in Javascript</p>
+                <p class="card-text"><small class="text-muted"><a class="btn btn-info" target="_blank" href="https://github.com/Mycroft1891/javascript_box/blob/master/javascript_games/lib/ping_pong.js">Visit Site</a></small></p>
+              </div>
+            </div>
+            <div class="card" id="2">
+              <img class="card-img-top" src="https://lh4.ggpht.com/yJe6HqfvYKO2ej-qfsoWf50T71o4346gXkF6T66FMXBAjJ5DhMt7buBDESUMqYaeIqI=w300" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Snake Game</h4>
+                <p class="card-text">A retro snake game I made in Javascript.</p>
+                <p class="card-text"><small class="text-muted"><a class="btn btn-info" target="_blank" href="https://github.com/Mycroft1891/javascript_box/blob/master/javascript_games/lib/snake.js">Visit Site</a></small></p>
+              </div>
+            </div>
+            <div class="card" id="3">
+              <img class="card-img-top" src="https://resources.cloud.genuitec.com/wp-content/uploads/2017/04/angular4-icon.png" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Angular 4 site</h4>
+                <p class="card-text">A website I made for my iOS chat app using Firebase & Angular.</p>
+                <p class="card-text"><small class="text-muted"><a class="btn btn-info" target="_blank" href="https://flash-chat-ca9f8.firebaseapp.com/">Visit Site</a></small></p>
+              </div>
+            </div>
+            <div class="card" id="4">
+              <img class="card-img-top" src="https://www.123freevectors.com/wp-content/uploads/backgroundvectors/social-media-devices-networking-free-vector.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Social Media site</h4>
+                <p class="card-text">A social media site with over 100k users.</p>
+                <p class="card-text"><small class="text-muted"><a class="btn btn-info" target="_blank" href="https://www.oremosadios.com/">Visit Site</a></small></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-group">
+            <div class="card" id="5">
+              <img class="card-img-top" src="https://acastprod.blob.core.windows.net/media/v1/ec9e6bb4-72fd-43ed-8251-9a0330f92791/japan-country-itf2hqte.png" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Japanese learning App</h4>
+                <p class="card-text">An Japanese Quiz Game App I made for iOS to learn Japanese easier</p>
+                <p class="card-text"><small class="text-muted"><a class="btn btn-info" target="_blank" href="https://github.com/Mycroft1891/swift_box/tree/master/Swift%203/Kana%20Trainer">Visit Site</a></small></p>
+              </div>
+            </div>
+            <div class="card" id="6">
+              <img class="card-img-top" src="https://i.pinimg.com/736x/b8/66/b0/b866b0e2def3ef046be2521adef9df7e--daily-bible-verses-scripture-verses.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Bible Verse App</h4>
+                <p class="card-text">An app that shows you a new bible verse each day as a support</p>
+                <p class="card-text"><small class="text-muted"><a class="btn btn-info" target="_blank" href="https://github.com/Mycroft1891/swift_box/tree/master/Swift%203/BibleVerse">Visit Site</a></small></p>
+              </div>
+            </div>
+            <div class="card" id="7">
+              <img class="card-img-top" src="https://t3.ftcdn.net/jpg/00/87/87/06/500_F_87870651_Y9qpKQKpbpURcrTN98YZGmU7KlmIJcah.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">E-commerce mockup</h4>
+                <p class="card-text">An e-commerce app with categories & product views for iOS</p>
+                <p class="card-text"><small class="text-muted"><a class="btn btn-info" target="_blank" href="https://github.com/Mycroft1891/swift_box/tree/master/Swift%204/e-commerce">Visit Site</a></small></p>
+              </div>
+            </div>
+            <div class="card">
+              <img class="card-img-top" src="https://octodex.github.com/images/jean-luc-picat.jpg" alt="Card image cap">
+              <div class="card-body">
+                <h4 class="card-title">Github Page</h4>
+                <p class="card-text">For more, please take a look at my github repositories</p>
+                <p class="card-text"><small class="text-muted"><a class="btn btn-info" target="_blank" href="https://github.com/Mycroft1891">Visit Site</a></small></p>
+              </div>
+            </div>
+          </div>
+
+          <hr><br><br>
+
+          <!-- link for why goes here -->
+          <h2 id="why" class="pacifico-font">Why should you hire me ?</h2>
+
+          <p>I love spending a lot of time writing code, reading new things to integrate, browse
+          for better solutions or ways to refactor my code and make it cleaner.</p>
+          <p>I enjoy learning from others and also teaching those who know less than me. I open for
+          conversations and ways to improve.</p>
+          <br>
+
+        </main><!-- end main -->
+
+        <!-- footer -->
+        <footer class="footer center col-md-12">
+          <hr>
+          <p class="center">&copy;Designed By <a target="_blank" href="https://github.com/Mycroft1891">Alexander Luna</a></p>
+        </footer>
+
+      </div><!-- end row -->
+    </div><!-- end container -->
+  </body>
+</html>
+<!-- designed by Alexander Luna -->
