@@ -1,0 +1,55 @@
+.jumbotron {
+  margin-bottom: 0px;
+  background: url(https://www.demilked.com/magazine/wp-content/uploads/2016/01/night-time-tokyo-streets-photography-masashi-wakui-fb.png) no-repeat center center;
+  background-position: 0% 25%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
+  min-height: 450px;
+}
+
+.center {
+  text-align: center;
+}
+
+.thumbnail {
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+}
+
+.pacifico-font {
+  font-family: 'Pacifico', cursive;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  line-height: 1;
+  font-size: 1.8em;
+  letter-spacing: -1px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: normal;
+}
+
+p {
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+a {
+  margin-bottom: 5px;
+}
+
+footer {
+  padding-top: 50px;
+  margin: auto;
+}
