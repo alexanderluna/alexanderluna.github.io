@@ -1,0 +1,27 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+// Theme skin
+@import "basically-basic/themes/{{ site.data.theme.skin | default: 'default' }}";
+
+@import "basically-basic";
+
+.sidebar-toggle-label {
+  color: white;
+}
+
+
+.highlight {
+  background-color: #262626;
+  border-radius: 0.5em;
+}
+
+
+div {
+  .inner {
+    margin: auto;
+  }
+}
