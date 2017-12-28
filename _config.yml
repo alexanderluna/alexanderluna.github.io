@@ -11,7 +11,7 @@ author:
   picture: null
 twitter_username: mr_moon95
 github_username: mycroft1891
-logo: null
+logo: /favicon.svg
 markdown: kramdown
 remote_theme: mmistakes/jekyll-theme-basically-basic
 plugins:
