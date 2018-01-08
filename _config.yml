@@ -5,6 +5,7 @@ description: 'Code like Good Wine, takes times'
 image: /assets/img/main
 baseurl: null
 url: null
+google_analytics: UA-112012666-1
 author:
   name: Alexander Luna
   twitter: mr_moon95
