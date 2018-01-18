@@ -1,6 +1,8 @@
 ---
 title: Schedule Tasks with Crontab and Launchd
 permalink: schedule-tasks-with-crontab-and-launchd
+image: /assets/img/cron
+extention: .jpg
 ---
 
 When we write a lot of scripts we will eventually want to automate some tasks like saving Database backups, scrap a website prodigally, do POST or GET requests to an API, etc. In all this cases we will need a task scheduler. On a Linux system, our easiest and best option is [Crontbab](http://www.adminschoice.com/crontab-quick-reference) and while it is a great option for quickly creating a scheduled task both on Linux and Mac, Apple deprecated it in favor of [launchd](http://www.launchd.info/). This does not mean that we can't use `Crontab` on Mac but downside of `Crontab` is that is assumes you machine is awake and therefor will skip the task until the next time if this is not the case. On the other hand, `launchd` will not run while your Mac is asleep BUT once you wake it up again, it will run.

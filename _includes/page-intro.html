@@ -1,15 +1,16 @@
 <header class="intro">
   {% if page.image or site.image %}
     {% assign intro_image = page.image.path | default: page.image | default: site.image %}
+    {% assign extention = page.extention | default: ".png" %}
     {% unless intro_image contains '://' %}
       {% assign intro_image = intro_image | relative_url %}
     {% endunless %}
     {% assign intro_image = intro_image | escape %}
     <div class="intro-image">
       <picture>
-        <source media="(min-width: 750px)" srcset="{{ intro_image }}-70pc_large.png">
-        <source media="(min-width: 500px)" srcset="{{ intro_image }}-50pc_medium.png">
-        <img src="{{ intro_image }}-40pc_small.png" alt="{{ page.title | default: site.title }}">
+        <source media="(min-width: 750px)" srcset="{{ intro_image }}-70pc_large{{ extention }}">
+        <source media="(min-width: 500px)" srcset="{{ intro_image }}-50pc_medium{{ extention }}">
+        <img src="{{ intro_image }}-40pc_small{{ extention }}" alt="{{ page.title | default: site.title }}">
       </picture>
     </div>
   {% endif %}
