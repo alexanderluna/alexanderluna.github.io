@@ -1,6 +1,5 @@
 ---
 title: Installing Ruby the right way
-New field 1: Installing Ruby the right way
 permalink: installing-ruby
 image: "/assets/img/ruby"
 categories: ruby
@@ -29,14 +28,14 @@ $ xcode-select --install
 
 ## Install Homebrew
 
-Now we are ready to install homebrew. 
+Now we are ready to install homebrew.
 
 ### What is [Homebrew](https://brew.sh/) ?
 - The missing package manager for macOS
 - You can install pretty much everything need with it (ruby, pytohn, libraries, etc.)
 - You can easily update everything you install and uninstall as well
 
-> Installing anything from the internet is always a little risky and 
+> Installing anything from the internet is always a little risky and
 > I recommend going to the Homebrew website self to copy the installation command (link aboves)
 
 
@@ -47,7 +46,7 @@ $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/inst
 {% endhighlight %}
 
 ## Install RBENV
-Now we are ready to install rbenv which is a package that lets us install any ruby version and multiple versions which is going to be essential as you develope more apps using Ruby similar to Python's `pipenv/pyenv` and Node's `nvm`. 
+Now we are ready to install rbenv which is a package that lets us install any ruby version and multiple versions which is going to be essential as you develope more apps using Ruby similar to Python's `pipenv/pyenv` and Node's `nvm`.
 
 Important to know: rbenv not only installs ruby versions but creates also seperate folders for each which means that you can mantain ruby versions with all their gems instact. You are going to appreciate it a lot espcially when you start migrating apps from older ruby versions.
 
