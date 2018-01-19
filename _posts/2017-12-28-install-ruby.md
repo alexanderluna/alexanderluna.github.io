@@ -2,6 +2,7 @@
 title: Installing Ruby the right way
 permalink: installing-ruby
 image: "/assets/img/ruby"
+extention: .png
 categories: ruby
 ---
 

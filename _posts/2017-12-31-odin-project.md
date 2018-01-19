@@ -1,6 +1,8 @@
 ---
 title: Supercharging your Web Dev studies
 permalink: the-odin-project
+image: /assets/img/odin
+extention: .png
 categories: [ruby, javascript]
 ---
 
