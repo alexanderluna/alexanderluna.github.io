@@ -161,7 +161,7 @@ In our case all we want is to specify the hour since we want to run our job ever
 <dict>
     <key>Label</key>
     <!-- The label should be the same as the filename without the extension -->
-    <string>org.Alexander.nasa-api</string>
+    <string>org.Alexander.my-node-job</string>
     <key>ProgramArguments</key>
     <array>
         <string>/Users/alexander/.nvm/versions/node/v8.4.0/bin/node</string>
@@ -174,4 +174,45 @@ In our case all we want is to specify the hour since we want to run our job ever
     </dict>
 </dict>
 </plist>
+{% endhighlight %}
+
+Great now all that is left is to load our agent (job). Here you have 2 options, you can do it the manual way or use a small tool for this called `lunchy`:
+
+## The Manual way
+
+We have to use `launchctl` to load and start our job (note, replace Alexander with your username):
+
+{% highlight bash %}
+$ launchctl load ~/Library/LaunchAgents/org.Alexander.my-node-job.plist
+$ launchctl start org.Alexander.my-node-job
+{% endhighlight %}
+
+
+## Using Lunchy
+
+Lunchy is a Ruby gem so we have to install it first like this:
+
+{% highlight bash %}
+$ gem install lunchy
+{% endhighlight %}
+
+Once it is downloaded we can load our job a little more simply, we don't have to specify a path nor the username just the plist's name:
+
+{% highlight bash %}
+$ lunchy restart my-node-job
+{% endhighlight %}
+
+
+Similar to list our jobs:
+
+{% highlight bash %}
+$ launchctl list
+$ lunchy list
+{% endhighlight %}
+
+Finally to stop our Agent:
+
+{% highlight bash %}
+$ launchctl stop org.Alexander.my-node-job
+$ lunchy stop my-node-job
 {% endhighlight %}
