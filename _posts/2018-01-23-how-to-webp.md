@@ -18,7 +18,7 @@ or haven't even heard of but pays off a lot. But how much ?
 <center>
 <img src="https://mycroft1891.github.io/portfolio/img/projects/japanese.png" alt="Japanese image">
 <br><br>
-<img src="https://mycroft1891.github.io/portfolio/img/projects/japanese.webp" alt="Japanese image">
+<img src="https://mycroft1891.github.io/portfolio/img/projects/japanese.webp" type="image/webp" alt="Japanese image">
 </center>
 <br>
 

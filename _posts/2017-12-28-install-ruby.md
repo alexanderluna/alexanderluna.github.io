@@ -6,7 +6,7 @@ extention: .png
 categories: ruby
 ---
 
-> This tutorial is greard toward MacOS users
+> This tutorial is geared toward MacOS users
 
 Index:
 
