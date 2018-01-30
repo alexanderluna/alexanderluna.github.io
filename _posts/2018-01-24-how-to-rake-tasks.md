@@ -2,6 +2,7 @@
 title: How to use Rake Tasks
 permalink: how-to-use-rake-tasks
 image: /assets/img/rake
+categories: ruby
 ---
 
 When developing Rails apps, it is inevitable to automate processes like submitting sitemaps, removing old records and more. Rake Tasks are the default way of doing it. But what should you do and shouldn't do in your Rake tasks ?
