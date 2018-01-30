@@ -15,7 +15,6 @@ github_username: mycroft1891
 codepen_username: mr-moon
 logo: /favicon.svg
 markdown: kramdown
-remote_theme: mmistakes/jekyll-theme-basically-basic
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
