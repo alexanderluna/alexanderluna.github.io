@@ -4,12 +4,12 @@ permalink: schedule-tasks-with-crontab-and-launchd
 image: /assets/img/cron
 ---
 
-When we write a lot of scripts we will eventually want to automate some tasks like saving Database backups, scrap a website prodigally, do POST or GET requests to an API, etc. In all this cases we will need a task scheduler. On a Linux system, our easiest and best option is [Crontbab](http://www.adminschoice.com/crontab-quick-reference) and while it is a great option for quickly creating a scheduled task both on Linux and Mac, Apple deprecated it in favor of [launchd](http://www.launchd.info/). This does not mean that we can't use `Crontab` on Mac but downside of `Crontab` is that is assumes you machine is awake and therefor will skip the task until the next time if this is not the case. On the other hand, `launchd` will not run while your Mac is asleep BUT once you wake it up again, it will run.
+When we write a lot of scripts we will eventually want to automate some tasks like saving Database backups, scrap a website periodically, do POST or GET requests to an API, etc. In all these cases we will need a task scheduler. On a Linux systems, our easiest and best option is [Crontbab](http://www.adminschoice.com/crontab-quick-reference) and while it is a great option for quickly creating a scheduled task both on Linux and Mac, Apple deprecated it in favor of [launchd](http://www.launchd.info/). This does not mean that we can't use `Crontab` on Mac but the downside of `Crontab` is that is assumes your machine is awake and therefor will skip the task until the next time if this is not the case. On the other hand, `launchd` will not run while your Mac is asleep BUT once you wake it up again, it will run.
 
-Nonetheless, both are great and thus we will cover them both. These are the main reason we would want to use `Crontab` over `launchd` :
+Nonetheless, both are great and thus we will cover them both. These are the main reasons we would want to use `Crontab` over `launchd` :
 
 - It is simpler to setup
-- We don't care if the job runs every time, it just should run on a best effort case
+- We don't care if the job runs every time, it just should run on a best effort basis
 
 ## Index:
 1. [Crontab](#crontab)
@@ -17,7 +17,7 @@ Nonetheless, both are great and thus we will cover them both. These are the main
 
 # Crontab
 
-As mentioned above Crontab is simpler to setup, it comes already installed all we have to do is add our job to the list which we can access using the `-l` flag:
+As mentioned above Crontab is simpler to setup, it comes already installed and all we have to do is add our job to the list which we can access using the `-l` flag:
 
 {% highlight bash %}
 $ crontab -l
@@ -30,27 +30,27 @@ In order to add a job we use the `-e` flag:
 $ crontab -e
 {% endhighlight %}
 
-This will let us add a job to the list. The default editor on Mac is VIM but don't be afraid. A very quick guide to VIM. When the VIM editor opens:
+This will let us add a job to the list. The default editor on Mac is VIM but don't be afraid. Here is a very quick guide to VIM. When the VIM editor opens:
 
 - Use the `i` key to start insert mode and edit the file
 - Use the arrow keys to move around the cursor
 - Use the `esc` key to stop editing
 - Type `:wq` to write your changes and exit after the `esc` key
 
-Now lets get into the actuall job running:
+Now lets get into the actual job running:
 
 {% highlight bash %}
 $ 1 2 3 4 5  node  my_node_job.js
 {% endhighlight %}
 
-Cronjobs let you specify the time by putting your desired times in the right slots as followed (based on the above job):
+Crontab lets you specify the time by putting your desired times in the right slots as followed (based on the above job):
 - 1) minute (0 - 59)
 - 2) hour (0 - 23)
 - 3) day of month (1 - 31)
 - 4) month (1 - 12)
 - 5) day of the week (0 - 6)
 
-For example a taks that will run every day at 4pm:
+For example a tasks that will run every day at 4pm:
 
 {% highlight bash %}
 0 16 * * *  node  my_node_job.js
@@ -75,7 +75,7 @@ No more email great ^^
 
 # Launchd
 
-While Crontab is a quick solution to for some scripts that don't necessarily have to run every day, sometimes we need something more robust. Sometimes we might be commuting at the time our job should run and as mentioned above, Crontab will skip this job and will not until tomorrow at the same.  Launchd solves this problem for us because it knows we are not always actively using our computer.
+While Crontab is a quick solution for scripts that don't necessarily have to run every day, sometimes we need something more robust. Sometimes we might be commuting at the time our job should run and as mentioned above, Crontab will skip this job and will not run it until tomorrow at the same time.  Launchd solves this problem for us because it knows we are not always actively using our computer.
 
 In order to create a new job with `Launchd` we have to create our `.plist` file first which is just an `XML` file with some boilerplate XML from [Apple's docs](https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingLaunchdJobs.html). We can create the file using `touch`:
 
@@ -89,7 +89,7 @@ Using the Crontab example, note my username is `Alexander` you have to use yours
 $ touch ~/Library/LaunchAgents/org.Alexander.my-node-job.plist
 {% endhighlight %}
 
-Now we can open it in our favorite editor (mine is atom):
+Now we can open it in our favorite editor (mine is Atom):
 
 {% highlight bash %}
 $ atom ~/Library/LaunchAgents/org.Alexander.my-node-job.plist
@@ -202,7 +202,7 @@ $ lunchy restart my-node-job
 {% endhighlight %}
 
 
-Similar to list our jobs:
+Similarly to list our jobs:
 
 {% highlight bash %}
 $ launchctl list
