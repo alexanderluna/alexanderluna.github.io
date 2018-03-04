@@ -187,3 +187,11 @@ self.addEventListener('fetch', function(event) {
 {%- endhighlight -%}
 
 Once again it reduces the 150 lines of code inside the `sw.js` down to just 2 where grep found the word `fetch`. If you use `grep --color=always` it will even highlight the word you are looking for.
+
+
+## cat command
+Out of all the commands, the cat is probably the easiest to use. It's job is to output the content of any file. Personally, this commands very handy when you want to quickly check the content of a file. Just type the command followed by the file name:
+
+{%- highlight bash -%}
+$ cat package.json
+{%- endhighlight -%}
