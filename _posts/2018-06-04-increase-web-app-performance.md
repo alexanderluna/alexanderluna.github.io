@@ -53,23 +53,36 @@ Browsers load all images by default. This behaviour makes it easy to build websi
 
 This is where the `Intersection Observer API` comes into play. This API enables us to tell when an HTML element enters the view and leaves it. We do this by adding an element to our observer API.
 
+When we create our images we cannot add the `src` attribute just yet or else the browswe will fetch the image immedeatly which we don't want. Instead we add a `data-src` attrbitute which will store the image link for later:
+
+{%- highlight html -%}
+<img class='image-class-name' data-src='ourImage.png'>
+{%- endhighlight -%}
+
+Now we can write the javascipt needed to notify us when the images enter the view:
+
 {%- highlight javascript -%}
-var observer = new IntersectionObserver(onIntersection);
+const images = document.querySelectorAll('.image-class-name');
+let observer = new IntersectionObserver(onIntersection, config);
+images.forEach(image => {
+  observer.observe(image);
+});
 
 function onIntersection(element) {
-  const images = document.querySelectorAll('.your-classname');
+const images = document.querySelectorAll(".your-classname");
   element.forEach(elem => {
-    if (elem.intersectionRatio > 0) {
-      observer.unobserve(elem.target);
-      preloadImage(elem.target);
-    }
+   if (elem.intersectionRatio > 0) {
+    observer.unobserve(elem.target);
+    preloadImage(elem.target);
+   }
+  };
 };
 {%- endhighlight -%}
 
-As it stands right now we have an observer and an event handler for when an element enters the view but we don't have an element that can trigger this event yet. This comes now:
+A quick walkthrough, first we are gathering all our images with the class `.image-class-name`. Next we create our `IntersectionObserver` and finally we loop through our images and add tell our observer to notify us when these images enter the view. The `onIntersection` function gets called when the image or images [it can be an array] enter the view. The image is past into our function as the first parameter. This element is an array so we loop through it (it can be 1 as well as 100 images). We make sure that the element is without our desired view and then we tell our observer to unobserve our image so that we don't fetch the same image more than once. Finally we load our image.
 
-{%- highlight javascript -%}
-{%- endhighlight -%}
+With a few lines of javascript we were able to lazy load our images. Now as the user scrolls our site, our images will load dynamically which means less Data consumption for our mobile users and a faster page speed.
+
 
 ## Minify CSS and Javascript
 ## Serve assets using Service Worker
