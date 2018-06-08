@@ -85,5 +85,10 @@ With a few lines of javascript we were able to lazy load our images. Now as the 
 
 
 ## Minify CSS and Javascript
+
+Assets such as CSS and Javascript have to be minified or uglyfied. Personally I like injecting my minified CSS into the head with a style tag if my CSS is small to reduce unnecesary requests and to speed up the paint of the site. Javascript should be minified and added inside the body tag using an `async` and/or `defer` attribute to improve the way it is loaded. There are several tools available for this such Webpack and Parcel or the old school Gulp and Grunt. Espcially CSS increases the pages "Firs meaningful paint" time which will reduce your performance quite a bit.
+
+
 ## Serve assets using Service Worker
+
 ## IndexedDB is not that terrible
