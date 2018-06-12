@@ -30,14 +30,17 @@ div {
 .highlighter-rouge {
   padding: 0.1em 0.5em 0.1em 0.5em;
   border-radius: 0.2em;
-  background: #7e7e7e;
+  background: rgba(255, 74, 76, 0.33);
 }
 
 .site-logo {
   border-radius: 0%;
 }
 
-
+.info-box {
+  border: 2px dashed;
+  padding: 1rem;
+}
 // .sidebar-toggle-wrapper {
 //   background-color: #00adb5;
 //   border-bottom-left-radius: 40%;
