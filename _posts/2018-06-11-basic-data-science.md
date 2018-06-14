@@ -56,7 +56,6 @@ Continuing where we left off, we will look at different data now.
 - zip code (Qualitative): numeric but no mathematical operation possible
 
 #### How to differentiate between Qualitative and Quantitative data ?
-
 Quantitative data can be described using numbers but at the same time this data should make sense even if you add/subtract/multiply/divide it. For example a Zip code is Qualitative because even tho it is a number it makes no sense to add two Zip codes together. On the other hand, the revenue of a business is Quantitative data because not only is is a number but we can actually add it or multiply it to know what the annual, quarterly or daily revenue could be.
 
 Quantitative Data can be broken down even further into:
@@ -82,7 +81,21 @@ Quantitative Data can be broken down even further into:
 
 
 ## Five Steps of Data Science
+What distinguishes Data Science from Data Analysis is that Data Science follows a step by step process that preserves the integrity of the results. These key steps are recognized and followed from beginner to professionals.
 
+1. Asking an interesting question
+2. Obtaining the data
+3. Exploring the data
+4. Modeling the data
+5. Communicating & Visualizing the results
+
+The first step is to ask question and it is important because it lets you brainstorm ideas and get a feeling for what data you need/want/expect as you move on. The seconds step is rather creative as it involves finding the data which can originate from many places and be in many shapes as you saw earlier. The third step is all about breaking down the data into its different types. The fourth step requires you to use models (Statistical/ML/etc.) to validate and quantify the effectiveness of each model. The fifth step is considered the most important step because you have to find a way of conveying your results through Visualizations that are easy to understand.
+
+#### Exploring the Data Questions
+- Is the data Organized ?
+- What does each Row represent ?
+- What does each Column represent ?
+- Are the any missing data points ?
 
 
 
