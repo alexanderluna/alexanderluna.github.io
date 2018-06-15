@@ -4,11 +4,11 @@ permalink: increase-webapp-performance
 image: /assets/img/performance
 ---
 
-<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" href="https://unsplash.com/@emiljarfelt?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Emil Jarfelt"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Emil Jarfelt</span></a>
-
 # Increase Web app performance
 
-As we develope Web Apps we tend to hit performance bottlenecks along the way and while sometimes they are not as terrible they can slow down our Web App considerably and can consume a lot of data which isn't great. There are some key areas we can focus on to increase drastically the performance of our Web Apps:
+As we develop Web Apps we tend to hit performance bottlenecks along the way and while sometimes they are not as terrible they can slow down our Web App considerably and can consume a lot of data which isn't great. There are some key areas we can focus on to increase drastically the performance of our Web Apps:
+
+Image Credits: <a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px;" href="https://unsplash.com/@emiljarfelt?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Emil Jarfelt"><span style="display:inline-block;padding:2px 3px;"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white;" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path></svg></span><span style="display:inline-block;padding:2px 3px;">Emil Jarfelt</span></a>
 
 - [Google Maps bottleneck](#google-maps-bottleneck)
 - [Loading Images Lazy](#loading-images-lazy)
@@ -19,7 +19,7 @@ As we develope Web Apps we tend to hit performance bottlenecks along the way and
 
 ## Google Maps bottleneck
 
-A lot of websites these days use google maps to display their store location or to indicate where something is happening but few users know just how much google maps decreases the performance of a Website. It seems rather simple to copy and paste a pregenarated map into our HTML and 1,2,3 we have a map but Google map is resource hungry. The way google maps loads is that it loads several smaller images (tiles) to generate the whole map you requested and it also loads a few scripts. Unfortunetly those images can take some time to load especially in HTTP 1.0.
+A lot of websites these days use google maps to display their store location or to indicate where something is happening but few users know just how much google maps decreases the performance of a Website. It seems rather simple to copy and paste a pre-generated map into our HTML and 1,2,3 we have a map but Google map is resource hungry. The way google maps loads is that it loads several smaller images (tiles) to generate the whole map you requested and it also loads a few scripts. Unfortunately those images can take some time to load especially in HTTP 1.0.
 
 The solution to this problem is rather simple:
 1. place it at the bottom where it gets rendered later
@@ -53,7 +53,7 @@ Browsers load all images by default. This behaviour makes it easy to build websi
 
 This is where the `Intersection Observer API` comes into play. This API enables us to tell when an HTML element enters the view and leaves it. We do this by adding an element to our observer API.
 
-When we create our images we cannot add the `src` attribute just yet or else the browswe will fetch the image immedeatly which we don't want. Instead we add a `data-src` attrbitute which will store the image link for later:
+When we create our images we cannot add the `src` attribute just yet or else the Browser will fetch the image immediately which we don't want. Instead we add a `data-src` attribute which will store the image link for later:
 
 {%- highlight html -%}
 <img class='image-class-name' data-src='ourImage.png'>
@@ -86,7 +86,7 @@ With a few lines of javascript we were able to lazy load our images. Now as the 
 
 ## Minify CSS and Javascript
 
-Assets such as CSS and Javascript have to be minified or uglyfied. Personally I like injecting my minified CSS into the head with a style tag if my CSS is small to reduce unnecesary requests and to speed up the paint of the site. Javascript should be minified and added inside the body tag using an `async` and/or `defer` attribute to improve the way it is loaded. There are several tools available for this such Webpack and Parcel or the old school Gulp and Grunt. Espcially CSS increases the pages "Firs meaningful paint" time which will reduce your performance quite a bit.
+Assets such as CSS and Javascript have to be minified or uglyfied. Personally I like injecting my minified CSS into the head with a style tag if my CSS is small to reduce unnecesary requests and to speed up the paint of the site. Javascript should be minified and added inside the body tag using an `async` and/or `defer` attribute to improve the way it is loaded. There are several tools available for this such Webpack and Parcel or the old school Gulp and Grunt. Especially CSS increases the pages "Firs meaningful paint" time which will reduce your performance quite a bit.
 
 
 ## Serve assets using Service Worker
