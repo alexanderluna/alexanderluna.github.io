@@ -10,7 +10,7 @@ Over the past years Data science has become increasingly important throughout di
 1. [Basics](#basics)
 2. [Types of Data](#types-of-data)
 3. [Five Steps of Data Science](#five-steps-of-data-science)
-4. [Basic Mathematics](#)
+4. [Basic Mathematics](#basic-mathematics)
 5. [Impossible or Improbable](#)
 6. [Advanced Probability](#)
 7. [Basic Statistics](#)
@@ -98,6 +98,21 @@ The first step is to ask question and it is important because it lets you brains
 - Are the any missing data points ?
 
 
+## Basic Mathematics
+Now we will look at some basic mathematical principles for Data Science:
+- Basic Symbols/Terminology
+- Logarithm/exponents
+- The set theory
+- Calculus
+- Matrix (linear) Algebra
+
+#### Basic Symbols and Terminology
+**Vectors** are objects with magnitude and direction. In Data Science a 1 dimensional array.
+**Matrix** is a 2 dimensional representation of an array of numbers. Matrices have 2 characteristics:
+1. dimension of matrix (n x m = n-rows, m-columns)
+2. matrices are denoted with capital/bold letter ex. X
+
+The upper case sigma symbol (Σ) is the universal symbol for addition. Ex. `Σx1 = 15` the sum of the vector `x1`. The lowercase alpha symbol `α` represents values that are proportional to each other. The dot product `.` is used to combine to two vectors similar to addition and multiplication.
 
 ## References
 - [Principles of Data Science (Packt Book)](https://www.amazon.com/Principles-Data-Science-techniques-making-ebook/dp/B01A8T8YNC)
