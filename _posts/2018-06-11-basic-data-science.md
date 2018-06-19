@@ -4,14 +4,14 @@ permalink: basic-data-science
 image: /assets/img/ds
 ---
 
-Over the past years Data science has become increasingly important throughout different industries. Which is why I'm writing this post to collect valuable information which will aid anyone to learn about this topic. Most of the information presented here will be taken from different which I will list at the bottom under the reference section.
+Over the past years Data science has become increasingly important throughout different industries. Which is why I'm writing this post to collect valuable information which will aid anyone to learn about this topic. Most of the information presented here will be taken from different sources which I will list at the bottom under the reference section.
 
 ## Index
 1. [Basics](#basics)
 2. [Types of Data](#types-of-data)
 3. [Five Steps of Data Science](#five-steps-of-data-science)
 4. [Basic Mathematics](#basic-mathematics)
-5. [Impossible or Improbable](#)
+5. [Impossible or Improbable](#impossible-or-improbable)
 6. [Advanced Probability](#)
 7. [Basic Statistics](#)
 8. [Advanced Statistics](#)
@@ -113,8 +113,40 @@ Now we will look at some basic mathematical principles for Data Science:
 2. matrices are denoted with capital/bold letter ex. X
 
 The upper case sigma symbol `Σ` is the universal symbol for addition. Ex. `Σx1 = 15` the sum of the vector `x1`. The lowercase alpha symbol `α` represents values that are proportional to each other. The dot product `.` is used to combine two vectors similar to addition and multiplication. Ex. `(3 7).(9 5) = 3*9 + 7*5 = 62`
+
 **Graphs** depict points using coordinates. The rate of change between two points is defined as `slope` and they can be very important in Data science. The rate of change of two points shows us how variables move together and to what degree.
-**Exponents** tells us how many times to multiply a number to itself. A **logarithm** on the other hand, tells us what exponent gets us from the base to another number. For example: `log2(16) = 4` because two is the base and we want to know what exponent makes 2 into 16 which is 4 because 2 to the power of 4 is 16 or `2 * 2 * 2 * 2 = 16`. The **Set Theory** involves mathematical operations at a set level. A **set** is a collection of distinct objects similar to an array.
+
+**Exponents** tells us how many times to multiply a number to itself. A **logarithm** on the other hand, tells us what exponent gets us from the base to another number. For example: `log2(16) = 4` because two is the base and we want to know what exponent makes 2 into 16 which is 4 because 2 to the power of 4 is 16 or `2 * 2 * 2 * 2 = 16`.
+
+The **Set Theory** involves mathematical operations at a set level. A **set** is a collection of distinct objects similar to an array. The **magnitude** of a set is the number of elements in the set. The epsilon notation tells us that an element is within a set. For example: `2∈{1,2,3}` shows that 2 is within the set of 1,2,3. If one set has items that are present in another set we call the first set a subset of the counterparts. For Example `A={1,3,6} B={1,2,3,4,5,6}` A is a subset of B or `A⊆B`. The **intersection** of two sets is a set whose elements appear in both sets: `A∩B = {1,3,6}` because A has 1,3,6 and those are also present in B. The **union** of two sets is a set whose elements appear in either set: `A∪B = {1,2,3,4,5,6}` because although A only has 1,3,6, B has all the numbers from 1-6 which means that the union of both includes them all. The **jaccard measure** divides the intersection by the union as a way of measuring the similarity of two sets.
+
+**Linear Algebra** is an area of Mathematics that deals with the math of matrices and vectors to make large multiplication more efficient. **Matrix Multiplication** is a simpler way of mass producing dot products. It is important to note that matrix multiplication is sensitive to the order you multiply them unlike normal numbers and the matrices must have equal dimensions which means that the first matrix must have the same number of columns as the second matrix rows.
+
+
+## Impossible or Improbable
+We use probability to define the chances of the occurrence of an event. We will first go through some basic definitions:
+
+A **procedure** is an act that leads to a result. An **event** is a collection of the outcomes of the procedure. A **simple event** is an outcome/event that cannot be broken down further. The **sample space** of a procedure is the set of all _possible_ simple events.
+
+### Probability
+**Probability** of an event represents the frequency that the event will happen `P(A)`. The probability can be defined like this: `P(A) = number of ways A occurs / size of sample space`.
+
+### Bayesian vs. Frequentist
+In reality it is nearly impossible to count all the possible ways event `A` can happen. For example, to find out the probability of a person smoking a single cigarette a day we would have to figure out how many different ways a person is a smoker which is impossible. When faced with these types of situations there are 2 schools of thought:
+
+1. Frequentist approach
+2. Bayesian approach
+
+In a Frequentist approach the probability of an event is calculated through experimentation. Similar to how we determined the probability before we the basic formula for this approach is as follows:
+
+`P(A) = number of times A occurred / number of times the procedure was repeated`
+
+The Bayesian approach on the other hand relies heavily on theoretical means. Using this approach we would have to think a bit more critically about the events and why they occur.
+
+The Frequentist approach relies on the `relative frequency` of an event (how often event occurs divided by the total number of observations).
+
+
+
 
 ## References
 - [Principles of Data Science (Packt Book)](https://www.amazon.com/Principles-Data-Science-techniques-making-ebook/dp/B01A8T8YNC)
