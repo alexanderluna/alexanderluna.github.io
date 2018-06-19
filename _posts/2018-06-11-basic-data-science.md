@@ -112,7 +112,9 @@ Now we will look at some basic mathematical principles for Data Science:
 1. dimension of matrix (n x m = n-rows, m-columns)
 2. matrices are denoted with capital/bold letter ex. X
 
-The upper case sigma symbol (Σ) is the universal symbol for addition. Ex. `Σx1 = 15` the sum of the vector `x1`. The lowercase alpha symbol `α` represents values that are proportional to each other. The dot product `.` is used to combine to two vectors similar to addition and multiplication.
+The upper case sigma symbol `Σ` is the universal symbol for addition. Ex. `Σx1 = 15` the sum of the vector `x1`. The lowercase alpha symbol `α` represents values that are proportional to each other. The dot product `.` is used to combine two vectors similar to addition and multiplication. Ex. `(3 7).(9 5) = 3*9 + 7*5 = 62`
+**Graphs** depict points using coordinates. The rate of change between two points is defined as `slope` and they can be very important in Data science. The rate of change of two points shows us how variables move together and to what degree.
+**Exponents** tells us how many times to multiply a number to itself. A **logarithm** on the other hand, tells us what exponent gets us from the base to another number. For example: `log2(16) = 4` because two is the base and we want to know what exponent makes 2 into 16 which is 4 because 2 to the power of 4 is 16 or `2 * 2 * 2 * 2 = 16`. The **Set Theory** involves mathematical operations at a set level. A **set** is a collection of distinct objects similar to an array.
 
 ## References
 - [Principles of Data Science (Packt Book)](https://www.amazon.com/Principles-Data-Science-techniques-making-ebook/dp/B01A8T8YNC)
