@@ -143,7 +143,12 @@ In a Frequentist approach the probability of an event is calculated through expe
 
 The Bayesian approach on the other hand relies heavily on theoretical means. Using this approach we would have to think a bit more critically about the events and why they occur.
 
-The Frequentist approach relies on the `relative frequency` of an event (how often event occurs divided by the total number of observations).
+The Frequentist approach relies on the `relative frequency` of an event (how often event occurs divided by the total number of observations). This approach can get very close to actual probability of an event thanks to the **law of large numbers** which states that if we repeat a procedure enough times, the relative frequency probability will approach the actual probability.
+
+**Compount Events** is any event that combines two or more simple events. We use the union and intersection Symbols to define the probability:
+
+- `P(A∩B) = Probability of A and B happening`
+- `P(A∪B) = Probability of A or B happening`
 
 
 
