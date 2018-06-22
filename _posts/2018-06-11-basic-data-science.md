@@ -143,14 +143,20 @@ In a Frequentist approach the probability of an event is calculated through expe
 
 The Bayesian approach on the other hand relies heavily on theoretical means. Using this approach we would have to think a bit more critically about the events and why they occur.
 
-The Frequentist approach relies on the `relative frequency` of an event (how often event occurs divided by the total number of observations). This approach can get very close to actual probability of an event thanks to the **law of large numbers** which states that if we repeat a procedure enough times, the relative frequency probability will approach the actual probability.
+The Frequentist approach relies on the **relative frequency** of an event (how often event occurs divided by the total number of observations). This approach can get very close to actual probability of an event thanks to the **law of large numbers** which states that if we repeat a procedure enough times, the relative frequency probability will approach the actual probability.
 
 **Compount Events** is any event that combines two or more simple events. We use the union and intersection Symbols to define the probability:
 
 - `P(A∩B) = Probability of A and B happening`
 - `P(A∪B) = Probability of A or B happening`
 
+Conditional Probability builds on this concept. If Event B occurred, then what is the probability of event A ? Since our condition depends on event B it means that our sample space is reduced down to the size of event B:
 
+- `P(A∪B) = P(A and B) / P(B)`
+
+As probability Visualization becomes more cumbersome we can start to use probability rules to help us calculate compound probabilities:
+
+1. Addition Rule (or) events: `P(A∪B) = P(A) + P(B) - P(A∩B)`
 
 
 ## References
