@@ -157,6 +157,9 @@ Conditional Probability builds on this concept. If Event B occurred, then what i
 As probability Visualization becomes more cumbersome we can start to use probability rules to help us calculate compound probabilities:
 
 1. Addition Rule (or) events: `P(A∪B) = P(A) + P(B) - P(A∩B)`
+2. Mutual Exclusivity (not at same time): `P(A∪B) = P(A) + P(B) - P(A∩B)`
+3. Multiplication Rule (and) events: `P(A∩B) = P(A) . P(B|A)`
+4. Independence (no event relation): `P(A∩B) = P(A) . P(B|A)`
 
 
 ## References
