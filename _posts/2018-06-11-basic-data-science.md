@@ -12,7 +12,7 @@ Over the past years Data science has become increasingly important throughout di
 3. [Five Steps of Data Science](#five-steps-of-data-science)
 4. [Basic Mathematics](#basic-mathematics)
 5. [Impossible or Improbable](#impossible-or-improbable)
-6. [Advanced Probability](#)
+6. [Advanced Probability](#advanced-probability)
 7. [Basic Statistics](#)
 8. [Advanced Statistics](#)
 9. [Communicating Data](#)
@@ -160,6 +160,12 @@ As probability Visualization becomes more cumbersome we can start to use probabi
 2. Mutual Exclusivity (not at same time): `P(A∪B) = P(A) + P(B) - P(A∩B)`
 3. Multiplication Rule (and) events: `P(A∩B) = P(A) . P(B|A)`
 4. Independence (no event relation): `P(A∩B) = P(A) . P(B|A)`
+5. Complementary Events: `P(Ā) = 1 - P(A)`
+
+**Type 1 error** are false positives while **Type 2 error** are false negatives.
+
+
+## Advanced Probability
 
 
 ## References
