@@ -166,7 +166,12 @@ As probability Visualization becomes more cumbersome we can start to use probabi
 
 
 ## Advanced Probability
+In this chapter we will go through some more advanced topics as well as some common machine learning algorithms such as the **Naive Bayes algorithm** some of the other topics include:
 
+- Exhaustive events
+- Bayes theorem
+- Basic prediction rules
+- Random Variables
 
 ## References
 - [Principles of Data Science (Packt Book)](https://www.amazon.com/Principles-Data-Science-techniques-making-ebook/dp/B01A8T8YNC)
