@@ -173,5 +173,27 @@ In this chapter we will go through some more advanced topics as well as some com
 - Basic prediction rules
 - Random Variables
 
+**Collectively exhaustive events** happen when one of two or more events must occur. **Mutually exhaustive events** happen when two events cannot happen at the same time. 
+
+**Bayesian** is all about three things and how they interact with each other:
+
+- A prior distribution
+- A posterior distribution (what we care about)
+- A likelihood
+
+At all moments data updates our hypothesis. The **bayes theorem** is the result of **Bayesian inference**:
+
+`P(A,B) = P(A) * P(B|A)`
+
+The probability that A and B occur is the probability that A occurs times the probability that B occurred, given that A already occurred. 
+{: class="info-box"}
+
+- `P(B,A) = P(B) * P(A|B)`
+- `P(A,B) = P(B,A)`
+- `P(B) * P(A|B) = P(A) * P(B|A)`
+
+If we divide both sides by `P(B)` we get:
+
+`P(A|B) = P(A) * P(B|A) / P(B)`
 ## References
 - [Principles of Data Science (Packt Book)](https://www.amazon.com/Principles-Data-Science-techniques-making-ebook/dp/B01A8T8YNC)
