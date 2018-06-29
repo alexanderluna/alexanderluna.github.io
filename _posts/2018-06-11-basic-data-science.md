@@ -203,6 +203,22 @@ In other words: The probability that our hypothesis is correct, given the data w
 
 **Random Variables** use real numerical values to describe a Probabilistic event and it may change value depending on the situation. For each value the random variable can take, there is a single probability.
 
+**Discrete random variable** takes on a countable number of possible values.We will use **probability mass function (PMF)** to describe a discrete random variable as follow:
+
+`P(X = x) = PMF`
+
+For example a dice roll which has a 1/6 probability for each number:
+
+`P(X = 1) = 1/6 and P(X = 5) = 1/6`
+
+The expected value of a random variable defines the mean value of a long run of repeated samples of the random variable. The expected value of a discrete random variable can also be found out using this formula:
+
+`Expected value = E[X] = 𝝁x = ∑xipi`
+
+xi is the i-th outcome and pi is the i-th probability. If we take our dice example from before:
+
+`1/6(1) + 1/6(2) + 1/6(3) + 1/6(4) + 1/6(5) + 1/6(6) = 3.5`
+
 
 ## References
 - [Principles of Data Science (Packt Book)](https://www.amazon.com/Principles-Data-Science-techniques-making-ebook/dp/B01A8T8YNC)
