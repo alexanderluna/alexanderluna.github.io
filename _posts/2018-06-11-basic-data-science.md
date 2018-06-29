@@ -201,6 +201,8 @@ The Bayes theorem is popular because it tries to figure out `P(H|D)` where `H` i
 In other words: The probability that our hypothesis is correct, given the data we have
 {: class="info-box" }
 
+**Random Variables** use real numerical values to describe a Probabilistic event and it may change value depending on the situation. For each value the random variable can take, there is a single probability.
+
 
 ## References
 - [Principles of Data Science (Packt Book)](https://www.amazon.com/Principles-Data-Science-techniques-making-ebook/dp/B01A8T8YNC)
