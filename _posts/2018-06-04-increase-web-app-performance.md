@@ -2,6 +2,7 @@
 title: Increase Web app performance
 permalink: increase-webapp-performance
 image: /assets/img/performance
+categories: javascript
 ---
 
 As we develop Web Apps we tend to hit performance bottlenecks along the way and while sometimes they are not as terrible they can slow down our Web App considerably and can consume a lot of data which isn't great. There are some key areas we can focus on to increase drastically the performance of our Web Apps:

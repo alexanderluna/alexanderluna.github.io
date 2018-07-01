@@ -2,6 +2,7 @@
 title: Basic Data Science
 permalink: basic-data-science
 image: /assets/img/ds
+categories: python
 ---
 
 Over the past years Data science has become increasingly important throughout different industries. Which is why I'm writing this post to collect valuable information which will aid anyone to learn about this topic. Most of the information presented here will be taken from different sources which I will list at the bottom under the reference section.

@@ -2,6 +2,7 @@
 title: Learning enough UNIX to get things done
 permalink: learning-unix-commands
 image: /assets/img/unix
+categories: unix
 ---
 
 Awww the good old shell. These days it doesn't matter what you are doing, the UNIX shell is always around. Wether we work as web developers, iOS developers, Android developers, Data Scientists. At some point we will have to use it.
