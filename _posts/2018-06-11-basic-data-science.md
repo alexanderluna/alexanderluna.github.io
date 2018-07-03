@@ -220,6 +220,14 @@ xi is the i-th outcome and pi is the i-th probability. If we take our dice examp
 
 `1/6(1) + 1/6(2) + 1/6(3) + 1/6(4) + 1/6(5) + 1/6(6) = 3.5`
 
+Types of discrete random variables:
+Binomial Random Variables
+A set where an event occurs over and over, counting the number of times the result is positive. There are 4 conditions for a Binomial set:
+
+1. outcomes are either positive or negative
+2. outcome of trial cannot affect the outcome of other trials
+3. it has a fixed sample size
+4. chance of success of each trial must be `p`
 
 ## References
 - [Principles of Data Science (Packt Book)](https://www.amazon.com/Principles-Data-Science-techniques-making-ebook/dp/B01A8T8YNC)
