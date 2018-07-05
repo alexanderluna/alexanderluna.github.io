@@ -47,7 +47,6 @@ function showMap(placeholder) {
 {%- endhighlight -%}
 
 ## Loading Images Lazy
-
 Browsers load all images by default. This behaviour makes it easy to build websites but at the same time it makes sites less responsive. We cannot just ditch image loading all together but it would be wise to prioritize the images that are above the fold and lazy load the rest of the images (when the user scrolls). This sounds great but how do we do this ?
 
 This is where the `Intersection Observer API` comes into play. This API enables us to tell when an HTML element enters the view and leaves it. We do this by adding an element to our observer API.
@@ -90,4 +89,6 @@ Assets such as CSS and Javascript have to be minified or uglyfied. Personally I 
 ## Serve assets using Service Worker
 The service worker is a middle man that can effectively intercept all requests your website does. Why is this useful ? The big idea here is that you can cache resources on the user's machine and then you can serve them locally instead of fetching them from the web. This doesn't just reduce the amount of server calls it also lays out the way to an offline experience. In an offline/low signal scenario you can actually serve the website 100% from cache showing the user the content they want without accessing the internet which is not just faster but safes also data from your plan. Furthermore you can combine the service worker with IndexedDB to store large images and even videos locally which enhances even more the offline experience and responsiveness of your website.
 
+
 ## IndexedDB is not that terrible
+As we saw previously, IndexedDB allows us to store almost everything on the user's machine. This is a great oportunity to build a web app around but also to improve the performance of our websites. IndexedDB works with callbacks.
