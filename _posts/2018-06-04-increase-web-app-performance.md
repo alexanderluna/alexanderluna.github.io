@@ -84,10 +84,10 @@ With a few lines of javascript we were able to lazy load our images. Now as the 
 
 
 ## Minify CSS and Javascript
-
 Assets such as CSS and Javascript have to be minified or uglyfied. Personally I like injecting my minified CSS into the head with a style tag if my CSS is small to reduce unnecesary requests and to speed up the paint of the site. Javascript should be minified and added inside the body tag using an `async` and/or `defer` attribute to improve the way it is loaded. There are several tools available for this such Webpack and Parcel or the old school Gulp and Grunt. Especially CSS increases the pages "Firs meaningful paint" time which will reduce your performance quite a bit.
 
 
 ## Serve assets using Service Worker
+The service worker is a middle man that can effectively intercept all requests your website does. Why is this useful ? The big idea here is that you can cache resources on the user's machine and then you can serve them locally instead of fetching them from the web. This doesn't just reduce the amount of server calls it also lays out the way to an offline experience. In an offline/low signal scenario you can actually serve the website 100% from cache showing the user the content they want without accessing the internet which is not just faster but safes also data from your plan. Furthermore you can combine the service worker with IndexedDB to store large images and even videos locally which enhances even more the offline experience and responsiveness of your website.
 
 ## IndexedDB is not that terrible
