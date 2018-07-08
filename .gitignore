@@ -10,6 +10,5 @@ codekit-config.json
 example/_site
 node_modules
 npm-debug.log*
-package.json
 images_src/
 img/assets/images_src/
