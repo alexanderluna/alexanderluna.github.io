@@ -9,13 +9,12 @@
 
 @import "basically-basic";
 
-.sidebar-toggle-label {
-  color: white;
-}
+// .sidebar-toggle-label {
+//   color: white;
+// }
 
 
 .highlight {
-  background-color: #262626;
   border-radius: 0.5em;
 }
 
@@ -44,7 +43,7 @@ div {
 
 strong {
   font-weight: bolder;
-  color: red;
+  color: rgba(243, 0, 0, 0.55);
 }
 // .sidebar-toggle-wrapper {
 //   background-color: #00adb5;
