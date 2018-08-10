@@ -1,0 +1,9 @@
+---
+title: Books
+layout: page
+permalink: books.html
+---
+
+{% for post in site.categories.books %}
+    {% include category-posts.html post=post %}
+{% endfor %}
