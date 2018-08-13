@@ -32,3 +32,5 @@ google_fonts:
 navigation_pages:
   - ruby.html
   - javascript.html
+  - python.html
+  - books.html
