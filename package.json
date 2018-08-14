@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "My blog",
   "scripts": {
+    "server": "bundle exec jekyll serve",
     "start": "grunt && bundle exec jekyll serve"
   },
   "repository": {
