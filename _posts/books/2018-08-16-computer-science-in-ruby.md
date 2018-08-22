@@ -68,6 +68,34 @@ Computers execute code by compiling or interpreting it. Compilation consists of 
 
 
 ## Core Programming Elements
+
+> For Ruby Installation instructions read this [post](/installing-ruby)
+
+In programming a variables is a  piece of data attached to a name. Most programming languages declare variables like in algebra `variable_name = value`. It is a good practice to give variables a meaningful name and avoid special characters. If you want to use multiple words for your variables name use a `_` to join them. Variables store a value at a given memory location. While variables can change constants allow us to declare unchangeable variables. 
+
+Variables can have different data types and each data type needs a different amount of memory allocated. In Ruby data types are defined as Classes. The most common Data Types are as follows:
+
+- Integer: possitive or negative number
+- Float: decimal number
+- String: one or more characters surrounded by quotes (' or ")
+- Boolean: true or false value
+
+Ruby will always try to remain in the same data type as such we have to do the conversion to ensure that the operation we want to do are doable.
+
+It is common to do mathematical operations which why ruby supports binary operations (`+, -, *, /, %, **` ). Ruby has a module for more complex mathmatical operations `Math.sin(1) or Math::PI` . I/O in Ruby is archived through `gets` and `puts`.
+
+When designing a program it is important to follow certain steps to design well:
+
+1. Understand the problem
+2. Write out the problem in plain english
+3. Rewrite the problem into code
+4. Test out the code on the computer
+
+No matter how good we design our programs errors will pop up. There are mainly 2 types of errors:
+
+1. Syntax Error:  code that ruby cannot execute
+2. Logical Error: error that ruby cannot catch  => wrong/undesired result
+
 ## Conditional Structures
 ## Look Structures
 ## Arrays
