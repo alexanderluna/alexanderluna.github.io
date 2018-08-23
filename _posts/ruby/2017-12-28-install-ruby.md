@@ -2,7 +2,7 @@
 title: Installing Ruby the right way
 permalink: installing-ruby
 image: "/assets/img/ruby"
-extention: .png
+extention: ".png"
 categories: ruby
 ---
 
@@ -33,7 +33,7 @@ Now we are ready to install homebrew.
 
 ### What is [Homebrew](https://brew.sh/) ?
 - The missing package manager for macOS
-- You can install pretty much everything need with it (ruby, pytohn, libraries, etc.)
+- You can install pretty much everything need with it (ruby, python, libraries, etc.)
 - You can easily update everything you install and uninstall as well
 
 > Installing anything from the internet is always a little risky and

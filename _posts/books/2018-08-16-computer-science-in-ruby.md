@@ -6,22 +6,22 @@ categories:
 image: "/assets/img/csruby"
 ---
 
-1. [Introduction to Computer Science](#introduction-to-computer-science)
-2. [How does the Computer really work ?](#how-does-the-computer-really-work)
-3. [Core Programming Elements](#core-programming-elements)
-4. [Conditional Structures](#conditional-structures)
-5. [Look Structures](#loop-structures)
-6. [Arrays](#arrays)
-7. [Sorting and Searching](#sorting-and-searching)
-8. [Using Objects](#using-objects)
-9. [Defining Classes and creating Objects](#defining-classes-and-creating-objects)
-10. [Object Inheritance](#object-inheritance)
-11. [File input and output](#file-input-and-output)
-12. [Putting it all together](#putting-it-all-together)
+1. [Introduction to Computer Science](#1-introduction-to-computer-science)
+2. [How does the Computer really work ?](#2-how-does-the-computer-really-work)
+3. [Core Programming Elements](#3-core-programming-elements)
+4. [Conditional Structures](#4-conditional-structures)
+5. [Look Structures](#5-loop-structures)
+6. [Arrays](#6-arrays)
+7. [Sorting and Searching](#7-sorting-and-searching)
+8. [Using Objects](#8-using-objects)
+9. [Defining Classes and creating Objects](#9-defining-classes-and-creating-objects)
+10. [Object Inheritance](#10-object-inheritance)
+11. [File input and output](#11-file-input-and-output)
+12. [Putting it all together](#12-putting-it-all-together)
 
 ##### Photo by Austin Neill on Unsplash
 
-## Introduction to Computer Science
+## 1 Introduction to Computer Science
 
 Programming is not the same same as Computer Science it is a tool to implement Computer Science concepts. While Programming languages come and go the underlying algorithms are the most important thing as they can be applied to any programming language. It is important to understand that computers only do what they are explicitly told. 
 
@@ -32,7 +32,7 @@ Computer Science is about problem solving:
 3. Translate it to code
 4. Test the code on the computer
 
-## How does the Computer really work
+## 2 How does the Computer really work
 
 Understanding the underlying machinary of computers enables us to develope more efficient software. Digital Computers consists mainly of:
 
@@ -67,7 +67,7 @@ Computers execute code by compiling or interpreting it. Compilation consists of 
 > Ruby support 2 types of interpretation: __interactive mode__ where you type one statement at the time and __batch mode__ where you create a file and the interpreter analyzes it for instructions.
 
 
-## Core Programming Elements
+## 3 Core Programming Elements
 
 > For Ruby Installation instructions read this [post](/installing-ruby)
 
@@ -96,12 +96,64 @@ No matter how good we design our programs errors will pop up. There are mainly 2
 1. Syntax Error:  code that ruby cannot execute
 2. Logical Error: error that ruby cannot catch  => wrong/undesired result
 
-## Conditional Structures
-## Look Structures
-## Arrays
-## Sorting and Searching
-## Using Objects
-## Defining Classes and creating Objects
-## Object Inheritance
-## File input and output
-## Putting it all together
+## 4 Conditional Structures
+Every algorithm has some type of logic flow also known as **Flow of Execution**. Conditional flow allows us to have more than one flow option. This is accomplished through expressions using boolean operators (true/false) and relations. We can combine various simple expressions to create complex expressions. In order to do this we can use the **and** and **or** boolean operators in Ruby. Furthermore we can flip the boolean value of any expression using the **!** sign. These operations allow us to alter the logic flow in a program. 
+
+At the top of these expressions we have **if/elsif/else** statements which use the expressions to determine how the program flows. 
+
+{% highlight ruby %}
+if condition
+	# do something
+elsif other_condition
+	# something else
+else
+	# default case
+end
+{% endhighlight %}
+
+The condition represents the logical expressions we discussed earlier. It is possible to chain multiple **elsif** statements to create even complexer logic flow but this becomes increasinly tideous to write and read. A better statement for these situations is a **case** statement:
+
+{% highlight ruby %}
+age = 12
+case
+when age > 12
+	puts 'You are older than 12'
+when age < 12 
+	puts 'You are younger than 12'
+then
+	puts 'You are 12'
+end
+{% endhighlight %}
+
+or on a single line as follows:
+
+{% highlight ruby %}
+age = 12
+case age
+when 13 then puts 'You are older than 12'
+when 11 then puts 'You are younger than 12'
+else puts 'You are 12'
+end
+{% endhighlight %}
+
+As the logic flow increases in complexity, it is important to debug our applications effectively. A simple option would be to use **puts** statements everywhere we expect the value of a variable to change. A slightly better options would be to use **Debug Flags** which are global variables that allow us to specify if our code is running in debug mode or not and only then increase our application log level using puts statments:
+
+
+{% highlight ruby %}
+DEBUG_MODE = true
+
+name = 'Alexander'
+#expext name = ["A", "l", "e", "x", "a", "n", "d", "e", "r"]
+name.split
+
+puts name  if DEBUG_MODE
+#real value of name is ["alexander"]
+{% endhighlight %}
+## 5 Look Structures
+## 6 Arrays
+## 7 Sorting and Searching
+## 8 Using Objects
+## 9 Defining Classes and creating Objects
+## 10 Object Inheritance
+## 11 File input and output
+## 12 Putting it all together
