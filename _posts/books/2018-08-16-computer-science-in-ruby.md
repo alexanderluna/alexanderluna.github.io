@@ -10,7 +10,7 @@ image: "/assets/img/csruby"
 2. [How does the Computer really work ?](#2-how-does-the-computer-really-work)
 3. [Core Programming Elements](#3-core-programming-elements)
 4. [Conditional Structures](#4-conditional-structures)
-5. [Look Structures](#5-loop-structures)
+5. [Loop Structures](#5-loop-structures)
 6. [Arrays](#6-arrays)
 7. [Sorting and Searching](#7-sorting-and-searching)
 8. [Using Objects](#8-using-objects)
@@ -149,7 +149,45 @@ name.split
 puts name  if DEBUG_MODE
 #real value of name is ["alexander"]
 {% endhighlight %}
-## 5 Look Structures
+
+## 5 Loop Structures
+There are three types of loops in Ruby:
+1. while loop
+2. until loop
+3. for loop
+
+Loops iterate or repeat commands. The **While**  loop is the simplest since it keeps looping while the condition is true:
+
+{% highlight ruby %}
+i = 0
+while i < 10 do
+	puts i 
+	i += 1
+end
+{% endhighlight %}
+
+On the other hand, the **Until** keeps looping until the condition is true. Hence is it as simple as flipping the comparison operator:
+
+{% highlight ruby %}
+i = 0
+until i > 10 do
+	puts i 
+	i += 1
+end
+{% endhighlight %}
+
+The **For** loop is different altogether as this loop takes a group of elements and loops through all of them. It is possible to nest this loop as well which comes in handy for multidimentional arrays.
+
+{% highlight ruby %}
+integer_list = [1,2,3,4,5]
+for i in integer_list do
+	puts i
+end
+{% endhighlight %}
+
+A common mistakes programmers make with loops is to create an infinite loop. This happens when there is no exit condition or the exit condition is never met. This is where **For** loops are handy as they will only loop while there are elements to loop over. 
+
+
 ## 6 Arrays
 ## 7 Sorting and Searching
 ## 8 Using Objects
