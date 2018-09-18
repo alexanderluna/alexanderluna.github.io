@@ -117,6 +117,23 @@ We can attach a network to a container using the connect command and detach usin
 The connect command takes two container names each connected to their own network and connects the second container to the first container’s network
 
 {% highlight bash %}
-docker network connect my_network_name another_network
-docker network disconnect my_network_name another_network
+docker network connect my_network_name myconatinername
+docker network disconnect my_network_name myconatinername
 {% endhighlight %}
+
+Using a custom network we get automatic DNS resolution. This is very useful because normally we would have to specify the IP addresses of each container to access it from another container in the network. The problem with that is that when we run our container those IP addresses can change easily and we would have to manually update all those IP addresses. Instead we can create a network and connect all containers to that network which allows us to communicate between containers using their names.
+
+
+{% highlight bash %}
+# create a network
+docker network create my_network_name
+
+# run two container on that network
+docker container run -d -p 8080:80 --name firstcontainer nginx:alpine --network my_network_name
+docker container run -d -p 80:80 --name secondcontainer nginx:alpine --network my_network_name
+
+# communicate on that network
+docker container exec -it firstcontainer ping secondcontainer
+{% endhighlight %}
+
+The last line does the actual communication. We are pining our **secondcontainer** from within our **firstcontainer**.
