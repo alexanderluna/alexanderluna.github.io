@@ -1,3 +1,5 @@
+---
+---
 # Theme Skin
 skin: default # default, night, plum, sea, soft, steel
 
@@ -30,7 +32,6 @@ google_fonts:
 # pages that have a `title`. Add raw page paths in the order you'd like.
 
 navigation_pages:
-  - ruby.html
-  - javascript.html
-  - python.html
-  - books.html
+  {% for category in site.categories %}
+  - category/{{ category[0] }}
+  {% endfor %}

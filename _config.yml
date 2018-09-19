@@ -4,7 +4,7 @@ email: mycroft1891@gmail.com
 description: 'Code like Good Wine, takes times'
 image: /assets/img/main
 baseurl: null
-url: "https://mycroft1891.github.io"
+url: "https://alexanderluna.github.io"
 google_analytics: UA-112012666-1
 author:
   name: Alexander Luna
@@ -45,6 +45,9 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+collections:
+  category:
+    output: true
 defaults:
   - scope:
       path: _posts
@@ -52,4 +55,10 @@ defaults:
     values:
       layout: post
       read_time: true
+  -
+    scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"
 permalink: none
