@@ -1,5 +1,6 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "github-pages", group: :jekyll_plugins
+gem 'github-pages', group: :jekyll_plugins
 gem 'jekyll-admin', group: :jekyll_plugins
-gem "jekyll-remote-theme"
+gem 'jekyll-paginate', group: :jekyll_plugins
+gem 'jekyll-remote-theme'
