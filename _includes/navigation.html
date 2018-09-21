@@ -10,7 +10,7 @@
     <!-- site.categories -->
     {% for category in site.categories %}
       <li class="menu-item">
-        <a href="category/{{ category[0] }}" itemprop="url">
+        <a href="/category/{{ category[0] }}" itemprop="url">
           <span class="menu-category-item" itemprop="name">{{ category[0] | escape }}</span>
         </a>
       </li>
