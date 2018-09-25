@@ -239,3 +239,75 @@ docker image tag alexander/nginx alexander/nginx:mynewtag
 # push new tag to our repository
 docker image push alexander/nginx:mynewtag
 ```
+
+## Understanding Dockerfiles
+
+A Dockerfile contains all the information required to build a custom image.
+This becomes useful as our images become more complex and they are more
+convenient than running a long command from the CLI configuring containers.
+Dockerfiles use a language specific to just Dockerfiles and looks similar to a
+bash script:
+
+```docker
+# specify the image we want to use
+FROM alpine
+
+# create environment variables for using later
+ENV MY_NAME alexander
+
+# specify what to run when the container starts
+RUN echo ${MY_NAME}
+
+# specify our working directory
+WORKDIR usr/share
+
+# copy from our folder into the container using the WORKDIR
+COPY app.js app.js
+
+# specify which ports to expose host:container
+EXPOSE 80 433
+
+# last command that runs when starting the container
+CMD ["echo", "We are done"]
+```
+
+Now that we have a dockerfile we can build our image from it. For that we navigate to the folder where our dockerfile is located first:
+
+```bash
+# build image tagging (-t) it with a name
+docker image build -t myalpineimage .
+```
+
+> Keep in mind the **.** at the end. As it tells docker build it for
+> the current directory
+
+The output of this command is important to take note off. We can see that docker generates a SHA for every step we specified. This means that when we change something like the **EXPOSE** port numbers, docker will not run any previous command again since they were cached as we saw earlier. Only from the line we changed until the end docker regenerates SHA keys and executes those commands again. Therefore it helps to keep in mind that docker reads the Dockerfile from top to bottom. That way we can put the commands that change the most further down and the ones that change the least at the top.
+
+```bash
+Sending build context to Docker daemon  2.048kB
+Step 1/5 : FROM alpine
+ ---> 196d12cf6ab1
+Step 2/5 : ENV MY_NAME alexander
+ ---> Running in 46472daea8c8
+Removing intermediate container 46472daea8c8
+ ---> 6f7b38a47d57
+Step 3/5 : RUN echo ${MY_NAME}
+ ---> Running in 34212670be87
+alexander
+Removing intermediate container 34212670be87
+ ---> 0e89f257f4a3
+Step 4/5 : EXPOSE 80 433
+ ---> Running in 7f8a18ee6623
+Removing intermediate container 7f8a18ee6623
+ ---> e56821bae325
+Step 5/5 : CMD ["echo", "We are done"]
+ ---> Running in 82456498a19c
+Removing intermediate container 82456498a19c
+ ---> e95d785d44ae
+Successfully built e95d785d44ae
+Successfully tagged myalpine:latest
+```
+
+> And right after step 3 we see that the echo commands gets executed.
+> The final echo "We are done" doesn't get outputed until we run a
+> container from that image.
