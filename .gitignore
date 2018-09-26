@@ -12,4 +12,3 @@ node_modules
 npm-debug.log*
 images_src/
 img/assets/images_src/
-yarn.lock
