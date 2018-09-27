@@ -13,6 +13,14 @@ learn about Docker, its features and how to use it properly.
 
 [Photo by A J on Unsplash]
 
+## Index
+1. [Basic Docker Commands](#basic-docker-commands)
+2. [Image vs Container](#image-vs-container)
+3. [Running Containers](#running-containers)
+4. [Docker Network](#docker-network)
+5. [Working with Images](#working-with-images)
+6. [Understanding Dockerfiles](#understanding-dockerfiles)
+
 ## Basic docker commands
 
 ```bash
