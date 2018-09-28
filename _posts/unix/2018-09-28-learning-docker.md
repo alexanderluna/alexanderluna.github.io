@@ -14,12 +14,14 @@ learn about Docker, its features and how to use it properly.
 [Photo by A J on Unsplash]
 
 ## Index
+
 1. [Basic Docker Commands](#basic-docker-commands)
 2. [Image vs Container](#image-vs-container)
 3. [Running Containers](#running-containers)
 4. [Docker Network](#docker-network)
 5. [Working with Images](#working-with-images)
 6. [Understanding Dockerfiles](#understanding-dockerfiles)
+7. [A Containers Lifetime](#a-containers-lifetime)
 
 ## Basic docker commands
 
@@ -40,7 +42,6 @@ docker login
 docker logout
 ```
 
-
 ## Image vs Container
 
 Docker is build around the concept of images and container but what are
@@ -50,7 +51,6 @@ they and how are they different ?
 2. A container is an instance of an image as a process
 3. Many containers can run from the same image (blueprint)
 4. Prebuild images can be found on docker hub
-
 
 ## Running Containers
 
@@ -99,7 +99,6 @@ docker container remove myconatinername
 > Keep in mind that removing a container doesn't remove the image
 > it is based off.
 
-
 ## Running commands inside our Container
 
 We can start a command prompt inside the container by using the **-it**
@@ -115,7 +114,6 @@ docker container start -ai myconatinername
 # start prompt inside a running container
 docker container exec -it mycontainer
 ```
-
 
 ## Docker Network
 
@@ -165,7 +163,6 @@ addresses. Instead we can create a network and connect all containers
 to that network which allows us to communicate between containers using
 their names.
 
-
 ```bash
 # create a network
 docker network create my_network_name
@@ -180,7 +177,6 @@ docker container exec -it firstcontainer ping secondcontainer
 
 The last line does the actual communication. We are pining our
 **secondcontainer** from within our **firstcontainer**.
-
 
 ## Working with Images
 
@@ -214,7 +210,8 @@ docker image history myimage
 docker image inspect myimage
 ```
 
-Docker images don't have a name but an Image ID. Conveniently we can refer to images using a Tag and a version optionally. We can therefore
+Docker images don't have a name but an Image ID. Conveniently we can refer
+to images using a Tag and a version optionally. We can therefore
 create a new tag for images we already have which is useful to create
 our own images.
 
@@ -236,7 +233,8 @@ docker image ls
 > Notice that docker recognizes this is a copy of the nginx image and
 > therefore assigns it the same **IMAGE ID**.
 
-Now that we have our own image, we can push our new image to our docker repository (if we are logged in).
+Now that we have our own image, we can push our new image to our docker
+repository (if we are logged in).
 
 ```bash
 docker image push alexander/nginx
@@ -279,7 +277,8 @@ EXPOSE 80 433
 CMD ["echo", "We are done"]
 ```
 
-Now that we have a dockerfile we can build our image from it. For that we navigate to the folder where our dockerfile is located first:
+Now that we have a Dockerfile we can build our image from it. For that
+we navigate to the folder where our Dockerfile is located first:
 
 ```bash
 # build image tagging (-t) it with a name
@@ -289,7 +288,14 @@ docker image build -t myalpineimage .
 > Keep in mind the **.** at the end. As it tells docker build it for
 > the current directory
 
-The output of this command is important to take note off. We can see that docker generates a SHA for every step we specified. This means that when we change something like the **EXPOSE** port numbers, docker will not run any previous command again since they were cached as we saw earlier. Only from the line we changed until the end docker regenerates SHA keys and executes those commands again. Therefore it helps to keep in mind that docker reads the Dockerfile from top to bottom. That way we can put the commands that change the most further down and the ones that change the least at the top.
+The output of this command is important to take note off. We can see that
+docker generates a SHA for every step we specified. This means that when we
+change something like the **EXPOSE** port numbers, docker will not run any
+previous command again since they were cached as we saw earlier. Only from
+the line we changed until the end docker regenerates SHA keys and executes
+those commands again. Therefore it helps to keep in mind that docker reads
+the Dockerfile from top to bottom. That way we can put the commands that
+change the most further down and the ones that change the least at the top.
 
 ```bash
 Sending build context to Docker daemon  2.048kB
@@ -319,3 +325,108 @@ Successfully tagged myalpine:latest
 > And right after step 3 we see that the echo commands gets executed.
 > The final echo "We are done" doesn't get outputed until we run a
 > container from that image.
+
+## A Containers Lifetime
+
+Containers hold an internal state where changes persist until the
+container is removed. This is why container are immutable or ephemeral.
+Nonetheless, we usually work with project that require persistant
+data everytime we run a container (ex. database). For those kind of
+scenarios, Docker offers two solutions:
+
+1. [Volumes: special location oustide a container](#volumes)
+2. [Bind Mounts: link container path to host path](#bind-mounts)
+
+### Volumes
+
+In order to use volumes we have to tell Docker in our Dockerfile
+which **VOLUME** to use.
+
+```docker
+# tell docker to save mysql data here
+VOLUMEN /var/lib/mysql
+```
+
+For the container it will look like a path inside of itself but under
+the hood docker takes care of creating a space on our local machine and
+save it there. If we take a look at a mysql image for example, we can
+run a container with that image and then inspect it:
+
+```bash
+docker pull mysql
+# mysql requires a password we bypass that with this variable
+docker container run -d --name msql -e MYSQL_ALLOW_EMPTY_PASSWORD=True mysql
+docker container inspect msql
+```
+
+In the output we can see a section called _Mounts_ and in there we can
+see that the **Destination** is a local path but the **Source** is
+actually a path on our host machine.
+
+```json
+"Mounts": [
+  {
+    "Type": "volume",
+    "Name": "2eab7ae997d2fd89470485705f47547ba349411071b78ebbafa405903634f4ae",
+    "Source": "/var/lib/docker/volumes/2eab7ae997d2fd89470485705f47547ba349411071b78ebbafa405903634f4ae/_data",
+    "Destination": "/var/lib/mysql",
+    "Driver": "local",
+    "Mode": "",
+    "RW": true,
+    "Propagation": ""
+  }
+]
+```
+
+A simpler way of viewing the volumes on our machine is the volume
+command.
+
+```bash
+docker image ls
+
+$ DRIVER  VOLUME NAME
+$ local   0b406327b01c78c63aa3b35df442ee1d662ef337c8ed7d2e4526491e11ee70ce
+
+docker volume inspect 0b406327b01c78c63aa3b35df442ee1d662ef337c8ed7d2e4526491e11ee70ce
+
+[
+  {
+    "CreatedAt": "2018-10-02T22:20:10Z",
+    "Driver": "local",
+    "Labels": null,
+    "Mountpoint": "/var/lib/docker/volumes/0b406327b01c78c63aa3b35df442ee1d662ef337c8ed7d2e4526491e11ee70ce/_data",
+    "Name": "0b406327b01c78c63aa3b35df442ee1d662ef337c8ed7d2e4526491e11ee70ce",
+    "Options": null,
+    "Scope": "local"
+  }
+]
+```
+
+By default Docker will create a new volume for every container we run and it
+will give it a unique ID which is hard to remeber. We can make things simpler
+for us by telling Docker to name the volume something easier to remeber.
+Now we can also use that volume name for new containers we create.
+
+```bash
+# give the volume a name
+docker container run -d --name msql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v my-favorite-name:/var/lib/mysql mysql
+
+# change the volume but not needed
+docker container run -d --name msql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v /var/lib/another-place mysql
+
+docker container run -d --name another-msql -e MYSQL_ALLOW_EMPTY_PASSWORD=True -v my-favorite-name:/var/lib/mysql mysql
+```
+
+### Bind Mounts
+
+Bind mounting maps a host file to a container file. Which makes both our
+host and the container point at the same file. The downside of this method
+is that we cannot specify it inside a Dockerfile but have to use when we run
+a container. We will use the same **-v** flag but a little different.
+
+```bash
+docker container run -d --name ngin -p 80:80 -v $(pwd):/usr/share/nginx/html nginx
+```
+
+While it is less convenient, we can actually map our project inside the
+container this way and have a live/sync version inside.
