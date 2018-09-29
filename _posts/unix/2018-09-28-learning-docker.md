@@ -18,10 +18,12 @@ learn about Docker, its features and how to use it properly.
 1. [Basic Docker Commands](#basic-docker-commands)
 2. [Image vs Container](#image-vs-container)
 3. [Running Containers](#running-containers)
-4. [Docker Network](#docker-network)
-5. [Working with Images](#working-with-images)
-6. [Understanding Dockerfiles](#understanding-dockerfiles)
-7. [A Containers Lifetime](#a-containers-lifetime)
+4. [Running commands inside Containers](#running-commands-inside-containers)
+5. [Docker Network](#docker-network)
+6. [Working with Images](#working-with-images)
+7. [Understanding Dockerfiles](#understanding-dockerfiles)
+8. [A Containers Lifetime](#a-containers-lifetime)
+9. [Automating with Docker Compose](#automating-with-docker-compose)
 
 ## Basic docker commands
 
@@ -99,7 +101,7 @@ docker container remove myconatinername
 > Keep in mind that removing a container doesn't remove the image
 > it is based off.
 
-## Running commands inside our Container
+## Running commands inside Containers
 
 We can start a command prompt inside the container by using the **-it**
 flag and the **-ai** flag
@@ -430,3 +432,50 @@ docker container run -d --name ngin -p 80:80 -v $(pwd):/usr/share/nginx/html ngi
 
 While it is less convenient, we can actually map our project inside the
 container this way and have a live/sync version inside.
+
+## Automating with Docker Compose
+
+Docker compose lets us configure relationshops between containers and save our
+our docker container run settings which in turn allows us to run several
+preconfigured containers with a single command. It consists of a **YAML** file
+and the **docker-compose** CLI. The yaml file has to be named
+**docker-compose.yml** by default but it can be customized with the **-f** flag:
+
+```docker
+version: '2'
+
+services: # containers we want to run
+  serviceone: # a name for each container
+    image: # optionally used to build
+    command: # replace the default image CMD
+    environment: # -e when using docker run
+    volumes: # -v when using docker run
+    ports: # which port to expose
+  servicetwo:
+    ...
+volumes: # create a volume if it doesn't exist
+
+networks: # create a network if it doesn't exist
+```
+
+> docker-compose is not a production tool but a developement tool
+
+There are two main commands when using **docker-compose**:
+
+- docker-compose up
+- docker-compose down
+
+In a real life scenario this very powerful as it allows to save our entire
+environment in a single and then we reproduce that project on any machine
+that has docker installed by simply:
+
+```bash
+git clone my-project-repo
+docker-compose up
+```
+
+This would take care of installing everything from databases, volumes,
+networks, ports, libraries, etc.
+
+We can also use docker-compose to build custom images. Docker will build
+anything that it can't find in the cache when we run **docker-compose up**
