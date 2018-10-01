@@ -4,9 +4,14 @@ image: "/assets/img/ds"
 categories: [python, books]
 ---
 
-Over the past years Data science has become increasingly important throughout different industries. Which is why I'm writing this post to collect valuable information which will aid anyone to learn about this topic. Most of the information presented here will be taken from different sources which I will list at the bottom under the reference section.
+Over the past years Data science has become increasingly important throughout
+different industries. Which is why I'm writing this post to collect valuable
+information which will aid anyone to learn about this topic. Most of the
+information presented here will be taken from different sources which I will
+list at the bottom under the reference section.
 
 ## Index
+
 1. [Basics](#basics)
 2. [Types of Data](#types-of-data)
 3. [Five Steps of Data Science](#five-steps-of-data-science)
@@ -20,6 +25,7 @@ Over the past years Data science has become increasingly important throughout di
 11. [References](#references)
 
 # Basics
+
 Data Science is all about acquiring knowledge from Data. Data itself is a collection of information which can be:
 
 - Organized Data: in some form of row/column structure

@@ -41,7 +41,7 @@ on you reading the documentation, blog posts, etc.
 > You are responsible for learning the content, The Odin Project DOES NOT teach
 > you the content YOU DO. The Odin Project just shows you what to read.
 
-## Why is this import ?
+## Why this is important
 
 Probably the most important aspect of all this, is that you are learning Web
 Development in the same way a professional would, which is by reading official

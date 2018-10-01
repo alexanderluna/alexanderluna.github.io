@@ -214,7 +214,7 @@ There are three types of loops in Ruby:
 2. until loop
 3. for loop
 
-Loops iterate or repeat commands. The **While**  loop is the simplest since it
+Loops iterate or repeat commands. The **While** loop is the simplest since it
 keeps looping while the condition is true:
 
 ```ruby
