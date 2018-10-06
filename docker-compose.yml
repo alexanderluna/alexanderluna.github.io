@@ -2,8 +2,12 @@ version: '2'
 
 services:
   jekyll:
-    image: bretfisher/jekyll-serve
+    image: mycroft1891/jekyll-github
     volumes:
+      - ruby_bundle:/usr/local/bundle
       - .:/site
     ports:
       - '80:4000'
+
+volumes: 
+  ruby_bundle:
