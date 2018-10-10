@@ -33,11 +33,19 @@ bundler is installing our gems. Once bundler is done our blog is ready and
 we can create, edit and save our files without going through the whole process
 again but our gems are short lived. When we stop our container all the gems are
 lost. The next time we run **docker-compose up** we will see that bundler
-installs all our gems again. 
+installs all our gems again.
 
 When we run our container we want bundler to load any previously installed gems
-from disk and for that we have to use volumes. Bundler installs all the gems in
-the **$BUNDLER_PATH**:
+from disk and for that we have to use volumes. Docker allows us to create custom
+volumes and it creates volumes we specify in our **docker-compose.yml** by
+default. For our purpose we will create a volume to store our gems:
+
+```bash
+docker image create ruby_bundle
+```
+
+Now we have to bind it to the folder that bundler uses to store gems with our
+volume. Bundler installs all the gems in the **$BUNDLER_PATH**:
 
 ```bash
 docker container run --rm -it ruby:2.5-alpine ash
@@ -47,7 +55,7 @@ echo $BUNDLE_PATH
 ```
 
 We can use that path to mount our volume and persist any downloaded gem for
-future use. For that we add a named volume to our **docker-compose** file:
+future use. For that we add our named volume to the **docker-compose.yml** file:
 
 ```yaml
 version: '2'
@@ -59,14 +67,19 @@ services:
       - ruby_bundle:/usr/local/bundle
       - .:/site
     ports:
-      - '80:4000'
+      - '4000:4000'
 
-volumes: 
+volumes:
   ruby_bundle:
+    external: true
 ```
 
-No we can run **docker-compose up** again and will see that bundler installs our
-gems again but if we stop the container and run **docker-compose up** again
+> Note that we are setting `external` to true here otherwhise docker would
+> create a new volume using the folder and volume name resulting in a name
+> like git-blog_ruby_bundle which wouldn't allow us to reuse the volume for
+> other containers.
+
+No we can run **docker-compose up** again and we will see that bundler installs our gems again but if we stop the container and run **docker-compose up** again
 it loads all the gems from the volume and the startup time is much shorter.
 
 We can also share this named volume with other containers as well.
