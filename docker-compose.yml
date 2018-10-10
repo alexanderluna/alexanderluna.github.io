@@ -1,13 +1,14 @@
-version: '2'
+version: '3'
 
 services:
   jekyll:
     image: mycroft1891/jekyll-github
     volumes:
-      - ruby_bundle:/usr/local/bundle
+      - ruby_bundle_2_5:/usr/local/bundle
       - .:/site
     ports:
-      - '80:4000'
+      - '4000:4000'
 
 volumes: 
-  ruby_bundle:
+  ruby_bundle_2_5:
+    external: true
