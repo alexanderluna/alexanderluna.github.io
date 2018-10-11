@@ -254,6 +254,48 @@ are elements to loop over.
 
 ## 6 Arrays
 
+There are two types of arrays:
+
+1. One-Dimensional: has only one index
+2. Multidimensional: has multiple indexes
+
+Arrays always start at index **0** where the index is the offset from the
+beginning of the array. Therefore the **n-th** element is found at index
+**n-1**.
+
+> It is n - 1 because the array starts at 0 not 1.
+
+As you can see arrays can at times be complicated when we deal with indexes
+especially of multidimensional arrays. Some of the most common errors
+programmers make are:
+
+1. Forget that the array starts at index 0
+2. **Arary.size** is the number of elements in the array not the highest index
+3. The last index is **Array.size - 1**
+
+Another common construct we can use which gives us a similar power as arrays, are hashes. Hashes unlike arrays can use any data as their index. This way we
+can use the string data type to map elements inside an array like structure.
+The string in this case is refered to as the **hash key**.
+
+```ruby
+students = Hash.new
+students.keys
+
+# []
+
+students['Alexander'] = { subject: 'Math', present: true }
+
+students.keys
+# ["Alexander"]
+
+students
+# {"Alexander"=>{:subject=>"Math", :present=>true}}
+```
+
+An important aspect of hashes is that the key has to be unique. For that reason,
+hashes excel at looking up values by custom keys like **["Alexander"]** instead
+of indexes. This makes it quicker to lookup phone numbers, names, emails, etc.
+
 ## 7 Sorting and Searching
 
 Computers spend a tremendous amount sorting. Sorting itself is a problem that
@@ -345,6 +387,26 @@ otherwise we look at the right half. Once again this a rinse and repeat process
 until we find the name we look for.
 
 ## 8 Using Objects
+
+Software development is prone to repeating code and as applications become
+more and more complex they become difficult to debug. For those reasons the
+object oriented (OOP) approach was created. In order to make OOP possible, we
+have to isolate functionality and we can do that using classes that define
+objects. Each object has its own private data and methods. In Ruby everything is an object.
+
+> API: application programming interface is an interface that allows programmers
+> to use a functionality without having to know how it works under the hood
+> creating a layer of abstraction.
+
+When we donwload ruby on our machine, we also download of Ruby's API
+documentation which has 3 headings: files, classes and methods. A class defines
+and includes all the variables and methods required to make the object work.
+
+As we can see form the Ruby documentation, there are many methods for different
+built in classes such as the string class's **.length** method. But there are
+also other methods that require a variable or paramter such as the **.index(x)**
+method of the string class. These type of methods take input to compute the
+output.
 
 ## 9 Defining Classes and creating Objects
 
