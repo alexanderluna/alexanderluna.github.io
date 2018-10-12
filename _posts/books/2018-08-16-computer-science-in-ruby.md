@@ -410,6 +410,57 @@ output.
 
 ## 9 Defining Classes and creating Objects
 
+An object is an instantiation of a class. Every class has a unique name. The
+syntax for creating a class simple:
+
+```ruby
+student = String.new
+```
+
+String is a buil-in class but we can create own classes capable of encapsulating
+everything related to a particular student:
+
+```ruby
+class Student
+ 
+ def initialize(name, subject, grade)
+  @name = name
+  @subject = subject
+  @grade = grade || []
+ end
+
+ def information
+  puts "Name: #{@student}"
+  puts "Subject: #{@subject}"
+  puts "Grades: #{@grades.join(', ')}
+ end
+
+ def addGrade(grade)
+  @grade.push(grade)
+
+end
+```
+
+The first part of our class is responsible for initializing all the required
+values which can come from the user or be a default value. If we don't do this
+our **attending** method would throw an error. The special method **initialize**
+is reserved and gets called when a new class is created which is why it is
+called a constructor. We would use our class this way:
+
+```ruby
+require 'student.rb'
+
+alexander = Student.new('Alexander', :math)
+alexander.addGrade(100)
+```
+
+All objects consist of two parts:
+
+- data: variables holding information about the instance
+- actions: methods to manipulate the data
+
+Classes group any combination of data and actions needed under a common name.
+
 ## 10 Object Inheritance
 
 ## 11 File input and output
