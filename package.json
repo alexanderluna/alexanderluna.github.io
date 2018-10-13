@@ -1,25 +1,26 @@
 {
-  "name": "git-blog.io",
-  "version": "1.0.0",
-  "description": "My blog",
-  "scripts": {
-    "server": "bundle exec jekyll serve",
-    "start": "grunt && bundle exec jekyll serve"
-  },
-  "repository": {
-    "type": "git",
-    "url": "null"
-  },
-  "author": "Alexander Luna",
-  "license": "MIT",
-  "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-nodeunit": "^1.0.0",
-    "grunt-contrib-uglify": "^3.3.0",
-    "grunt-mkdir": "^1.0.0",
-    "grunt-responsive-images": "^1.10.1"
-  }
+    "name": "git-blog.io",
+    "version": "1.0.0",
+    "description": "My blog",
+    "scripts": {
+        "resize-images": "./node_modules/grunt/bin/grunt",
+        "server": "bundle exec jekyll serve",
+        "start": "grunt && bundle exec jekyll serve"
+    },
+    "repository": {
+        "type": "git",
+        "url": "null"
+    },
+    "author": "Alexander Luna",
+    "license": "MIT",
+    "devDependencies": {
+        "grunt": "^1.0.1",
+        "grunt-contrib-clean": "^1.1.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-jshint": "^1.1.0",
+        "grunt-contrib-nodeunit": "^1.0.0",
+        "grunt-contrib-uglify": "^3.3.0",
+        "grunt-mkdir": "^1.0.0",
+        "grunt-responsive-images": "^1.10.1"
+    }
 }
