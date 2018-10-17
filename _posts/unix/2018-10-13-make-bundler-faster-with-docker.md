@@ -1,5 +1,6 @@
 ---
 title: Make Bundler faster with Docker
+image: assets/img/bundle-docker
 categories: [ruby, unix]
 ---
 
