@@ -19,7 +19,7 @@ image: "/assets/img/csruby"
 11. [File input and output](#11-file-input-and-output)
 12. [Putting it all together](#12-putting-it-all-together)
 
-##### Photo by Austin Neill on Unsplash
+**Photo by Austin Neill on Unsplash**
 
 ## 1 Introduction to Computer Science
 
@@ -422,7 +422,7 @@ everything related to a particular student:
 
 ```ruby
 class Student
- 
+
  def initialize(name, subject, grade)
   @name = name
   @subject = subject
@@ -462,6 +462,100 @@ All objects consist of two parts:
 Classes group any combination of data and actions needed under a common name.
 
 ## 10 Object Inheritance
+
+One of the most powerful abilities of OOP are relationships. Instead of defining
+large objects and repeating certain aspects which are shared across similar
+objects we can use **inheritance** to define the base and let other objects
+share the common methods which is called **Polymorphism**. This way we could
+create a vehicle class which defines the weight, number of tiers, price, engine
+power and color. Now we can create a car which inherits from vehicle all those
+variables and methods and adds some more such as number of doors and windows
+something that a motorcycle doesn't have. A motorcycle can inherit from vehicle
+the same properties without a problem.
+
+```ruby
+class Vehicle
+
+ def initialize(tire, price, color, weight, hp, milage)
+  @tire = tire
+  @price = price
+  @color = color
+  @weight = weight
+  @hp = hp
+  @milage = milage
+ end
+
+ def information
+  puts "Price #{@price}"
+  puts "Color #{@color}"
+  puts "milage #{@milage}"
+ end
+
+end
+
+
+class Car < Vehicle
+
+ def initialize(tire, price, color, weight, hp, milage, windows, doors)
+  super(tire, price, color, weight, hp, milage)
+  @windows = windows
+  @doors = doors
+ end
+
+end
+```
+
+The main reason of doing this is to reduce complexity in other classes, handle
+shared logic in one place instead of reapting it and in the worst case introduce
+bugs.
+
+The relationship between classes is expressed as Superclass and Subclass
+(inherits from superclass). It so happends that we define sometimes methods
+that do not work for a subclass in which case we can overwrite that method.
+In ruby it is as simple as defining the method on the current subclass as it
+will overwrite it by default.
+
+```ruby
+class Car < Vehicle
+
+ def initialize(tire, price, color, weight, hp, milage, windows, doors)
+  super(tire, price, color, weight, hp, milage)
+  @windows = windows
+  @doors = doors
+ end
+
+ def information
+  # only print the number of doors
+  puts "Doors: #{@doors}"
+ end
+
+end
+```
+
+Just as there are times where we want to overwrite the method from the
+superclass there are also times we want to extend a method. When we overwrite
+a method it executes just the code we define in our overwritten method. But
+we can also execute the superclass method and then execute our code on top of
+that using the **super** keyword.
+
+```ruby
+class Car < Vehicle
+
+ def initialize(tire, price, color, weight, hp, milage, windows, doors)
+  super(tire, price, color, weight, hp, milage)
+  @windows = windows
+  @doors = doors
+ end
+
+ def information
+  # print the Vehicle Information
+  super
+  # and also print number of doors
+  puts "Doors: #{@doors}"
+ end
+
+end
+```
 
 ## 11 File input and output
 
