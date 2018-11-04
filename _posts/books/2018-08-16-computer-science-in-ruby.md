@@ -6,18 +6,22 @@ categories:
 image: "/assets/img/csruby"
 ---
 
-1. [Introduction to Computer Science](#1-introduction-to-computer-science)
-2. [How does the Computer really work ?](#2-how-does-the-computer-really-work)
-3. [Core Programming Elements](#3-core-programming-elements)
-4. [Conditional Structures](#4-conditional-structures)
-5. [Loop Structures](#5-loop-structures)
-6. [Arrays](#6-arrays)
-7. [Sorting and Searching](#7-sorting-and-searching)
-8. [Using Objects](#8-using-objects)
-9. [Defining Classes and creating Objects](#9-defining-classes-and-creating-objects)
-10. [Object Inheritance](#10-object-inheritance)
-11. [File input and output](#11-file-input-and-output)
-12. [Putting it all together](#12-putting-it-all-together)
+- [1 Introduction to Computer Science](#1-introduction-to-computer-science)
+- [2 How does the Computer really work](#2-how-does-the-computer-really-work)
+- [3 Core Programming Elements](#3-core-programming-elements)
+- [4 Conditional Structures](#4-conditional-structures)
+- [5 Loop Structures](#5-loop-structures)
+- [6 Arrays](#6-arrays)
+- [7 Sorting and Searching](#7-sorting-and-searching)
+  - [Selection Sort O(n)](#selection-sort-on)
+  - [Insertion Sort O(n²)](#insertion-sort-on%C2%B2)
+  - [Bubble Sort O(n)](#bubble-sort-on)
+  - [Radix Sort O(dn)](#radix-sort-odn)
+- [8 Using Objects](#8-using-objects)
+- [9 Defining Classes and creating Objects](#9-defining-classes-and-creating-objects)
+- [10 Object Inheritance](#10-object-inheritance)
+- [11 File input and output](#11-file-input-and-output)
+- [12 Putting it all together](#12-putting-it-all-together)
 
 **Photo by Austin Neill on Unsplash**
 
@@ -558,5 +562,22 @@ end
 ```
 
 ## 11 File input and output
+
+We can manipulate files in Ruby using the **File Class**. Everytime we use it
+we have to specify the access mode (read or write):
+
+```ruby
+# access mode -> write (w), read (r)
+my_file = File.open('path_to_file', access_mode)
+
+# get one line
+my_file.gets
+
+# cloes the file when done
+my_file.close
+```
+
+> In *read mode* the file is accessed from the start while in *write mode*
+> it will access the beginning of the file and overwrite any content.
 
 ## 12 Putting it all together
