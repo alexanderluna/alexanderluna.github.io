@@ -10,7 +10,7 @@ services:
     ports:
       - '4000:4000'
 
-volumes: 
+volumes:
   node_modules:
   ruby_bundle_2_5:
     external: true
