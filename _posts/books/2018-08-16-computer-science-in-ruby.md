@@ -581,3 +581,20 @@ my_file.close
 > it will access the beginning of the file and overwrite any content.
 
 ## 12 Putting it all together
+
+As a final project we are going to build a tic tac toe game. Writing a program
+like this requires all the steps we have learning thus far. First, we have to
+to break the problem down into keysteps as we learned in
+[Chapter 1](##1-introduction-to-computer-science):
+
+1. Draw Board
+2. Ask Player for move
+3. Validate Move
+4. Store Move
+
+Given that we interact with a virtual board all the time, we have to first
+create a board class which defines all the game logic using methods. After that
+we have to create a game loop which will ask the players for the next move
+until one player wins or the board is full.
+
+[Code for this project](https://github.com/alexanderluna/ruby/tree/master/ruby/tic_tac_toe)
