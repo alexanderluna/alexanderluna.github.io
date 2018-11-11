@@ -73,3 +73,14 @@ them, reshape them and rename them to improve readability.
 > Think of systems as stories to be told rather than programs to be written.
 
 ## Comments
+
+> Good code doesn't need comments because it is readable and easy to understand.
+
+Comments don't make up for bad code. Comments introduce a lot of problems in our
+source code. Comments get outdated quickly and misinform the readers. You want
+to use comments only when they are really needed such as for legal notices and
+licenses or to give a basic idea when the code it too complex. You may also use
+comments to warn future readers of consequences or such as a long load time or
+to mark an implementation as a **TODO**. Avoid any other type of comment such as
+journal comments used to log changes made by individiual programmers as well as
+commented out code.
