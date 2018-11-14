@@ -13,3 +13,5 @@ fields:
   type: boolean
   hidden: false
   default: true
+pages:
+- _posts/unix/test.md
