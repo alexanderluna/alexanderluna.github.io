@@ -6,6 +6,12 @@ categories:
 image: "/assets/img/csruby"
 ---
 
+If you know basic high-school math, you can quickly learn and apply the core
+concepts of computer science with this concise, hands-on book. Led by a team of
+experts, you’ll quickly understand the difference between computer science and
+computer programming, and you’ll learn how algorithms help you solve computing
+problems.
+
 - [1 Introduction to Computer Science](#1-introduction-to-computer-science)
 - [2 How does the Computer really work](#2-how-does-the-computer-really-work)
 - [3 Core Programming Elements](#3-core-programming-elements)
@@ -14,7 +20,7 @@ image: "/assets/img/csruby"
 - [6 Arrays](#6-arrays)
 - [7 Sorting and Searching](#7-sorting-and-searching)
   - [Selection Sort O(n)](#selection-sort-on)
-  - [Insertion Sort O(n²)](#insertion-sort-on%C2%B2)
+  - [Insertion Sort O(n²)](#insertion-sort-on%c2%b2)
   - [Bubble Sort O(n)](#bubble-sort-on)
   - [Radix Sort O(dn)](#radix-sort-odn)
 - [8 Using Objects](#8-using-objects)
