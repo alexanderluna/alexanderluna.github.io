@@ -8,17 +8,12 @@ categories:
 image: "/assets/img/cleancode"
 ---
 
-TODO: Introduction 100-200 characters
-
-- [Introduction](#introduction)
-- [Meaningful Names](#meaningful-names)
-- [Functions](#functions)
-- [Comments](#comments)
-
-## Introduction
-
 Bad code slows down development because it is messy and hard to make changes to
 without breaking functionality and consulting multiple methods and classes.
+
+- [Meaningful Names](#Meaningful-Names)
+- [Functions](#Functions)
+- [Comments](#Comments)
 
 ## Meaningful Names
 
