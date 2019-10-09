@@ -15,6 +15,7 @@ without breaking functionality and consulting multiple methods and classes.
 - [Functions](#functions)
 - [Comments](#comments)
 - [Formatting](#formatting)
+- [Objects and Data Structure](#objects-and-data-structure)
 
 ## Meaningful Names
 
@@ -119,3 +120,45 @@ decrease the code readability.
 
 > Teams should agree on a single format to improve code sharing and readability
 > as this allows each reader to feel right at home when working on the file.
+
+## Objects and Data Structure
+
+When working with objects the most important thing is to keep variables private
+so that no one depends on them. In order to archive this, we use
+**Data Abstraction**. In other words, we expose the implementation of an object
+as little as possible. When we have to expose implementation we prefer to use
+interfaces rather than getter/setters for variables because they allow data
+manipulation without knowing the implementation.
+
+While Objects and Data Structures may seem like two similar things they are in
+fact the opposite. Objects hide their data behind abstraction and expose
+function that operate on the data. Data Structures on the other hand, expose
+their data and have no meaningfull functions.
+
+> Procedural code (code using data structures) makes it easy to add new
+> function without changing the existing data structures. Object-Oriented code,
+> on the other hand make it easy to add new classes without changing existing
+> functions - excerpt from *clean code*
+
+In a nutshell, whats hard for Object-Oriented is easy for Procedures and
+vice-versa.
+
+**Law of Demeter** states that modules shouldn't know about the innards of the
+objects it manipulates. A method of a class should only call the following
+methods:
+
+- the class it belongs to
+- an object created by the method
+- an object passed as an argument to the method
+- object held in an instance variable of the class
+
+Failing to follow this law leads to **Train Wrecks** or chained method calls
+which are undesirable because a method ends up navigating methods it shouldn't
+know of. Similarly, not adhering to Objects or Data Structures will result in
+**Hybrids** which take the worst of both worlds either because the owner of the
+code doesn't know the difference or doesn't understand the implementation.
+
+A **Data Transfer Object** is a special kind of Data Structure class with public
+variables and no functions. This type of Data Structure is usefull for
+communication with a database. For example, an **Active Record** is a direct
+translation of a database table to an object.
