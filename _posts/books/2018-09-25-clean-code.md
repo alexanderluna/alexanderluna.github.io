@@ -16,6 +16,7 @@ without breaking functionality and consulting multiple methods and classes.
 - [Comments](#comments)
 - [Formatting](#formatting)
 - [Objects and Data Structure](#objects-and-data-structure)
+- [Error Handling](#error-handling)
 
 ## Meaningful Names
 
@@ -162,3 +163,21 @@ A **Data Transfer Object** is a special kind of Data Structure class with public
 variables and no functions. This type of Data Structure is usefull for
 communication with a database. For example, an **Active Record** is a direct
 translation of a database table to an object.
+
+## Error Handling
+
+Error handling is important but if done poorly it can obscure the logic. When
+working with errors prefer exceptions rather than error codes because this makes
+the callers code cleaner. Use try-catch-finally blocks since the *try* block
+denotes that the following code block can abort at any point and then it should
+immeadiatly execute the catch block. Therefor, try to force exceptions and
+exception handlers on the caller. Whenever possible use unchecked exceptions,
+because checked exceptions violate the open/closed principal by forcing the
+caller to the exception in the signiture of each method even when the code is
+several levels deep.
+
+When working exceptions, provide enough context to determine the source and
+location of an error. Define the exception classes in terms of a callers needs.
+Classify errors by source or type. In a similar way, avoid returning null from
+a method and passing null as an argument to a method as it leads to unnecessary
+*NullPointerException*s which have to be checked extensively further down.
