@@ -17,6 +17,7 @@ without breaking functionality and consulting multiple methods and classes.
 - [Formatting](#formatting)
 - [Objects and Data Structure](#objects-and-data-structure)
 - [Error Handling](#error-handling)
+- [Boundaries](#boundaries)
 
 ## Meaningful Names
 
@@ -181,3 +182,27 @@ location of an error. Define the exception classes in terms of a callers needs.
 Classify errors by source or type. In a similar way, avoid returning null from
 a method and passing null as an argument to a method as it leads to unnecessary
 *NullPointerException*s which have to be checked extensively further down.
+
+## Boundaries
+
+We rarely control software in our systems. Thus we will look at practices and
+techniques to keep the boundaries of our software clean.
+
+3rd party code providers want to cover use cases as broad as possible but
+consumers want to cover as close as possible to their needs which results in a
+conflict. The key is to hide the interface boundaries as much as possible,
+uncluttering the users code of managing code. For this, we can create our own
+adapter to cnonvert the interface to our own needs.
+
+When integrating 3rd party code its a burden to both learn their code and
+testing it on our production code so a better approach is to learn and explore
+the code through tests. Tests allow for a controlled experiment.
+
+The cost of learning tests is none. Tests allow us to run code experiments in a
+controlled way. Fruthermore, we can run the same tests to verify a future
+release of the software. This allows us to migrate code at a much faster pace
+and more confortably.
+
+Good software design allows us to do changes without huge investements and
+rework. Thus we should avoid letting too much of our code know about the 3rd
+party particulars.
