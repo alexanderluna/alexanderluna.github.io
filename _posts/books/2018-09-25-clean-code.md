@@ -18,6 +18,7 @@ without breaking functionality and consulting multiple methods and classes.
 - [Objects and Data Structure](#objects-and-data-structure)
 - [Error Handling](#error-handling)
 - [Boundaries](#boundaries)
+- [Unit Tests](#unit-tests)
 
 ## Meaningful Names
 
@@ -206,3 +207,48 @@ and more confortably.
 Good software design allows us to do changes without huge investements and
 rework. Thus we should avoid letting too much of our code know about the 3rd
 party particulars.
+
+## Unit Tests
+
+Agile and Test driven development encourage programmers to write automated unit
+tests. When writing unit tests it is important to follow the 3 layers of TDD
+(*test driven development*):
+
+1. Don't write production code until you have written a failing test
+2. Don't write more of a unit test than is sufficient to make it fail.
+3. Don't write more production code than sufficient to pass the test.
+
+This pushes us into a cycle on which we iterate. Working this way we write tests
+that cover almost all our code.
+
+Tests have to change as production code changes and unorganized and sloppy tests
+can't do that. As a result, test start failing, production code becomes harder
+to write, maintance increases with every release.
+
+> Test's code is just as important as production code.
+> excerp from Clean Code
+
+When we have tests we don't fear making changes to our production code which is
+why they add flexibility to our code.
+
+Clean tests are defined by readability, clarity, simplicity and density of
+expressiong. You want to say as much as possible with as few expressions as
+possible.
+
+> Use the build-operate-check pattern. First, build the test data. Second,
+> operate on the test data. Third, check that the operation yields the expected
+> results.
+
+When writing tests, a DSL (domain specific language) allows us to follow a
+convention and build an API on top of existing API's. Among the various school
+of thoughts around testing, there is one that says that every test should only
+have one assert statement. The benefits of this are modular, easy to understand
+and precise tests. An even better approach would be to test a single concept per
+test. Another helpful concept for writing tests is the **F.I.R.S.T** principle
+which says that *tests should be*:
+
+- **fast** otherwise it becomes a pain to run tests frequently
+- **independent** from each other to avoid failures from cascading
+- **repeatable** in any environment to avoid excuses due to conditions
+- **self-validating** by returning booleans so failures don't become subjective
+- **timely** before the production code because its harder to write tests afterwards
