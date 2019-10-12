@@ -19,6 +19,7 @@ without breaking functionality and consulting multiple methods and classes.
 - [Error Handling](#error-handling)
 - [Boundaries](#boundaries)
 - [Unit Tests](#unit-tests)
+- [Classes](#classes)
 
 ## Meaningful Names
 
@@ -252,3 +253,37 @@ which says that *tests should be*:
 - **repeatable** in any environment to avoid excuses due to conditions
 - **self-validating** by returning booleans so failures don't become subjective
 - **timely** before the production code because its harder to write tests afterwards
+
+## Classes
+
+Until now we looked at writing blocks of code but we won't have clean code until
+we pay attention to higher levels of code organization.
+
+A class should be organanized as followed from top to bottom:
+
+1. begin with a list of variables
+2. public state constants
+3. private state variables
+4. private instance variables
+5. public functions
+6. private utitilites (right below the calling function)
+
+> There is seldome a good reason to have a public variable. We like to keep our
+> variables and utility functions private. - excerpt from ***Clean Code***
+
+All classes should be small. The size of a class is measured in
+responsabilities. If you can't give a class a concrete name, it hints that the
+class is too big.
+
+> **SRP**: Single responsability principle states that a class/module should
+> have one and only one reason to change.
+
+It is thought that having many small classes makes the code unmanagable, but a
+system with many small classes has no more moving parts than a system with few
+large classes. There is just as much to learn so readability clearly pays off.
+
+Most systems change is continued. A clean system organizes classes so to reduce
+the risk of change.
+
+> **OCP**: open close principle says that a class should be open for extension
+> and closed for modification.
