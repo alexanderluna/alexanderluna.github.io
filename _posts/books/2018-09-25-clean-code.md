@@ -20,6 +20,7 @@ without breaking functionality and consulting multiple methods and classes.
 - [Boundaries](#boundaries)
 - [Unit Tests](#unit-tests)
 - [Classes](#classes)
+- [Systems](#systems)
 
 ## Meaningful Names
 
@@ -287,3 +288,33 @@ the risk of change.
 
 > **OCP**: open close principle says that a class should be open for extension
 > and closed for modification.
+
+## Systems
+
+We will look how to stay clean at higher levels of abstraction, the system level.
+
+> System construction and system consumption are very different.
+
+Software should seperate the startup process, when the application objects are
+constructed and the dependencies are "wired" together, from the runtime logic
+that takes over after the startup.
+
+- using factories (AFP) our application controls when to create an object
+- dependency injection seperates construction from use (inversion of control)
+
+Software systems are unique compared to physical systems. Their architecture can
+grow incrementally if we mantain the proper seperation of concerns.
+
+An optimal system architecture consists of a modularized domain of concern each
+of which is implemented with a plain old object. This architecture can be TTD
+just like the code.
+
+The agility provided by a POJO system with modularized concerns allows us to
+make optimal just in-time decisions based on the most recent knowdledge. The
+complexity of these decisions is also reduced.
+
+Standards make it easier to reduce ideas and components. Recruit people with
+relevant experience encapsulate good ideas and write components together.
+However, the process of creating standards can take longer than the industry can
+wait and some standards lose touch with the real needs of the adapter they are
+intended to use.
