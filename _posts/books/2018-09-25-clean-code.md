@@ -21,6 +21,7 @@ without breaking functionality and consulting multiple methods and classes.
 - [Unit Tests](#unit-tests)
 - [Classes](#classes)
 - [Systems](#systems)
+- [Emergence](#emergence)
 
 ## Meaningful Names
 
@@ -318,3 +319,24 @@ relevant experience encapsulate good ideas and write components together.
 However, the process of creating standards can take longer than the industry can
 wait and some standards lose touch with the real needs of the adapter they are
 intended to use.
+
+## Emergence
+
+What if there were rules that facilitaed the emergence of good design. Many feel
+that Kent Beck's four rules of simple design are of significant help in creating
+well designed software.
+
+1. Runs all the tests
+2. Contains no duplications
+3. Expresses the intend of the programmer
+4. Minimizes the number of classes and methods
+
+The design must produce a system that runs as intended. A non-testable system is
+a non-verifiable system. We tests in place we can improve our code by
+incrementally refactoring our code. We can apply rules 2-4 that way without any
+problems. Duplication is the primary enemy of a well designed system because it
+creates additional work, risk and complexity. The majority of the costs of
+software projects is the long term maintenance. Therefore, it is crucial to
+write code that everyone can understand. The key idea to archive a well designed
+system is to keep the classes and methods small instead of reducing the amount
+of them.
