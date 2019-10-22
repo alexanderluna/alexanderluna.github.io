@@ -22,6 +22,7 @@ without breaking functionality and consulting multiple methods and classes.
 - [Classes](#classes)
 - [Systems](#systems)
 - [Emergence](#emergence)
+- [Concurrency](#concurrency)
 
 ## Meaningful Names
 
@@ -340,3 +341,47 @@ software projects is the long term maintenance. Therefore, it is crucial to
 write code that everyone can understand. The key idea to archive a well designed
 system is to keep the classes and methods small instead of reducing the amount
 of them.
+
+## Concurrency
+
+Writing concurrent programs is hard but it is a decoupling strategy that
+improves the throughput and structure of an app. Nonetheless, there are some
+myths and misconceptions around concurrency:
+
+| Myth                                                  | Reality                           |
+| ----------------------------------------------------- | --------------------------------- |
+| always improves perfomance                            | when there is a long wait time    |
+| design doesn't change                                 | it can be very different          |
+| understanding concurrency isn't important             | it is very important              |
+| it increases some overhead                            | adds perfomance & additional code |
+| correct concurrency is complex                        | ...                               |
+| bugs are not repeatable                               | so they are ingnored (bad)        |
+| it requires a fundamental change in design strategies |                                   |
+
+Due to the added complexity of concurrency, we need defense principles and
+techniques to protect us from it's problems.
+
+> SRP: a class/method/component should have 1 reason to change. Concurrency
+> related code has it's own cycle of development. Therefore, keep your
+> concurrency related code seperate from other code.
+
+- limit the scope of data
+- use copies of data
+- threats should be as independant as possible
+
+Know your execution model:
+
+- Producer - Consumer: producer queue work and consumer complete it
+- Reader - Writer: shared resources for readers and writers update them
+- Dining Philosopher: processes compete for resources
+
+Beware dependencies between syncronized methods cause subtle bugs in concurrency
+code. Therefore, keep your syncronized methods small with as few critical
+sections as possible.
+
+Think about shut down code early and get it working early. It is going to take
+longer than you would expect. Review exiting algorithms.
+
+Testing concurrent code doesn't guarantee correctness but it minimizes risk.
+Write tests with the potential to expose problems and then run them frequently
+with different programmatic configurations and system configurations.
