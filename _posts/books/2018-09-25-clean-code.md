@@ -23,6 +23,7 @@ without breaking functionality and consulting multiple methods and classes.
 - [Systems](#systems)
 - [Emergence](#emergence)
 - [Concurrency](#concurrency)
+- [Succesive Refinement](#succesive-refinement)
 
 ## Meaningful Names
 
@@ -385,3 +386,14 @@ longer than you would expect. Review exiting algorithms.
 Testing concurrent code doesn't guarantee correctness but it minimizes risk.
 Write tests with the potential to expose problems and then run them frequently
 with different programmatic configurations and system configurations.
+
+## Succesive Refinement
+
+In order to create a clean program, one has to crete a dirty program  first and
+then clean it up through successive refinements. When the program starts getting
+messie, stop adding features and start refactoring.
+
+> One of the biggest ways of ruining a program is by making massive changes to
+> "improve" the program. Unfortunetly, programs rarely recover from such
+> changes. In order to avoid this, we use TDD to keep our program working at
+> all times.
