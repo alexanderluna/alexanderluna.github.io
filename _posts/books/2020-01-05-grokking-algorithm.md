@@ -4,6 +4,10 @@ image: assets/img/grokking
 categories: books
 ---
 
+- [Introduction](#introduction)
+- [Selection Sort](#selection-sort)
+- [Recursion](#recursion)
+
 ## Introduction
 
 An algorithm is a set of instructions for accomplishing a task. Throughout this
@@ -111,3 +115,18 @@ Given that we traverse the list once to find the play count $$\Theta(n)$$ and
 that we add them to the new list $$\Theta(n)$$, this sort algorithm takes:
 
 $$\Theta(n) \times \Theta(n) = \Theta(n^2)$$
+
+## Recursion
+
+Recursion is when a function calls itself and is used when it makes the solution
+cleaner. Many algorithms use it. When writting a recursive function it is
+important to tell it when to stop or you get an infinite loop.
+
+A stack is a **data structure** where you "push" items on top and "pop" the top
+most item. Computers use internally a "call stack". Each time a function is
+executed it gets pushed on to the call stack. In recursion, the self calling
+functions are in a partially completed state until the recursion stops and each
+function returns which in turn pops each execution from the stack.
+
+The power of recursion is that we don't need to keep track of the calls since
+the call stack takes care of it for us.
