@@ -8,6 +8,7 @@ categories: books
 - [Selection Sort](#selection-sort)
 - [Recursion](#recursion)
 - [Quick Sort](#quick-sort)
+- [Hashtables](#hashtables)
 
 ## Introduction
 
@@ -74,7 +75,7 @@ Unfortunatly, for this problem there is no faster algorithm available.
 ## Selection Sort
 
 Every computer memory has addresses where it stores information. To store a list
-of itmes you can use an: `array` or `list`.
+of itmes you can use an: **array** or **linked list**.
 
 An **array** stores data right beside each other in memory. If you want to add
 an item to the list but the next address is taken, you have to take all items
@@ -115,7 +116,7 @@ count. Thus we take 2 steps:
 Given that we traverse the list once to find the play count $$\Theta(n)$$ and
 that we add them to the new list $$\Theta(n)$$, this sort algorithm takes:
 
-$$\Theta(n) \times \Theta(n) = \Theta(n^2)$$
+> $$\Theta(n) \times \Theta(n) = \Theta(n^2)$$
 
 ## Recursion
 
@@ -177,4 +178,40 @@ Nontheless, each quick sort will take $$\Theta(n)$$ to divide the array and the
 amount of times quicksort calls itself is $$\Theta(log_{2}n)$$. Thus, the
 overall runtime is:
 
-$$\Theta(n) \times \Theta(log_{2}n) = \Theta(n log_{2}n)$$
+> $$\Theta(n) \times \Theta(log_{2}n) = \Theta(n log_{2}n)$$
+
+## Hashtables
+
+Assuming we want to implement a search for products with a price tag. We could
+use an array and sort it to use binary search on it ($$\Theta(log{2}n)$$).
+Intead we want to search in $$\Theta(1)$$ or constant time and for that we can
+use a **hash function**. For a hash function to work, it needs to be a constant
+and map a key to a value. A hash function returns always the same values for the
+searched key because a hash function:
+
+1. maps a key to the same index
+2. maps different keys to different indexes
+3. knows how big the array is and only returns valid indexes
+
+If we combine a hash function and an array we get a **hash table**. Unlike
+arrays and lists, hash tables are smart and don't map directly to memory but use
+a hash function to figure out where to store data.
+
+When working with hash tables it is possible that 2 keys get assigned the same
+memory spot resulting in a collision. A simple solution to this is to use a
+linked list when keys collide. The hash function is very important because it
+will give us few collisions.
+
+As for performance, hash tables take $$\Theta(1)$$ for everything (read, write,
+delete) on average and $$\Theta(n)$$ in the worst case scenario. In order to
+avoid the worst case scenario, one has to avoid collisions. Hence, you will need
+a low **load factor** and a good hash function.
+
+> $$
+> Load\ Factor = \frac{number\ of\ items\ in\ table}{number\ of\ total\ slots}
+> $$
+
+Hash tables use arrays for storage. When the array is smaller than the amount
+of items it will hold we get a larger load factor (more items per slot). To
+reduce the load factor we need a bigger array. Meanwhile, a good hash function
+distributes values in the array evenly.
