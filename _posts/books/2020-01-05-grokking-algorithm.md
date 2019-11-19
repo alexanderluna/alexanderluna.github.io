@@ -4,6 +4,12 @@ image: assets/img/grokking
 categories: books
 ---
 
+Grokking Algorithms is an introduction book to the world of algorithms. This
+book covers not only how algorithms work are implemented, but also why they
+work the way they do and why the data structures it uses are important. Along
+the way, you will learn also different data structures and how a computer
+works with data structures.
+
 - [Introduction](#introduction)
 - [Selection Sort](#selection-sort)
 - [Recursion](#recursion)
@@ -230,7 +236,7 @@ number of moves to win a chess game for example. The steps are simple:
 
 A **graph** models a set of connections and consists of **nodes** and **edges**
 which connect the nodes. Nodes connected to any particular node are called its
-neighor. 
+neighor.
 
 The breadth first search algorithm answers 2 questions:
 
