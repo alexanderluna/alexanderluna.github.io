@@ -6,6 +6,8 @@ categories: books
 
 - [Easy for me hard for you](#easy-for-me-hard-for-you)
 - [A simple prediction machine](#a-simple-prediction-machine)
+- [Classifying is not different from Predicting](#classifying-is-not-different-from-predicting)
+- [Training a Simple Classifier](#training-a-simple-classifier)
 
 ## Easy for me hard for you
 
@@ -53,3 +55,23 @@ $$
 
 As our guess approaches the correct answer (small error rate), our steps to
 ajust should decrease. Thus, our steps are a **fraction** of the error.
+
+## Classifying is not different from Predicting
+
+Given data, we want to classify wether an insect is a caterpillar or a ladybugs.
+We can see that based on length and width. A caterpillar is longer than wide
+and the opposite is true for ladybugs.
+
+![graph](/assets/uploads/nn-plot.png)
+
+> source: (book) make your own neural networks
+
+The line added seperates both insects based on its characteristics. If we were
+to encounter an unknown insect we can use this classifier to figure out what it
+is.
+
+> we use **training data** to teach our classifier the truth
+
+## Training a Simple Classifier
+
+$$
