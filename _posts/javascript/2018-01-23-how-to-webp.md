@@ -21,9 +21,9 @@ not all browsers support it which is why the following demo won't work on every
 browser:
 
 <center>
-<img src="https://mycroft1891.github.io/portfolio/img/projects/japanese.png" alt="Japanese image">
+<img src="https://alexanderluna.github.io/portfolio/img/projects/japanese.png" alt="Japanese image">
 <br><br>
-<img src="https://mycroft1891.github.io/portfolio/img/projects/japanese.webp" type="image/webp" alt="Japanese image">
+<img src="https://alexanderluna.github.io/portfolio/img/projects/japanese.webp" type="image/webp" alt="Japanese image">
 </center>
 <br>
 

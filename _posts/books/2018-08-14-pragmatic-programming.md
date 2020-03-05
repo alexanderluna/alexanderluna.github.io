@@ -1,6 +1,6 @@
 ---
 title: How to become a Pragmatic Programmer
-image: assets/img/pragmatic
+image: /assets/img/pragmatic
 categories: books
 ---
 
