@@ -1,30 +1,37 @@
 {% if post.id %}
-  {% assign title = post.title | markdownify | strip_html %}
+{% assign title = post.title | markdownify | strip_html %}
 {% else %}
-  {% assign title = post.title %}
+{% assign title = post.title %}
 {% endif %}
 
 <article class="entry">
-  <header class="entry-header">
-    <h3 class="entry-title">
-      <a href="{{ post.url | relative_url }}" rel="bookmark">{{ title }}</a>
-    </h3>
-  </header>
-  <footer class="entry-meta">
-    <ul>
-    {% if post.date %}
-      <li><span class="icon">{% include icon-calendar.svg %}</span><time class="entry-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></li>
-    {% endif %}
-    {% if post.read_time %}
-      <li><span class="icon">{% include icon-stopwatch.svg %}</span>{% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}</li>
-    {% endif %}
-    </ul>
-  </footer>
-  <div class="entry-excerpt">
-    {% if post.excerpt %}
-      {{ post.excerpt | markdownify }}
-      <p><a href="{{ post.url | relative_url }}" class="more-link">{{ site.data.theme.t.read_more | default: 'Read More' }} <span class="icon icon--arrow-right">{% include icon-arrow-right.svg %}</span></a></p>
-    {% endif %}
-  </div>
+    <header class="entry-header">
+        <div class="entry-image">
+            <picture>
+                <source media="(min-width: 750px)" srcset="{{ post.image }}-70pc_large{{ post.extention | default: ".jpg" }}">
+                <source media="(min-width: 500px)" srcset="{{ post.image }}-50pc_medium{{ post.extention | default: ".jpg" }}">
+                <img src="{{ post.image }}-40pc_small{{ post.extention | default: ".jpg" }}">
+            </picture>
+        </div>
+        <h3 class="entry-title">
+            <a href="{{ post.url | relative_url }}" rel="bookmark">{{ title }}</a>
+        </h3>
+    </header>
+    <footer class="entry-meta">
+        <ul>
+            {% if post.date %}
+            <li><span class="icon">{% include icon-calendar.svg %}</span><time class="entry-time" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time></li>
+            {% endif %}
+            {% if post.read_time %}
+            <li><span class="icon">{% include icon-stopwatch.svg %}</span>{% capture read_time %}{% include read-time.html %}{% endcapture %}{{ read_time | strip }}</li>
+            {% endif %}
+        </ul>
+    </footer>
+    <div class="entry-excerpt">
+        {% if post.excerpt %}
+        {{ post.excerpt | markdownify }}
+        <p><a href="{{ post.url | relative_url }}" class="more-link">{{ site.data.theme.t.read_more | default: 'Read More' }} <span class="icon icon--arrow-right">{% include icon-arrow-right.svg %}</span></a></p>
+        {% endif %}
+    </div>
 </article>
 <!--  individual posts -->
