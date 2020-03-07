@@ -13,8 +13,10 @@ Nonetheless, both are great and thus we will cover them both. These are the main
 - We don't care if the job runs every time, it just should run on a best effort basis
 
 ## Index:
-1. [Crontab](#crontab)
-2. [Launchd](#launchd)
+- [Crontab](#crontab)
+- [Launchd](#launchd)
+  - [The Manual way](#the-manual-way)
+  - [Using Lunchy](#using-lunchy)
 
 # Crontab
 

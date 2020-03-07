@@ -1,7 +1,9 @@
 ---
 title: Make Bundler faster with Docker
 image: assets/img/bundle
-categories: [ruby, unix]
+categories: 
+  - ruby
+  - unix
 ---
 
 Docker is an incredible tool that simplifies developement environemnt setup.

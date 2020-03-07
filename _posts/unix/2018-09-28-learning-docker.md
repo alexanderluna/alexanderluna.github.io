@@ -15,15 +15,18 @@ learn about Docker, its features and how to use it properly.
 
 ## Index
 
-1. [Basic Docker Commands](#basic-docker-commands)
-2. [Image vs Container](#image-vs-container)
-3. [Running Containers](#running-containers)
-4. [Running commands inside Containers](#running-commands-inside-containers)
-5. [Docker Network](#docker-network)
-6. [Working with Images](#working-with-images)
-7. [Understanding Dockerfiles](#understanding-dockerfiles)
-8. [A Containers Lifetime](#a-containers-lifetime)
-9. [Automating with Docker Compose](#automating-with-docker-compose)
+- [Index](#index)
+- [Basic docker commands](#basic-docker-commands)
+- [Image vs Container](#image-vs-container)
+- [Running Containers](#running-containers)
+- [Running commands inside Containers](#running-commands-inside-containers)
+- [Docker Network](#docker-network)
+- [Working with Images](#working-with-images)
+- [Understanding Dockerfiles](#understanding-dockerfiles)
+- [A Containers Lifetime](#a-containers-lifetime)
+  - [Volumes](#volumes)
+  - [Bind Mounts](#bind-mounts)
+- [Automating with Docker Compose](#automating-with-docker-compose)
 
 ## Basic docker commands
 
