@@ -6,15 +6,17 @@
 
 <article class="entry">
     <header class="entry-header">
-        <div class="entry-image">
-            <picture>
-                <source media="(min-width: 750px)" srcset="{{ post.image }}-70pc_large{{ post.extention | default: ".jpg" }}">
-                <source media="(min-width: 500px)" srcset="{{ post.image }}-50pc_medium{{ post.extention | default: ".jpg" }}">
-                <img src="{{ post.image }}-40pc_small{{ post.extention | default: ".jpg" }}">
-            </picture>
-        </div>
         <h3 class="entry-title">
-            <a href="{{ post.url | relative_url }}" rel="bookmark">{{ title }}</a>
+            <a href="{{ post.url | relative_url }}" rel="bookmark">
+                <div class="entry-image">
+                    <picture>
+                        <source media="(min-width: 750px)" srcset="{{ post.image }}-70pc_large{{ post.extention | default: ".jpg" }}">
+                        <source media="(min-width: 500px)" srcset="{{ post.image }}-50pc_medium{{ post.extention | default: ".jpg" }}">
+                        <img src="{{ post.image }}-40pc_small{{ post.extention | default: ".jpg" }}">
+                    </picture>
+                </div>
+                {{ title }}
+            </a>
         </h3>
     </header>
     <footer class="entry-meta">
