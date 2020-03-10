@@ -1,6 +1,5 @@
 ---
 title: Learning Docker from scratch
-permalink: learning-docker
 image: /assets/img/docker
 categories: unix
 ---

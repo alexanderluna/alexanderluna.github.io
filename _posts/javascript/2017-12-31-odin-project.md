@@ -1,9 +1,10 @@
 ---
 title: Supercharging your Web Dev studies
-permalink: the-odin-project
 image: /assets/img/odin
 extention: .png
-categories: [ruby, javascript]
+categories:
+  - ruby
+  - javascript
 ---
 
 About 2 months ago I learned about [Free Code Camp](https://www.freecodecamp.org)

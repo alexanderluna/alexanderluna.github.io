@@ -1,6 +1,5 @@
 ---
 title: Installing Ruby the right way
-permalink: installing-ruby
 image: "/assets/img/ruby"
 extention: ".png"
 categories: ruby
@@ -10,10 +9,11 @@ categories: ruby
 
 Index:
 
-1. [Install Xcode-Command line Tools](#install-xcode-command-line-tools)
-2. [Install Homebrew](#install-homebrew)
-3. [Install RBENV](#install-RBENV)
-4. [Install Ruby](#install-ruby)
+- [Install Xcode Command Line Tools](#install-xcode-command-line-tools)
+- [Install Homebrew](#install-homebrew)
+  - [What is Homebrew ?](#what-is-homebrew-)
+- [Install RBENV](#install-rbenv)
+- [Install Ruby](#install-ruby)
 
 
 ## Install Xcode Command Line Tools

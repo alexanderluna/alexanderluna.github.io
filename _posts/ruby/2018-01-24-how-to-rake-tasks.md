@@ -1,6 +1,5 @@
 ---
 title: How to use Rake Tasks
-permalink: how-to-use-rake-tasks
 image: /assets/img/rake
 categories: ruby
 ---

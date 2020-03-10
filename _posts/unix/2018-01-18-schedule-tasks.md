@@ -1,6 +1,5 @@
 ---
 title: Schedule Tasks with Crontab and Launchd
-permalink: schedule-tasks-with-crontab-and-launchd
 image: /assets/img/cron
 categories: unix
 ---

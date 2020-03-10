@@ -1,6 +1,5 @@
 ---
 title: Learning enough UNIX to get things done
-permalink: learning-unix-commands
 image: /assets/img/unix
 categories: unix
 ---

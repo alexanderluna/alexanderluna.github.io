@@ -3,7 +3,7 @@ host: 0.0.0.0
 port: 4000
 title: Programming Dungeon
 email: mycroft1891@gmail.com
-description: 'Code like Good Wine, takes times'
+description: "Code like Good Wine, takes times"
 image: /assets/img/main
 baseurl: null
 url: "https://alexanderluna.github.io"
@@ -25,9 +25,10 @@ plugins:
 feed:
   path: atom.xml
 paginate: 10
-paginate_path: '/page:num/'
+paginate_path: "/page:num/"
 exclude:
   - package.json
+  - yarn.lock
   - Gruntfile.js
   - .asset-cache
   - .bundle
@@ -45,6 +46,8 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - assets/images_src
+  - docker-compose.yml
 collections:
   category:
     output: true
@@ -55,8 +58,7 @@ defaults:
     values:
       layout: post
       read_time: true
-  -
-    scope:
+  - scope:
       path: ""
       type: category
     values:
