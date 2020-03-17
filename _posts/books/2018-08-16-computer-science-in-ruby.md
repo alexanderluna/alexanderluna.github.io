@@ -20,7 +20,7 @@ problems.
 - [6 Arrays](#6-arrays)
 - [7 Sorting and Searching](#7-sorting-and-searching)
   - [Selection Sort O(n)](#selection-sort-on)
-  - [Insertion Sort O(n²)](#insertion-sort-on%c2%b2)
+  - [Insertion Sort O(n²)](#insertion-sort-on²)
   - [Bubble Sort O(n)](#bubble-sort-on)
   - [Radix Sort O(dn)](#radix-sort-odn)
 - [8 Using Objects](#8-using-objects)
@@ -33,7 +33,7 @@ problems.
 
 ## 1 Introduction to Computer Science
 
-Programming is not the same same as Computer Science it is a tool to implement
+Programming is not the same as Computer Science. It is a tool to implement
 Computer Science concepts. While Programming languages come and go the
 underlying algorithms are the most important thing as they can be applied to
 any programming language. It is important to understand that computers only do
