@@ -1,6 +1,6 @@
 ---
 title: Take a tour with Pandas
-image: assets/img/pandas
+image: /assets/img/pandas
 categories:
   - python
 ---

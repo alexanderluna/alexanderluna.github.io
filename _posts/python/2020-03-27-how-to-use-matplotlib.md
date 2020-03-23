@@ -1,6 +1,6 @@
 ---
 title: How to use Matplotlib
-image: assets/img/matplotlib
+image: /assets/img/matplotlib
 categories:
   - python
 ---

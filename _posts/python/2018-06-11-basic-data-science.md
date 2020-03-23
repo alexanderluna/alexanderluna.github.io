@@ -1,6 +1,6 @@
 ---
 title: Basic Data Science
-image: "/assets/img/ds"
+image: /assets/img/ds
 categories: [python, books]
 ---
 
@@ -12,17 +12,20 @@ list at the bottom under the reference section.
 
 ## Index
 
-1. [Basics](#basics)
-2. [Types of Data](#types-of-data)
-3. [Five Steps of Data Science](#five-steps-of-data-science)
-4. [Basic Mathematics](#basic-mathematics)
-5. [Impossible or Improbable](#impossible-or-improbable)
-6. [Advanced Probability](#advanced-probability)
-7. [Basic Statistics](#)
-8. [Advanced Statistics](#)
-9. [Communicating Data](#)
-10. [Machine Learning](#)
-11. [References](#references)
+- [Basics](#basics)
+      - [Common Vocabulary:](#common-vocabulary)
+- [Types of Data](#types-of-data)
+      - [How to differentiate between Qualitative and Quantitative data ?](#how-to-differentiate-between-qualitative-and-quantitative-data-)
+      - [Structured Data can be broken down into four levels of data:](#structured-data-can-be-broken-down-into-four-levels-of-data)
+  - [Five Steps of Data Science](#five-steps-of-data-science)
+      - [Exploring the Data Questions](#exploring-the-data-questions)
+  - [Basic Mathematics](#basic-mathematics)
+      - [Basic Symbols and Terminology](#basic-symbols-and-terminology)
+  - [Impossible or Improbable](#impossible-or-improbable)
+    - [Probability](#probability)
+    - [Bayesian vs. Frequentist](#bayesian-vs-frequentist)
+  - [Advanced Probability](#advanced-probability)
+  - [References](#references)
 
 # Basics
 

@@ -1,6 +1,6 @@
 ---
 title: Solving Graph problems with the Breadth First Search Algorithm
-image: assets/img/breadth-first-search
+image: /assets/img/breadth-first-search
 categories:
   - books
   - ruby

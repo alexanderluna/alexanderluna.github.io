@@ -1,6 +1,6 @@
 ---
 title: Setup phpMyAdmin and MySQL with docker compose
-image: assets/img/bundle-docker
+image: /assets/img/bundle-docker
 categories: unix
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: A quick look at Numpy
-image: assets/img/numpy
+image: /assets/img/numpy
 categories:
   - python
 ---

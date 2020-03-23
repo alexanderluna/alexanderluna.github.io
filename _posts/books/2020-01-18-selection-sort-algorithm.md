@@ -1,6 +1,6 @@
 ---
 title: Understanding the Selection Sort Algorithm
-image: assets/img/selection-sort
+image: /assets/img/selection-sort
 categories:
   - books
   - ruby

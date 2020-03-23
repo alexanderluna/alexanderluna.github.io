@@ -1,6 +1,6 @@
 ---
 title: Installing Tor on Linux (Virtual Machine)
-image: assets/img/tor
+image: /assets/img/tor
 categories: it
 ---
 

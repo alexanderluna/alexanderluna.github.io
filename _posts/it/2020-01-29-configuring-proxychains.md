@@ -1,6 +1,6 @@
 ---
 title: Configuring Proxychains on Linux (Virtual Machine)
-image: assets/img/chain
+image: /assets/img/chain
 categories: it
 ---
 

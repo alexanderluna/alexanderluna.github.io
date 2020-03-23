@@ -3,7 +3,7 @@ title: Computer Science Programming Basics in Ruby
 categories:
 - ruby
 - books
-image: "/assets/img/csruby"
+image: /assets/img/csruby
 ---
 
 If you know basic high-school math, you can quickly learn and apply the core

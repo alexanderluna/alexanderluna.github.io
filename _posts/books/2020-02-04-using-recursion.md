@@ -1,6 +1,6 @@
 ---
 title: What is recursion and why should I use it ?
-image: assets/img/recursion
+image: /assets/img/recursion
 categories:
   - books
   - ruby

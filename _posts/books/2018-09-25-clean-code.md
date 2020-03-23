@@ -5,7 +5,7 @@ categories:
 - javascript
 - python
 - books
-image: "/assets/img/cleancode"
+image: /assets/img/cleancode
 ---
 
 Bad code slows down development because it is messy and hard to make changes to

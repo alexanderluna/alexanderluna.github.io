@@ -1,6 +1,6 @@
 ---
 title: Make your own Neural Network
-image: assets/img/neural-networks
+image: /assets/img/neural-networks
 categories: books
 ---
 

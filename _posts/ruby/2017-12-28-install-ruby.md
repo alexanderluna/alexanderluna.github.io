@@ -1,6 +1,6 @@
 ---
 title: Installing Ruby the right way
-image: "/assets/img/ruby"
+image: /assets/img/ruby
 extention: ".png"
 categories: ruby
 ---

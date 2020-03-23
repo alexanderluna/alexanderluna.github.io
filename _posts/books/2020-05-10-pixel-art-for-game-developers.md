@@ -1,6 +1,6 @@
 ---
 title: Pixel Art for Game Developers
-image: assets/img/game-dev
+image: /assets/img/game-dev
 categories: books
 ---
 

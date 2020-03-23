@@ -1,6 +1,6 @@
 ---
 title: Design Patterns Elements of Reusable Object-Oriented Software
-image: assets/img/design-patterns
+image: /assets/img/design-patterns
 categories: books
 ---
 

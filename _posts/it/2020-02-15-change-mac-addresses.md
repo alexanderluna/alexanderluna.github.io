@@ -1,6 +1,6 @@
 ---
 title: Understanding and changing MAC addresses on Linux
-image: assets/img/mac-address
+image: /assets/img/mac-address
 categories: it
 ---
 

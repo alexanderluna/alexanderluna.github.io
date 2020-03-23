@@ -1,6 +1,6 @@
 ---
 title: How does Quick Sort work ?
-image: assets/img/quick-sort
+image: /assets/img/quick-sort
 categories:
   - books
   - ruby

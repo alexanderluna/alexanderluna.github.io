@@ -1,6 +1,6 @@
 ---
 title: Deploy React to Github Pages
-image: "/assets/img/ghpages"
+image: /assets/img/ghpages
 categories: javascript
 ---
 

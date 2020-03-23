@@ -1,6 +1,6 @@
 ---
 title: What is an Algorithm and how does it work ?
-image: assets/img/algorithm
+image: /assets/img/algorithm
 categories:
   - books
   - ruby

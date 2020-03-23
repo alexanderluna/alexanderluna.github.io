@@ -1,6 +1,6 @@
 ---
 title: How Hashtables work and how to use them
-image: assets/img/hashtable
+image: /assets/img/hashtable
 categories:
   - books
   - ruby
