@@ -2,7 +2,7 @@ lang: en-US
 host: 0.0.0.0
 port: 4000
 title: Programming Dungeon
-email: mycroft1891@gmail.com
+email: alexanderluna1891@gmail.com
 description: "Code like Good Wine, takes times"
 image: /assets/img/main
 baseurl: null
@@ -10,9 +10,6 @@ url: "https://alexanderluna.github.io"
 google_analytics: UA-112012666-1
 author:
   name: Alexander Luna
-  twitter: mr_moon95
-  picture: "https://pbs.twimg.com/profile_images/925100245146656768/KvQL2ei5_400x400.jpg"
-twitter_username: mr_moon95
 github_username: alexanderluna
 codepen_username: mr-moon
 logo: /favicon.svg
