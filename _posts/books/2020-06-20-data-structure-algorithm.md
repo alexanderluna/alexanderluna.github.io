@@ -29,7 +29,7 @@ performance of data structures through common operations.
 - insert
 - delete
 
-When we **read** from an arry it takes just one step since we can access
+When we **read** from an array it takes just one step since we can access
 everything by index. When **searching** an array, we look wether a particular
 value exists in an array and what its index is. For N-items in an array, linear
 search takes N-steps. When **inserting** an item into an array, it depends
@@ -45,6 +45,20 @@ set. It takes 2N+1 steps. 1N to check if the item exists, 1N to shift the other
 items and 1 step to insert the item.
 
 ## Why Algorithms Matter
+
+> An algorithm is simply a particular process of solving a problem.
+
+When working with an ordered array compared to an unordered array we can make
+use of other algorithms than linear search. Inserting items is slow because we
+have to insert at a specific spot and then shift the other items. However,
+searching can become faster. We can use binary search. In binary search, we
+start in the middle and check if the value is bigger or smaller than the target.
+We can skip half the items this way until we find the target value.
+
+At 100 itms, linear search takes 100 steps and binary search 7.
+
+- linear search: as many steps as items
+- binary search: 1 step everytime items double
 
 ## Big O Notation
 
