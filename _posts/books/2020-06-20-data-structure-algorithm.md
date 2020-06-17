@@ -62,6 +62,37 @@ At 100 itms, linear search takes 100 steps and binary search 7.
 
 ## Big O Notation
 
+Computer scientists use a mathematic concept to describe the efficiency of
+algorithms known as **Big O** notation.
+
+Big O notation focuses on the number of steps that an algorithm takes. An
+algorithm that takes always 1 step, is written as $$\Theta(1)$$. An algorithm that
+depends on the number of itmes, is written as $$\Theta(N)$$.
+
+- $$\Theta(1)$$: Constant Time
+- $$\Theta(N)$$: Linear Time
+
+> Big O generally refers to the worst case scenario.
+
+If we look at binary search it takes more than $$\Theta(1)$$ but less than
+$$\Theta(N)$$. It takes $$\Theta(log_2N)$$.
+
+> Log N means that the number of steps increase by one each time the data
+> doubles. Logarithms are the inverse of exponents.
+
+In order to solve $$\Theta(log_2N)$$, ask yourself how often you have to
+multiply 2 to get N.
+
+$$\Theta(log_28) = 3\ or\ (2*2*2)$$
+
+For binary search this means
+
+| # of elements | $$\Theta(N)$$ | $$\Theta(log_2N)$$ |
+| ------------- | ------------- | ------------------ |
+| 8             | 8             | 3                  |
+| 16            | 16            | 4                  |
+| 32            | 32            | 5                  |
+
 ## Speeding up Code
 
 ## Optimizing Code
