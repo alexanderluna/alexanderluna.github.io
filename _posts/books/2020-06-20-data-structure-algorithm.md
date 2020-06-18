@@ -66,8 +66,8 @@ Computer scientists use a mathematic concept to describe the efficiency of
 algorithms known as **Big O** notation.
 
 Big O notation focuses on the number of steps that an algorithm takes. An
-algorithm that takes always 1 step, is written as $$\Theta(1)$$. An algorithm that
-depends on the number of itmes, is written as $$\Theta(N)$$.
+algorithm that takes always 1 step, is written as $$\Theta(1)$$. An algorithm
+that depends on the number of itmes, is written as $$\Theta(N)$$.
 
 - $$\Theta(1)$$: Constant Time
 - $$\Theta(N)$$: Linear Time
@@ -94,6 +94,28 @@ For binary search this means
 | 32            | 32            | 5                  |
 
 ## Speeding up Code
+
+As we saw big O allows us to compare algorithms and pick them based on speed.
+Sorting algorithms have been the focus of computer science over the past years.
+A common sorting algorithm is **bubble sort**.
+
+1. pick 2 itms and check if they are in order
+2. if out of order swap them
+3. else do nothing
+4. move to the next pointer
+5. repeat until sorted
+
+Bubble sort does comparisons and swaps. We do multiple comparisons and swaps to
+sort a list. In fact, exponential in relation to the number of items
+$$\Theta(N^2)$$.
+
+If we were to check if a list has duplicate values we could use a nested for
+loop to check each item. However, this takes $$\Theta(N^2)$$ time. All nested
+for loops perform bad.
+
+A linear solution to this problem would be to store numbers encounters in a
+second array at the index the number represents. If a given number is not
+undefined or null it means we found a duplicate.
 
 ## Optimizing Code
 
