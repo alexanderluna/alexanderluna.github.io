@@ -119,6 +119,41 @@ undefined or null it means we found a duplicate.
 
 ## Optimizing Code
 
+Big O is a tool to determine which algorithm to use for a given situation.
+However, it isn't the only tool.
+
+We will look at **selection sort** which is a different sorting algorithm. It
+works in 3 steps.
+
+1. Check each cell of an array and keep track of the smallest value in the array
+2. Swap the lowest value position with where we started in the array. Next time,
+we can skip the first item because it is already sorted.
+3. Repeat until the data is sorted
+
+If we look at the performance we do
+
+$$(N+1) + (N-2) + (N-3)\ ...\ +1$$
+
+As for swaps we do 0 to 1 swap each time. In comparison, for bubble sort we have
+to make 1 swap for each comparison. This makes bubble sort take twice as many
+steps as selection sort.
+
+$$Selection\ Sort:\ \Theta(\frac{n^2}{2})\ or \Theta(n^2)$$
+
+> Big O ignores constants thus we remove the division. The resulting big O
+> notation is the same for bubble sort. Although, as we saw, selection sort
+> performs less steps.
+
+Big O notations helps us visualize the long term performance of an algorithm.
+On the long run, constants don't play such an important role because different
+classifications will eventually perform differently. Thus, the purpose of Big O
+is to classify algorithms.
+
+$$\Theta(n^2)$$ will be slower than $$\Theta(log_2n)$$. That is why we can
+ingore the constant. Big O helps us classify different algorithms into different
+classes. If two algorithms fall under the same category, we have to do further
+analysis by looking at the amount of steps it takes for each algorithm.
+
 ## Optimizing Optimisticly
 
 ## Big Oh in everyday code
