@@ -9,11 +9,13 @@ categories:
   - java
   - csharp
 ---
-
-The backpack problem is a very famous computer science problem. Assuming we
-have a backpack that can hold 4kg worth of items we want to figure out how
-many items we can fit while at the same time archiving the highest amount of
-value possible.
+Dynamic programming is a an interesting way of solving problems using recursion.
+At it's core, it consists of breaking down a problem into simpler to solve
+sub problems recursively. A famous problem to show case this is the backpack
+problem. The backpack problem is a very famous computer science problem.
+Assuming we have a backpack that can hold 4kg worth of items we want to figure
+out how many items we can fit while at the same time archiving the highest
+amount of value possible.
 
 | item   | price | weight |
 | ------ | ----- | ------ |
