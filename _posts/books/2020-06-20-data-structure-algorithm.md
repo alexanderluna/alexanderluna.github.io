@@ -156,6 +156,98 @@ analysis by looking at the amount of steps it takes for each algorithm.
 
 ## Optimizing Optimisticly
 
+When evaluating the efficiency of an algorithm, we focuse on the number of steps
+in the worst case scenario. Thus, the result turns out good most of the time.
+However, looking at all the scenarios can help us take pick the right algorithm
+for the problem at hand.
+
+> Previously, we looked at Bubble and Selection sort both having an efficiency
+> of $$\Theta(N^2)$$ despite Selection sort being twice as fast.
+
+Insertion sort allows us to analyze scenarios beyond the worst case. It consists
+of 4 steps.
+
+1. Temporarly remove value at index 1 and store it in a variable. In the next
+   iterations we remove the next index.
+2. Take each value to the left of the removed index to compare and shift if
+   the value to the left is greater than the index value.
+3. Insert the temporarily removed index value into the shifted gap.
+4. Repeat 1-3 until we reach the end of the array.
+
+```ruby
+# example with an array of length 4
+a = [4,2,7,1,3]
+# first step shift index 1
+a = [2,4,7,1,3]
+# second step shift index 2
+a = [2,4,7,1,3]
+# third step shift index 3
+a = [1,2,4,7,3]
+# fourth step shift index 4
+a = [1,2,3,4,7]
+```
+
+The algorithm uses 4 types of steps: remove, compare, shift and insert. For
+comparison we do compare all numbers in the worst case but we only compare one
+time in the first run, two times in the second and so on.
+
+$$1 + 2 + 3 + ... + (N-1)$$
+
+| Array Size | # of Comparisons |
+| ---------- | ---------------- |
+| 5          | 10               |
+| 10         | 45               |
+| 20         | 190              |
+
+Looking at the table it becomes apparent that the speed is about
+
+$$\Theta(N^2/2)$$
+
+$$\frac{10^2}{2} = 50$$
+
+Moving on to shift, in the worst case we have to shift each time to sort a
+reversed ordered array resulting in as many shifts as comparisons
+$$\Theta(N^2/2)$$
+
+As for removing and inserting, we remove and insert in each pass through once
+resulting in $$\Theta(N-1)$$. If we combine all the notations and simply we get.
+
+$$(N^2/2) + (N^2/2) + (N-1) + (N-1)$$
+
+$$(N^2) + (N-1)$$
+
+> So far, we only removed constants from Big O notation but another rule states
+> that we only take into account the the highest order of N when we have
+> multiple orders added together. This is because as N increases, the higher
+> order becomes much more significant.
+
+| $$N^2$$ | $$N^2$$ | $$N^3$$ | $$N^4$$ |
+| ------- | ------- | ------- | ------- |
+| 2       | 4       | 8       | 16      |
+| 5       | 25      | 125     | 625     |
+| 10      | 100     | 1000    | 10000   |
+
+### Is Selection Sort the best ?
+
+At first glance, looking at the worst case scenario we can draw that conclusion.
+
+| Algorithm      | Big O             |
+| -------------- | ----------------- |
+| Selection Sort | $$\Theta(N^2/2)$$ |
+| Bubble Sort    | $$\Theta(N^2)$$   |
+| Insertion Sort | $$\Theta(N^2)$$   |
+
+However, comparing Selection and Insertion Sort by Best, Average and Worst case
+we get a bigger picture.
+
+| Algorithm      | Best              | Average           | Worst             |
+| -------------- | ----------------- | ----------------- | ----------------- |
+| Selection Sort | $$\Theta(N)$$     | $$\Theta(N^2/2)$$ | $$\Theta(N^2)$$   |
+| Insertion Sort | $$\Theta(N^2/2)$$ | $$\Theta(N^2/2)$$ | $$\Theta(N^2/2)$$ |
+
+In short, if data is mostly sorted, insertion is the best option. For a reversed
+ordered array selection sort of the better option.
+
 ## Big Oh in everyday code
 
 ## Hash Tables
