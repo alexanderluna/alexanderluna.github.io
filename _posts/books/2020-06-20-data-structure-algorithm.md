@@ -250,6 +250,68 @@ ordered array selection sort of the better option.
 
 ## Big Oh in everyday code
 
+Now we will look at production code to determine how we can optimize and
+analyze the efficiency of differnt algorithms under different scenarios. The
+first algorithm we will look at is one that determines the mean average of even
+numbers.
+
+```python
+def average_of_even_numbers(array):
+   sum = 0
+   even_number_counter = 0
+
+   for item in array:
+      if itme.even?
+         sum += item
+         even_number_counter++
+
+   return sum/even_number_counter
+```
+
+Given that we loop the array and considering the worst case we have to add to
+the sum and increment the even_number_counter each time we end up with 3N steps.
+If we add the constant steps of declearing the `sum`, `even_number_counter`
+variables and returning the average, we perform 3N + 3 steps. However, as we
+already know in big O we don't include constants thus the resulting Big O
+notation is $$\Theta(N)$$.
+
+> For every for loop we encounter the performance of the algorithm decreases by
+> the power of 1. 1 for loop = $$\Theta(N)$$, 2 for loops $$\Theta(N^2)$$, 3 for
+> loops $$\Theta(N^3)$$
+
+It is also worthwhile to note that whenever we have an algorithm that performs
+$$(N-1)+(N-2)+(N-3)...+(N-M)$$ it always turns out to be about $$\Theta(N^2/2)$$
+or $$\Theta(N^2)$$.
+
+Now we will look at algorithms that work with multiple datasets. For that, lets
+create an algorithm that computes the product of even numbers from two arrays.
+
+```python
+def product_of_two_arrays(array1, array2):
+   products = []
+
+   for a in array1:
+      for b in array2:
+         products.push(a*b)
+
+   return product
+```
+
+While we could lump both arrays together and call it all N, we face a problem
+where we could have arrays with different sizes. In order to understand this,
+lets look at 2 scenarios.
+
+1. (5x5) = 25 steps for 10 items N = 25
+2. (9*1) = 10 steps for 10 items N = 10
+
+Thus the number of steps varies greatly with differently sized ararys and it
+becomes apparant that we have to express it as $$\Theta(N*M)$$. With 2 distinct
+datasets that have to interact we identify both sources seperatly in terms of
+Big O. Big O $$\Theta(N*M)$$ in this case lies in a specific range. If N is the
+same size as M we get $$\Theta(N^2)$$. If one of the two is smaller we can
+express it with a single letter since we can ignore the other one resulting in
+$$\Theta(N)$$.
+
 ## Hash Tables
 
 ## Stacks and Queues
