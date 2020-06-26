@@ -314,6 +314,50 @@ $$\Theta(N)$$.
 
 ## Hash Tables
 
+Assuming we want to build a search program, we ocul use an array that stores
+sub arrays with the data. The performance would be $$\Theta(N)$$ for an
+unordered array and $$\Theta(log_2N)$$ for an ordered one. However, using a hash
+table we can archive $$\Theta(1)$$.
+
+Most programming languages come with hash tables for fast reading which is
+basically a list of key and value pairs.
+
+```javascript
+let menu = { "apple": 5 }
+```
+
+The reason search is fast is becuase hash tables use a hashing function to
+convert characters to numbers. There are several hash functions but they all
+have to meet one criteria. It mus convert the same string to the same number
+every time. The hash table then:
+
+1. hashes the key (105)
+2. directly goes to the cell 105 where the value is stored
+
+Given that the key stores the exact location, search takes $$\Theta(1)$$.
+
+> Note however, that we can only look up this fast if we know the key otherwise
+> we end up looping the entire hash table for $$\Theta(N)$$.
+
+Since search is one directional, every key can exist only once. Thus, it can
+happen that key collides with another. Collision handling is very important and
+one way of handling it is through **seperate chaining** where we store a
+reference to an array in the cell rather than the single value.
+
+As it turns out, in the worst case all the keys collide and end up stored in the
+same cell inside an array performing the same as an array. However a good
+hashing algorithm takes care of producing as few collisions as possible. 3
+factors are important to ensure efficiency.
+
+1. amount of data stored in the hash table
+2. amount of cells available in the hash table
+3. which hashing function we use
+
+A good hash table avoids collisions while consuming little memory. In order to
+archive this, we can adjust teh ratio of data to cells also called the
+**load factor**. In general terms for every 7 keys there should be 10 cells
+resulting in a load factor of 0.7 to avoid collisions and save space.
+
 ## Stacks and Queues
 
 ## Recursion
