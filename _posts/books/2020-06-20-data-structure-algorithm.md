@@ -360,6 +360,41 @@ resulting in a load factor of 0.7 to avoid collisions and save space.
 
 ## Stacks and Queues
 
+Thus far, our focus has been performance but beyond that data structures allow
+us to create simpler and easier to read code.
+
+Two data structures that fullfill that roll are stacks and queues. Their main
+purpose is to store temporary data or data that is useless after being
+processed. Both archive this but in a different order. Stacks function similar
+to arrays as a list of element.
+
+1. data is inserted at the end
+2. data is deleted from the end
+3. only the last added data can be read
+
+> In other words, the beginning is the bottom andthe end is the top. We
+> push and pop items from the top in a process called LIFO.
+
+Contrary to other data structures, stacks are usually not implemented in
+programming languages by default. In fact, many data structures are build on top
+of others. These data structures are called **abstract data types**.
+
+Although a stack may be implemented using an array, a
+**constrained data structure** is important. For once, we prevent potential bugs
+by limiting the kind of operations to push and pop. Secondly, they give us a
+different mental model to solve problems. Among developers, it becomes clear
+what we are using and how it works.
+
+A queue is similar to a stack in that it stores temporary data but in a
+different oder, FIFO. They work with 3 restrictions.
+
+1. data is inserted at the top
+2. data is deleted at the top
+3. only the last added data can be read
+
+> Queues are great for processing asynchronous requests they can keep track of
+> the process in the order they were received.
+
 ## Recursion
 
 ## Writing Recursion
