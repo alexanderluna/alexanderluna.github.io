@@ -56,3 +56,86 @@ seperation of concerns has thaught us that this is bad. However, javascript and
 HTML are tightly coupled no matter how seperated they are structured. Javascript
 always is there to modify and extend the HTML as we already saw from traditional
 templating engines like Mustache, ERB, EJS, etc.
+
+## Ways to keep our React Code Clean
+
+React provides us with 2 ways of defining our elements, javascript functions and
+JSX. In order to use modern Javascript, we need bable to compile our javascript
+into a browser compatible version.
+
+> Although JSX and HTML look similar we have to keep in mind that gets
+> transpiled to javascript which means we can't use any javascript key words
+> such as `class` and `for`. Instead we use `className` and `htmlFor` for
+> example.
+
+When writing JSX, always prefer multilines for components and properties as they
+make it easier to read.
+
+```jsx
+<div>
+  <header>
+    <Main
+      content={data}
+      date="Friday"
+      visible
+      color={color}
+    />
+  </header>
+</div>
+```
+
+For conditional code, we can use the `if/else` syntax however, a cleaner way of
+creating conditional code in our components it through inline conditions.
+
+```jsx
+{ isLoggedIn && <LogoutButton />}
+{ isLoggedIn ?<LogoutButton /> : <LoginButton /> }
+```
+
+For complexer UI elements it is better to use a helper function which
+conditionally returns JSX to keep the render method cleaner or split the
+component into smaller components. However, components
+are not meant to be packed with logic. One solucion for this are
+**Higher-Order-Components** which we will cover later.
+
+> In order to keep a consistent format in our codebase, we can use ESLint. It
+> comes with several extension which we can use to configure which format to
+> follow a popular one is the airbnb preset.
+
+Another way of keeping our code clean is to follow the
+**functional programming** style. Specifically, functional programming is a
+declarative paradigm to avoid side effects and data mutation. It makes it easier
+to mantain our code.
+
+In javascript, functions are first class objects which allows us to build
+**Higher-Order-Functions**. HOF are functions that take a function as a
+parameter and return another function.
+
+```javascript
+const add = (a, b) => a + b;
+const log = (func) => (...args) => {
+  console.log(...args);
+  return func(...args);
+};
+
+const logAdd = log(add);
+```
+
+This concept allows us to build HOC in react. Another key aspect of functional
+programming is purity or pure functions which are functions that have no side
+effect. Impure functions return different results because they modify variables
+outside their scope.
+
+Yet another feature is immutability. If we have to change a variable, rather
+than modify the original variable we cerate a new one and return it.
+
+Finally, a popoular technique in FP is currying which consists in converting a
+function with multiple arguments into a function that takes one argument at the
+time returning another function.
+
+```javascript
+const add = (x) => (y) => x + y
+const adder = add(1); // 1
+adder(2); // 3
+adder(3); // 6
+```
