@@ -227,9 +227,8 @@ $$(N^2) + (N-1)$$
 | 5       | 25      | 125     | 625     |
 | 10      | 100     | 1000    | 10000   |
 
-### Is Selection Sort the best ?
-
-At first glance, looking at the worst case scenario we can draw that conclusion.
+Is Selection Sort the best ? At first glance, looking at the worst case scenario
+we can draw that conclusion.
 
 | Algorithm      | Big O             |
 | -------------- | ----------------- |
@@ -396,6 +395,62 @@ different oder, FIFO. They work with 3 restrictions.
 > the process in the order they were received.
 
 ## Recursion
+
+Recursion allows us to tap into complexer algorithms. Specifically it can be
+used to solve problems in a simpler way.
+
+> In essence, recursion is a funciton that calls itself.
+
+We can use recursion to loop over data instead of using a for loop.
+
+```javascript
+function loop_countdown(number) {
+   for(i = number; i >= 0; i++) {
+      console.log(i);
+   }
+}
+
+function recursion_countdown(number) {
+   console.log(number);
+   if (number === 0) return;
+   recursion_countdown(number - 1);
+}
+```
+
+As you can see however, reading recursive code takes a bit of proactice. In
+order practice a little more we can look at a factorial algorithm.
+
+```ruby
+def factorial(number)
+   return 1 if number === 1
+   number * factorial(number - 1)
+end
+```
+
+Instead of creating a loop and multiplying each number to calculate the
+factorial, we recursively call the function by subtracting one from that number.
+This way, the function keeps track of each number and multiplies every number
+for us.
+
+The key part is to identify the base case to avoid ending up in an endless loop.
+Next we identify the "next-to-last" case or the step which we will be repeating.
+
+```ruby
+factorial 3 # returns 6
+factorial 2 # returns 2
+factorial 1 # returns 1
+```
+
+The way the computer executes the recursion is quite simple. The computer
+makes use of the call stack to temporarily store each recursive call. First it
+calls `factorial(3)`, then `factorial(2)` and finally `factorial(1)`. It does
+this until it reaches the base case. At that point it looks at the call stack
+and then goes in reverse order. As we learned previously about stacks, they use
+LIFO method.
+
+So what happens if there is no base case ? In that case, the same function gets
+called indefinetly and the same function gets added to the call stack until the
+computer runs out of memory. This is called a **stack overflow**.
 
 ## Writing Recursion
 
