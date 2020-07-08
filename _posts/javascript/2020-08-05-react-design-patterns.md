@@ -227,3 +227,59 @@ Here an overview of the hooks:
 > Finally, keep in mind to not use any of the hooks unless absolutly necessary.
 > The purpose of these hooks is to improve performance of render intensive tasks
 > in our components. However, if we over use them their worsen the performance.
+
+## Composition Patterns
+
+No we will focus on communication between components. One key aspect is
+reusablity. We can archive this through small components which we can compose
+later to form complex UI.
+
+While it is common to pass props to components to to pass data down, we can also
+use the children property. This allows us to render complexer elements beyond
+just text without adding more logic to our components.
+
+```jsx
+const button = ({children}) => (
+  <button className="btn">{children}</button>
+);
+```
+
+Components typically are a mix of logic and presentation. We can use the
+**container and presentational pattern** to seperate those two concerns. It
+consists in splitting components into smaller ones with clear responsibilities.
+The presentational component is logic free. The container component is appended
+with "container" while presentational component gets the original name.
+
+- GeolocationContainer.tsx: handle geolocation logic, request, load, state.
+- Geolocation.tsx: functional pure component, just renders the props.
+
+> This pattern is useful when your single component logic becomes to coupled
+> to the presentation (render block).
+
+HoC are great at helping us reuse existing components to enhance them.
+
+```jsx
+const HoC = (Component) => EnhancedComponent;
+```
+
+Using HoC we can for instance add props existing components or classNames.
+Similar to the children property can basically wrap the component.
+
+```jsx
+const Enhancer = (Component) => (props) => (
+  <Component {...props} extraProp={true} className="enhance-me" />
+);
+```
+
+A slightly new approach is to use FunctionAsChild where instead of a component
+we pass a function as a child which feeds parameters at runtime to the
+component.
+
+```jsx
+<Fetch url="...">
+  {data => <List users={data} />}
+</Fetch>
+```
+
+This allows the user of the component to not be forced to use predefined prop
+names.
