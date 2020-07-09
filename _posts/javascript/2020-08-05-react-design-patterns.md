@@ -283,3 +283,44 @@ component.
 
 This allows the user of the component to not be forced to use predefined prop
 names.
+
+## Understanding GraphQL
+
+GraphQL is a query language for APIs which  allows us to request the exact data
+we need. The best way of setting it up in the backend is with Apollo Server.
+Apollo among the best tools to setup graphQL on the client and server side.
+
+On the server side we define our database models, `resolvers` and `typeDefs` to
+create a schema which we can use in our Apollo server. The typeDefs mirror our
+entities in the database similar to a database schema. It includes types for the
+entities, queries and mutations to describe which CRUD operations are possible.
+Queries are the equivalent of a GET request in a REST API. Mutation is how we
+post data covering the remaining (PUT, PATCH, POST, DELETE) verbs.
+
+> The typeDef only defines the different queries, mutations and types similar to
+> a schema file.
+
+Now we can move on to the resolvers. Resolvers are the logic behind the typeDefs
+we defined previously.In here we implement the queries and mutations. Once both
+typeDefs and resolvers are ready we have to combine them into a single typeDef
+and a single resolver. Luckily, apollo comes with convenient tools for this.
+
+Next up is authentication. This is very important for APIs given that there is
+no state and the client is detached from the server. The most commong way to do
+this is through JWT and open standard that digitally signs the token (HMAC).
+
+The way it works is we generate a secret key, import JWT in our backend and
+verify each request with the secret key. JWT takes care of signing the secret
+key so that it is protected together with an expiration date. Inside the token
+we can save a payload such as a user id which we can use then for our logic as
+needed.
+
+We can implement JWT on the server by adding extra middleware to check that the
+user is logged in, check user privilage and redirect if needed.
+
+> Middleware is a function with access to the request and response objects and
+> the next funciton to execute the middleware and move on to the next middleware
+> or request handler.
+
+While this wasn't an exhaustive coverage of how GraphQL works with the client
+and server side. It provides a high overview and may clear up any doubt.
