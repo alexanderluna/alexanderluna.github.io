@@ -10,7 +10,13 @@ interfaces for the web and mobile. This article is for react developrs who want
 improve their skills and dive a little deeper into the react ecosystem. If you
 have build a small or medium sized application this article is right for you.
 
-## A quick look at React
+- [Understanding React better](#understanding-react-better)
+- [Ways to keep our Code Clean](#ways-to-keep-our-code-clean)
+- [Improve Component reusability with Hooks](#improve-component-reusability-with-hooks)
+- [Composition Patterns](#composition-patterns)
+- [Understanding GraphQL](#understanding-graphql)
+
+## Understanding React better
 
 When we read the react documentation, one of the first things that we learn is
 that react enforces **declarative programming**. Simply put:
@@ -57,13 +63,13 @@ HTML are tightly coupled no matter how seperated they are structured. Javascript
 always is there to modify and extend the HTML as we already saw from traditional
 templating engines like Mustache, ERB, EJS, etc.
 
-## Ways to keep our React Code Clean
+## Ways to keep our Code Clean
 
 React provides us with 2 ways of defining our elements, javascript functions and
 JSX. In order to use modern Javascript, we need bable to compile our javascript
 into a browser compatible version.
 
-> Although JSX and HTML look similar we have to keep in mind that gets
+> Although JSX and HTML look similar we have to keep in mind that it gets
 > transpiled to javascript which means we can't use any javascript key words
 > such as `class` and `for`. Instead we use `className` and `htmlFor` for
 > example.
@@ -94,22 +100,20 @@ creating conditional code in our components it through inline conditions.
 
 For complexer UI elements it is better to use a helper function which
 conditionally returns JSX to keep the render method cleaner or split the
-component into smaller components. However, components
-are not meant to be packed with logic. One solucion for this are
-**Higher-Order-Components** which we will cover later.
+component into smaller components. However, components are not meant to be
+packed with logic. One solution for this are **Higher-Order-Components** which
+we will cover later.
 
 > In order to keep a consistent format in our codebase, we can use ESLint. It
 > comes with several extension which we can use to configure which format to
-> follow a popular one is the airbnb preset.
+> follow. A popular one is the airbnb preset.
 
 Another way of keeping our code clean is to follow the
 **functional programming** style. Specifically, functional programming is a
 declarative paradigm to avoid side effects and data mutation. It makes it easier
-to mantain our code.
-
-In javascript, functions are first class objects which allows us to build
-**Higher-Order-Functions**. HOF are functions that take a function as a
-parameter and return another function.
+to mantain our code. In javascript, functions are first class objects which
+allows us to build **Higher-Order-Functions**. HOF are functions that take a
+function as a parameter and return another function.
 
 ```javascript
 const add = (a, b) => a + b;
@@ -121,13 +125,13 @@ const log = (func) => (...args) => {
 const logAdd = log(add);
 ```
 
-This concept allows us to build HOC in react. Another key aspect of functional
+This concept allows us to build HoC in react. Another key aspect of functional
 programming is purity or pure functions which are functions that have no side
 effect. Impure functions return different results because they modify variables
 outside their scope.
 
 Yet another feature is immutability. If we have to change a variable, rather
-than modify the original variable we cerate a new one and return it.
+than modify the original variable we create a new one and return it.
 
 Finally, a popoular technique in FP is currying which consists in converting a
 function with multiple arguments into a function that takes one argument at the
@@ -140,7 +144,7 @@ adder(2); // 3
 adder(3); // 6
 ```
 
-## Creating Reusable Components with Hooks
+## Improve Component reusability with Hooks
 
 Hooks let us use state and other features in functional components while at the
 same time being backward compatible. Thus far, we could only use state in class
