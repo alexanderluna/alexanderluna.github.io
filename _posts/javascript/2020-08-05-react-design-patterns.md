@@ -15,6 +15,7 @@ have build a small or medium sized application this article is right for you.
 - [Improve Component reusability with Hooks](#improve-component-reusability-with-hooks)
 - [Composition Patterns](#composition-patterns)
 - [Understanding GraphQL](#understanding-graphql)
+- [Handling Data](#handling-data)
 
 ## Understanding React better
 
@@ -328,3 +329,99 @@ user is logged in, check user privilage and redirect if needed.
 
 While this wasn't an exhaustive coverage of how GraphQL works with the client
 and server side. It provides a high overview and may clear up any doubt.
+
+## Handling Data
+
+The react context API is a new addition to react. It is so popular that many
+developers are shifting away from redux as it allows us to share data between
+component but in a slighly simpler way. We begin by creating a context similar
+to how we would define a local state.
+
+```jsx
+import { createContext } from 'react'
+
+export const TodoContext = createContext({
+  todos: [],
+  url: ''
+})
+```
+
+Then we create a provider component where can render the children.
+
+```jsx
+const TodoProvider = ({children, url}) => {
+  // do some logic to fetch data wiht the url
+  const context = { todos, url }
+  return (
+    <TodoContext.Provider value={context}>
+      {children}
+    </TodoContext.Provider>
+  )
+}
+```
+
+The provider component adds the context to the child component enhancing it. We
+can use this inside our app now to wrap any component that should get access to
+the context.
+
+```jsx
+const App = () => {
+  return (
+    <TodoProvider url="...">
+      <Todo/>
+    </TodoProvider>
+  )
+}
+
+const Todo = () => {
+  const { todos, url } = useContext(TodoContext)
+  return (
+    // todos.map(todo => ...)
+  )
+}
+```
+
+Another recent added feature is React Suspense. However, it is still
+experimental. Suspense lets us suspend component rendering until a condition is
+met. It can render a loading component or anything as fallback.
+
+SWR (Stale-While-Revalidate) is an HTTP cache invalidation strategy. It returns
+the cache first, fetches the data and then returns up to date data.
+
+First we configure SWR in our App through the `SWRConfig` component which does
+the fetching. The child is the component uses the suspense component to pass the
+data to its child component or fallback if it fails. Finally the grandchild can
+access and render the data using the `useSWR` hook.
+
+```jsx
+import { SWRConfig } from 'swr'
+
+const App = () => {
+  return (
+    <SWRConfig fetcher>
+      <TodosContainer/>
+    </SWRConfig>
+  )
+}
+
+import { Suspense } from 'swr'
+
+const TodosContainer = () => {
+  return (
+    <Suspense fallback={FallbackComponent}>
+      <Todos />
+    </Suspense>
+  )
+}
+
+const Todo = () => {
+  const { data } = useSWR()
+  return (
+    // data.map(todo => ...)
+  )
+}
+```
+
+> Note that you can use Suspend several times. It will always perform fetches
+> to validate the data is up to date. However, there isn't a defined pattern for
+> using it yet.
