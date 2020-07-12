@@ -65,3 +65,33 @@ stand out so use it wisely. Low saturation is generally good for backgrounds.
 
 A great way of learning about colors and coloring is to look at art drawn by
 others.
+
+## Tip and Tricks to draw better
+
+> Most of what makes art look good has to do with shadowing, cast shadow, light
+> consistency and linear perspective.
+
+When it comes to shading, any surface that is perpendicular to the light,
+reflects the most light and is thus the brightest part of the object. Any
+surface that is parallel to the light source will appear darker. In a similar
+way the shadow of our object should be aligned with the light source to create a
+good feeling of depth. The shadow is darker closeer to the object and gets
+lighter toward the edges. An extra tip at this point, a distant light source
+casts a blurry shadow while a near light source (torch) casts a dark and rich
+shadow.
+
+Atmospheric Perspective is one way our brain determines the distance of objects.
+Object appear smaller when they are far. If one object overlaps another, it
+immedeatly converys a sense of depth. Returning to Atmospheric Perspective, very
+distance objects (horizon, mountains, etc.) don't just appear smaller and
+overlapped but lighter and bluish. Why ? because we are used to how the
+atmosphere changes the color of things. For mountains this would mean the first
+mountains are dark and become inreasingly lighter and bluer as they overlap
+until they blend with the horizon.
+
+The Linear Perspective is the guide we use to determine the size of objects to
+give a feeling of depth. The lines start big and get smaller the closer they are
+to the horizon.
+
+If we combine all this concepts in our art we can create complex and rich
+scenary with a lot of eye candy.
