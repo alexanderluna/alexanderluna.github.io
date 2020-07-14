@@ -454,6 +454,42 @@ computer runs out of memory. This is called a **stack overflow**.
 
 ## Writing Recursion
 
+Writing recursions requires a mind set to identify when it is a good fit.
+Generally speaking, any task that requires repetition is usually a good fit.
+Lets take a function that doubles all its values as an example.
+
+```python
+def double_array(array, index=0):
+   return if index >= len(array)
+   array[index] *= 2
+   double_array(array, index + 1)
+```
+
+Another broad area good for recursion is when performing claculations based on
+subproblems. These problems usually take an input and return calculations based
+on the input.
+
+> A subproblem is a smaller version of the same problem but with less input.
+
+Factorial was a good example for this. The `factorial(5)` calls `factorial(4)`
+and so on. The factorial function calls itself with a subproblem until it can't
+break the problem any smaller to solve it.
+
+When looking at functions that perform calculations we essentially have two ways
+to solve the calculation the **bottom up** and **top down**. The bottom up
+approach would look like this.
+
+```python
+def factorial(n, i=1, product=1):
+   return product if i > n
+   return factorial(n, i+1, product*1)
+```
+
+A bottom up approach isn't much different from a loop. The top down approach on
+the other hand works only with recursion which makes it a prefered choice for
+writing recursion. Using this approach, we essentially pass the problem to the
+next function call as we saw with factorial.
+
 ## Dynamic Programming
 
 ## Recursive Algorithms
