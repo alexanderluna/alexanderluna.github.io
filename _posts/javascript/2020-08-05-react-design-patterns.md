@@ -16,6 +16,7 @@ have build a small or medium sized application this article is right for you.
 - [Composition Patterns](#composition-patterns)
 - [Understanding GraphQL](#understanding-graphql)
 - [Handling Data](#handling-data)
+- [Forms, Events and DOM animations](#forms-events-and-dom-animations)
 
 ## Understanding React better
 
@@ -425,3 +426,147 @@ const Todo = () => {
 > Note that you can use Suspend several times. It will always perform fetches
 > to validate the data is up to date. However, there isn't a defined pattern for
 > using it yet.
+
+
+## Forms, Events and DOM animations
+
+When it comes to forms in react they can be controlled or uncontrolled.
+Uncontrolled components are components where we don't manage the values directly
+but let the DOM do it.
+
+```jsx
+const [values, setValues] = useState('')
+
+return (
+  <form>
+    <input type="text" name="name" onChange={handleChange} />
+    <input type="text" name="email" onChange={handleChange} />
+    <button>Submit</button>
+  </form>
+)
+```
+
+Looking at the handler, we use can use the event target to dynamicaly set the
+key in our state.
+
+```javascript
+cont handleChange = ({target}) => {
+  setValues({
+    ...values,
+    [target.name]: target.value
+  })
+}
+```
+
+Using this technique we cna add as many fields as we want to our form. Every
+change triggers that `handleChange` event handler.
+
+A controlled component contriolls the values of the input elements in a form
+by using the component state. For our input this means that we add the value
+field to set the value dynamicaly as well based on the state.
+
+```jsx
+<input name="email" onChange={handleChange} value={values.email} />
+```
+
+An important thing to note is that events work differently across browser. React
+wraps the handler to provide a consistent API for us. This is called a
+**synthetic event**. We can then attach handlers for each event we want to
+listen to. A cleaner approach is to use a single handler and swtich on the type
+to handle different events in one function.
+
+```javascript
+const chandleEvent(event) => {
+  switch(event.type) {
+    case "click":
+      // component was clicked
+    case "dbclick":
+      // component was double clicked
+    case "hover":
+      // component was hovered
+  }
+}
+```
+
+When we attach an event, React doesn't attach an actual event handler to the DOM
+node. It attaches a single event handler to the root element. Through
+**event bubbling** it can listen to all events. React can then call the handler
+of a specific component in a technique called **event delegation**. This
+improves memory and speed.
+
+Sometimes we want to access the underlying DOM elements. We can do this with
+`refs`.
+
+```jsx
+const inputRef = useRef()
+
+const handleClick = () => {
+  inputRef.current.focus()
+}
+
+return () {
+  <div>
+      <input type="text" ref={inputRef} />
+      <button onClick={handleClick}>Submit</button>
+  </div>
+}
+```
+
+> In general, avoid using refs because it is impertative rather than declarative
+> which is what react strives for.
+
+In react we can create animations in a declarative way with an addon called
+`react-addons-css-transistion-group`.
+
+```jsx
+import CSSTransitionGroup from "react-addons-css-transistion-group"
+
+const Transition = () => (
+  <CSSTransitionGroup
+    transitionName = "fade"
+    transitionAppear
+    transitionAppearTimeout={500}
+  >
+    <h1>Hello</h1>
+  </CSSTransitionGroup>
+)
+```
+
+`transitionName` is the name of the css class that gets added to the element.
+The component appends "-appear" to it. The "-appear-active" is there to so we
+can fire the animation.
+
+```css
+// transitionName + "-appear"
+.fade-appear {
+  opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s, ease-in;
+}
+```
+
+React motion is another library to handle animations.
+
+```jsx
+import { Motion, spring } from 'react-motion'
+
+return () {
+  <>
+    <Motion
+      defaultStyle={{opacity: 0.01}}
+      style={{opacity: spring(1)}}
+    >
+      {interpolatinStyle => (
+        <h1 style={interpolatingStyle}>Hello</h1>
+      )}
+    </Motion>
+  </>
+}
+```
+
+What is interesting about react motion is that it uses the function as a child
+pattern. That way we can dynamically get updated styling for every point in
+time.
