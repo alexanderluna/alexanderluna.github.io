@@ -95,3 +95,52 @@ to the horizon.
 
 If we combine all this concepts in our art we can create complex and rich
 scenary with a lot of eye candy.
+
+## Caveats with Animation
+
+Animation is what allows us to bring inanimate objects such as sprites to life.
+While traditional animations were done in 24 FPS, 30 and 60 FPS is much more
+common. Each animation consists of a sprite that loops in place so that we can
+move it according to the user input later on.
+
+Any modern pixel art program will allow us to create duplicates of each frame.
+After creating a duplicate, we can make increasingly small changes. A good tool
+for this is onion skinning which allows us to emulate the effect of a light
+table by showing us prior and later frames.
+
+One of the problems with animating pixel art is **pixel flashing**. This
+happens when a pixel appears in one frame and doesn't in the next giving off
+the sensation of flashing or jitter. It is especially common in low resolution
+pixel art.
+
+While there are various animation techniques it is best to keep it simple at the
+beginning - anticipation, squash and stretch. Anticipation is the process of
+showing that a movement is about to happen. An example would be a football
+player moving his lag back in preparation for shooting a ball. In other words,
+we create momentum for the actual movement and follow it through to show the
+whole animation cycle.
+
+> Anticipation is especially convincing when it exagerates the movement.
+
+A great techniqued for showing fast moving objects is ghost trailing. We create
+less detailed versions of the fast moving object that trail it. This way the
+player doesn't just see a fast moving object but a trail which can be followed.
+
+A squash happens when the width increases respective to its height. In a game
+this would happen when a slime jumps down or a fat character lands on the floor.
+The character contracts due to the abrubt stopping and expands to the sides.
+
+The opposite of a squash is a stretch. Instead of jumping down, the character
+jumps up this time stretching its body. We can combine squash and stretch to
+create lots of movement. If we use it in a subtle way, we can create also an
+idle cycle for our character to give the player something to look at while the
+character isn't moving.
+
+> A key aspect of game animations is that unlike movie animations, the player
+> decides the next animation at any given point in time. This means animations
+> have to loop well and fit with one another.
+
+Usually every game has some common animation which the player can trigger like
+walk, run, idle, attach, death, jump and tacking damage. Generally each
+animation is about 8-16 frames depending on how smooth it should look but there
+are animations with fewer frames when there is only the need for some feedback.
