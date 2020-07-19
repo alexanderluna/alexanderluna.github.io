@@ -492,6 +492,70 @@ next function call as we saw with factorial.
 
 ## Dynamic Programming
 
+While recursion is great at solving certain problems, it is also usually slow as
+it leads the slowest category of algorithms - $$\Theta(2^n)$$. However, we can
+fix this through dynamic programming to understand how we will look at an
+example.
+
+```python
+# find max number in an array
+
+def max(array):
+   return array[0] if len(array) == 1
+   if array[0] > max(array[1, len(array) - 1])
+      return array[0]
+   return max(array[1, len(array) - 1])
+```
+
+What basically happens is we check one number with the max of the array. This
+isn't efficient because we are calling max twice. We can visualize this by
+walking through.
+
+```python
+max([1,2,3,4])
+# checks if 1 > [2,3,4]
+# checks if 2 > [3,4]
+# checks if 3 > [4]
+```
+
+`max([3,4])` calls `max([4])` because it compares `3 > max([4])`. This returns
+4 and now it can evaluate the if statement
+`if array[0] > max(array[1, len(array) - 1])` but it fails so it returns
+`max(array[1, len(array) - 1])` which calls `max([4])` again. In other words,
+we call `max([4])` twice. If follow the steps up all the way to the solution.
+
+```python
+max([3,4]) # 2x max([4])
+max([2,3,4]) # 2x max([3,4]) 4x max([4])
+max([1,2,3,4]) # 2x max([2,3,4]) 4x max([3,4]) 8x max([4])
+```
+
+We can skip steps by saving the result of the max call and use it instead of
+calculating over and over.
+
+```python
+def max(array):
+   return array[0] if len(array) == 1
+   max_remainder = max(array[1, len(array) - 1])
+   if array[0] > max_remainder
+      return array[0]
+   return max_remainder
+```
+
+This way we call max 4 times instead of 15 times. The original version ran with
+a complexity of $$\Theta(2^n)$$ while the improved version with $$\Theta(N)$$.
+
+> They key is to avoid excesive recursion calls.
+
+Dynamic programming is the process of optimizing recursive problems that have
+overlapping subproblems. We do this through memoization, where we remember
+previous function calls. Another dynamic programming approach os called
+**bottom-up** which consists in ditching recursion and go for another approach
+instead like a loop.
+
+The important thing to note about recursion is to only use it where it makes
+sense. Preferably in a top-down approach.
+
 ## Recursive Algorithms
 
 ## Nodes
