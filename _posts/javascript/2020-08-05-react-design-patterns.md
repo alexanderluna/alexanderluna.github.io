@@ -17,6 +17,7 @@ have build a small or medium sized application this article is right for you.
 - [Understanding GraphQL](#understanding-graphql)
 - [Handling Data](#handling-data)
 - [Forms, Events and DOM animations](#forms-events-and-dom-animations)
+- [Styling Components](#styling-components)
 
 ## Understanding React better
 
@@ -427,7 +428,6 @@ const Todo = () => {
 > to validate the data is up to date. However, there isn't a defined pattern for
 > using it yet.
 
-
 ## Forms, Events and DOM animations
 
 When it comes to forms in react they can be controlled or uncontrolled.
@@ -570,3 +570,78 @@ return () {
 What is interesting about react motion is that it uses the function as a child
 pattern. That way we can dynamically get updated styling for every point in
 time.
+
+## Styling Components
+
+When it comes to styling components there are several approaches from CSS,
+inline-css to styled component and modules.
+
+The problems with vanilla CSS at scale because names are global making it hard
+to name classes. It is difficult to attach one component to one CSS style in a
+different file which in turn makes it difficult to make changes. Furthermore,
+since the relation between CSS and components isn't clear, it makes it difficult
+to delete old styles. Simply put, it is is difficult to isolate styles and
+mantain them.
+
+For those reasons react recommends to inline the styles for components.
+
+```jsx
+const style = {
+  color: 'blue',
+  width: 500,
+};
+
+<button style={style}>Hello</button>
+```
+
+Given that it is javascript and inlined, we can recalculate values on the client
+at runtime. Some limitation with this are however media queries and animations
+which can't be done via inline styles. Debugging is another problem which is
+hard to do given that we don't have class names nor ids to guide us. For those
+reason the react community developed tools to solve these problems.
+
+Once of these is called `radium`. This way we can add pseudo-classes such as
+hover, active and focus as well as media queries.
+
+```javascript
+const style = {
+  color: 'blue',
+  ':hover': {
+    color: 'red'
+  },
+  '@media(max-width: 480px)': {
+    color: 'green'
+  }
+};
+```
+
+Radium archives this through event listeners and attaches the styles as needed.
+Another tool which lets us keep our css files but scoped to our component is
+called CSS modules which works with webpack. (css-loader and style-loader). We
+create our css file and a `style` object with our css which we can use to add it
+as a class name.
+
+```css
+.button {
+  color: blue;
+}
+```
+
+```jsx
+<button className={styles.button}>hello</button>
+```
+
+The good thing about CSS modules is that it scopes our css and allows us to
+write normal css (animations and media queries included).
+
+Yet another more modenr tool tries to combine inline styles with css modules
+ability to keeo our css. It is called styled component. Using this library we
+can write our css  like usual using template literals.
+
+```jsx
+import styled from 'styled-component';
+
+const Button = styled.button`
+  color: blue;
+`
+```
