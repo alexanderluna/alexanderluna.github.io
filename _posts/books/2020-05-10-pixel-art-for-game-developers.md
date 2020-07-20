@@ -144,3 +144,31 @@ Usually every game has some common animation which the player can trigger like
 walk, run, idle, attach, death, jump and tacking damage. Generally each
 animation is about 8-16 frames depending on how smooth it should look but there
 are animations with fewer frames when there is only the need for some feedback.
+
+## The power of Tiles
+
+Now we will cover a huge part of pixel art which is tiles. A tile is a resuable
+and combinable piece of art which we can use to compose our world. **Tiles**
+usually are between 8x8 and 32x32 big - each dimension doubles in size. Given
+that we work with a constriant size, it is useful to keep a grid layout when
+working our art.
+
+Tiles are small pieces of art which can be combined which in turn means they
+should be made to able to connect nicely both horizontally and vertically.
+Sometimes we combine them in a **grid** to create a wall for instance. For these
+type of scenarios it is useful keep tiles homogenous to avoid tiles from
+sticking out. They key of tiles is recycling. Thats why creating a tile that
+can be combined and reused over and over without creating a boring scene it
+vital and helps reduce drawing time.
+
+When it comes to matching tiles and creating transitions, **dithering** is a
+great technique. We add pixels between transisting tiles to create a sense of
+fade. This can be done organically (by hand) or with a pattern (a brush tool).
+Organic dithering can be very charming and less "computerized" when done
+properly.
+
+Once we are ready to make our tiles, it very important to compose the tiles to
+make sure that are not creating tiles with obvious patterns and that they fit
+well with each other. Generally a good 3 step process it to create a single
+tile, compose to test the tiling, shadows and highlights and finally add some
+texture to give the tiles depth.
