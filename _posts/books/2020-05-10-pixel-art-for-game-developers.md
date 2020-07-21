@@ -172,3 +172,35 @@ make sure that are not creating tiles with obvious patterns and that they fit
 well with each other. Generally a good 3 step process it to create a single
 tile, compose to test the tiling, shadows and highlights and finally add some
 texture to give the tiles depth.
+
+## Avoiding common errors
+
+One error which beginners commonly do especially when you work on small
+resolution art is **banding** or also called super pixels. This happens when
+drawing diagonal/curved lines and the different shades line up it creates a
+feeling thick lines. This can be countered by creating shades of organic shape
+instead don't just follow the outer line to create inner shades.
+
+At the beginning we talked about anti aliasing and how it makes our art look
+blurry. Thats why you should avoid this to keep the art quality intact.
+
+Another issue is poor shape quality. The general shape of the art should give
+the viewer a guideline. A bad shape is marked by awkward lines and missing
+pieces in the sillouhette.
+
+The color palette we chose impacts the look at feel of our art. It shouldn't be
+too saturated nor too muted. It shouldn't have too much contrast nor too little.
+
+A common misconcept is that pixel art has to have a lot of details but the
+opposite it true. The less pixel your art needs the better. Complex art doesn't
+just make it though to work on later on during tight schedules but it also
+isn't aesthetically pleasing - KISS (keep it simple, stupid).
+
+When it comes to shading avoid **pillow shading**. Pillow shading consists in
+adding shading to your art by making the outlines darker. While it creates
+shades it makes the art look flat and unpleasent. Don't forget, shades should
+match the light source.
+
+Finally, give your art good texture. Texture lets you play with light and
+shadows and allows you to create unique art which conveys a lot of information
+to the player.
