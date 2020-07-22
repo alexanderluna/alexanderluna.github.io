@@ -18,6 +18,7 @@ have build a small or medium sized application this article is right for you.
 - [Handling Data](#handling-data)
 - [Forms, Events and DOM animations](#forms-events-and-dom-animations)
 - [Styling Components](#styling-components)
+- [Server Side Rendering](#server-side-rendering)
 
 ## Understanding React better
 
@@ -645,3 +646,56 @@ const Button = styled.button`
   color: blue;
 `
 ```
+
+## Server Side Rendering
+
+Server side rendered pages are better for SEO and can be perceived as faster
+while allowing knowledge sharing between the front and back end. We can render
+react components on the sever. However, at a cost.
+
+A universal application is an app that can run on the server as well as on the
+clien. Using SSR (server side rendering) we can render react on the server.
+Javascript can run on the the sever as well as the client allowing knowledge
+sharing which in turn makes it popular to build isomorphic applications with
+react. An isomorphic applications is an app that looks the same on the client
+as on the server also known as a universal app.
+
+One of the main reasons of rendering on the server is SEO. Another big advantage
+is that of using a commong language, javascript, for the entire code base. If
+we render parts of the app on the server we can render viewable content quicker.
+SPAare quick and responsive but their first load time is usually slow.
+
+As proimising as SSR is it comes with its short commings. We have to mantain a
+server with all its routes, handlers and logic. Thus SSR shuold only be used
+when it is really necessary.
+
+Now we can build a SSR application. We will need a server usually an express
+web server and a client. Webpack allows us to combine our client and server
+code. On the server side we need a `template.ts` file which exports a function
+to return to the browser.
+
+In our server we import React and express and configure it pointing at our
+static assets. We import our react component and inside a request handler we
+can render it.
+
+```javascript
+app.set('/', req, res, () => {
+  const body = renderToString(<App/>)
+  const html = template(body)
+  res.send(html)
+})
+```
+
+As you can see we render the app component and pass it ot the template function.
+We can load data from a database or an API and feed it to the component as a
+prop. For that, we have to define it in our tempalte prior and make the data
+globally available through the window object `window.my_data = xyz`.
+
+```javascript
+const html = template(body, my_data)
+```
+
+While this seems quite complicated, we can simplify it through Next.js. In
+Next.js we can build pages that match the browser URL and build our app using
+several conventions. Nonethless, Next.js comes with its own set of solutions
+and documentation 
