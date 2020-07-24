@@ -19,6 +19,7 @@ have build a small or medium sized application this article is right for you.
 - [Forms, Events and DOM animations](#forms-events-and-dom-animations)
 - [Styling Components](#styling-components)
 - [Server Side Rendering](#server-side-rendering)
+- [Improve Performance](#improve-performance)
 
 ## Understanding React better
 
@@ -698,4 +699,42 @@ const html = template(body, my_data)
 While this seems quite complicated, we can simplify it through Next.js. In
 Next.js we can build pages that match the browser URL and build our app using
 several conventions. Nonethless, Next.js comes with its own set of solutions
-and documentation 
+and documentation.
+
+## Improve Performance
+
+While itself optimizes whenever it can there are various areas where the
+developer itself has to do optimizations.
+
+React optimizes the rendering by calling hte render method recursively and
+modifying as little as possible. This process is called reconciliation.
+
+React renders components again when two elements have a different type or
+doesn't have a key property. If we don't provide a key, react mutates all the
+elements to render the view again resulting in bad performance.
+
+```jsx
+<li key="1111">Hello</li>
+<li key="1112">Hola</li>
+<li key="1113">Hallo</li>
+<li key="1114">こんにちは</li>
+```
+
+Another way of reducing rendering calls is by using immutable data with Memo
+hooks.
+
+```javascript
+const obj = {
+  ...state.obj,
+  name: "Alex",
+}
+setState({ obj })
+```
+
+Here we create a new instance each time we mutate the object. Using this
+technique, the React memo hook's shallow comparison will find the difference
+given that the object changed. Finally there are babel plugins that optimize our
+code at build time.
+
+- constant-element-transformer: extracts static components from render call
+- inline-element-transformer: replaces jsx declaration with optimized version
