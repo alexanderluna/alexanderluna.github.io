@@ -20,6 +20,7 @@ have build a small or medium sized application this article is right for you.
 - [Styling Components](#styling-components)
 - [Server Side Rendering](#server-side-rendering)
 - [Improve Performance](#improve-performance)
+- [Testing and Debugging](#testing-and-debugging)
 
 ## Understanding React better
 
@@ -738,3 +739,65 @@ code at build time.
 
 - constant-element-transformer: extracts static components from render call
 - inline-element-transformer: replaces jsx declaration with optimized version
+
+## Testing and Debugging
+
+Testing components is an important part to protect against bugs and confidently
+change our code base. In React, we can use Jest with Enzyme and the React
+Testing Library. Simply install Jest and add it as a script to your
+`package.json`
+
+```json
+"scripts": {
+  "test": jest,
+  "test:coverage": jest --coverage
+}
+```
+
+At the root of our applicaiton we need a `setUpTests.tsx` file where we import
+our testing library for testing.
+
+```tsx
+import '@testing-library/jest-dom/extended-expect'
+```
+
+Now we are ready to test our components. Suppose we want to test a simple
+component that renders "Hello World" in an h1 element and accepts a prop `name`
+to customize the greeting. We first create a file with the same name as the
+component and append `.test.tsx`.
+
+```tsx
+import React from 'react'
+import { render, cleanUp } from '@react-testing-library'
+
+import HelloWorld from './index'
+
+describe('Hello World', () => {
+  it('should render Hello World', () => {
+    const wrapper = render(<HelloWorld/>)
+    expect(wrapper.getByText('Hello World').toBeInTheDocument())
+  })
+
+  it('should render the name prop', () => {
+    const wrapper = render(<HelloWorld name="Alexander" />)
+    expect(wrapper.getByText('Hello Alexander').toBeInTheDocument())
+  })
+})
+```
+
+We can then run our test with our scripts using yarn or npm.
+
+```bash
+yarn test
+yarn test:coverage
+```
+
+Using Jest we can test for DOM events as well by firing events.
+
+```tsx
+const nameInput = wrapper.container.querySelector('input[name="name"')
+fireEvent.change(nameInput, { target: { value: "Alex" }})
+expect(nameInput.value).toBe('Alex')
+```
+
+> For Redux testing we can use Redux Devtools to debug the Redux flow.
