@@ -21,6 +21,7 @@ have build a small or medium sized application this article is right for you.
 - [Server Side Rendering](#server-side-rendering)
 - [Improve Performance](#improve-performance)
 - [Testing and Debugging](#testing-and-debugging)
+- [Routing in React](#routing-in-react)
 
 ## Understanding React better
 
@@ -801,3 +802,36 @@ expect(nameInput.value).toBe('Alex')
 ```
 
 > For Redux testing we can use Redux Devtools to debug the Redux flow.
+
+## Routing in React
+
+In react routing isn't build in but added with a third party library like React
+Router. In order to add a router, we import the `BrowserRouter` component from
+`react-router-dom` and wrap out routes with it with is which are just
+components.
+
+```jsx
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+<Router>
+  <Route exact path="/" component={Home} />
+</Router>
+```
+
+The router comes with several features that makes routing easier. React Router
+comes also with a `Link` component that renders an anchor tag without
+re-rendering the entire page. In our routes we can dynamically match routes as
+well.
+
+```jsx
+<Route exact path="/user/:id" component={User} />
+```
+
+The id becomes available in the component through the match prop which holds the
+parameters.
+
+```jsx
+const User = ({match}) => (
+  <h1>{match.params.id}</h1>
+)
+```
