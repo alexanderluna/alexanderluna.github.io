@@ -22,6 +22,7 @@ have build a small or medium sized application this article is right for you.
 - [Improve Performance](#improve-performance)
 - [Testing and Debugging](#testing-and-debugging)
 - [Routing in React](#routing-in-react)
+- [Anti-Patterns to avoid](#anti-patterns-to-avoid)
 
 ## Understanding React better
 
@@ -833,5 +834,50 @@ parameters.
 ```jsx
 const User = ({match}) => (
   <h1>{match.params.id}</h1>
+)
+```
+
+## Anti-Patterns to avoid
+
+This far we looked at best practices for creating react applications. Now we
+will cover some common anti patterns to avoid when crafting react apps.
+
+A common error beginers do is to populate the state using the props that come
+from the parent. When the component sets the initial state to the prop, we
+create a fork of the data. If the prop changes, the state gets out of touch and
+viceversa when the state changes it doesn't change the data in the parent who
+send the prop. For that reason, unless our goal is to just initialize the state
+and never update it we can use this technique but the name of hte prop should
+reflect this intention.
+
+Previously, we looked at how a key property improves the performance of a list.
+However, it is important to pick our key value wisely to avoid unwanted
+behaviour. In fact, a common error is to use the index of a list as a key. The
+problem with this is that the index always starts at 0. If we render a list
+with 3 items their keys become 1,2,3. However, adding a 4th item react thinks
+that all 3 items changed and adds the item at index 0. Given that the index
+isn't unique we get this behaviour. This we lose the performance gain.
+
+> The key has to be unique and stable
+
+Another anti pattern is spreading props on components.
+
+```jsx
+<Home {...props} />
+```
+
+While it allows us to quickly drill several props down it also adds props which
+we might not want. Among those props might be non-standard attributes which is
+why react will warn us when we do this as well. If we want to pass certain
+props as a group we can pass them down in a prop. We can than spread that single
+prop rather than the whole prop object.
+
+```jsx
+<Home hello="world" domProps={{ className: "hello-world" }} />
+
+const Home = (props) => (
+  <div {...props.domProps}>
+    <p>{props.hello}</p>
+  </div>
 )
 ```
