@@ -558,6 +558,56 @@ sense. Preferably in a top-down approach.
 
 ## Recursive Algorithms
 
+Most modern programming languages already implement the sorting algorithms we
+learned so far and it is usually quicksort. Quicksort shows us how to improve
+recursion speed.
+
+While quicksort performs similar to insertion sort and selection sort in the
+worst case, in the average case it performs better. It uses **partitioning**.
+This means we pick a random value of the array that becomes the pivot. Numbers
+less than our pivot go to the left and greater than our pivot got to the right.
+
+We archive this by assigning a pointer to the left and right most values.
+
+1. Left pointer moves right until it finds a value >= pivot
+2. Right pointer moves left until it finds a value <= pivot or the beginning
+3. If left reaches right pointer move to step 4 else swap value and repeat 1-3.
+4. Swap the pivot with the value of the left pointer.
+
+If we follow the steps, all values to the left are less and all values to the
+right are greater than the pivot.
+
+Now that we know how partioning works, we can tackle Quicksort which follows
+3 steps:
+
+1. Partition array place privot
+2. Split array to the left and right of the pivot and partition
+3. We stop when we have an arary with 0 or 1 elements
+
+The efficiency of quicksort depends on two operations - comparison and swaps.
+Each partition has N comparisons and at most N/2 swaps. For an average case we
+swap half the time of N/4. Thus our efficiency becomes
+$$\Theta(N+(N/4)) = \Theta(1.25N)$$ or $$\Theta(N)$$
+
+Quicksort relies on several partitions and each partition is smaller than the
+previous. We can see a logarithmic increase which depends on the number of itmes
+in the original array. In other words $$N*log_2N$$.
+
+In the worst case, the values end up on the only one side of the pivot which
+means all comparisons and swaps are conducted on one side resulting in
+$$\Theta(N^2)$$.
+
+If our goal is to find a value in an unsorted array without sorting it,
+Quickselect is the better option. We can partition the arary and instead of
+sorting we discard the half we are not interested in and partition again similar
+to how binary search works.
+
+We end up doing $$(N/2) + (N/4) + (N/8) + 2$$ or $$\Theta(N)$$.
+
+Sorting is commonly used as a key for other algorithms. While quicksort is one
+of the most popular ones, merge sort is another popular sorting algorithm with
+$$\Theta(Nlog_2N)$$.
+
 ## Nodes
 
 ## Binary Search Trees
