@@ -610,6 +610,68 @@ $$\Theta(Nlog_2N)$$.
 
 ## Nodes
 
+Nodes are pieces of data that are dispersed through the memory. These node based
+structures provide a number of performance advantages.
+
+One of the implemented node strucutres is a linked list. Similar to arrays it
+represents a list of items. Arrays need a group of empty memory cells in a row.
+Linked lists can be scattered around differnt cells. Each node holds a memory
+address of the next node in the list. The final cell points to null to indicate
+that the list ends there. The first node is refered to as the head.
+
+Some programming languages come with linked lists in others we have to implement
+them ourself.
+
+```ruby
+class Node
+   attr_accessor :data, :next_node
+
+   def initiliaze(data)
+      @data = data
+   end
+end
+
+node_1 = Node.new("Hello")
+node_2 = Node.new("World")
+node_1.next_node = node_2
+```
+
+> Ruby doens't allow us to manipulate memory addresses directly. Instead we
+> link objects but the result is the same 
+
+```ruby
+class LinkedList
+   attr_accessor :first_node
+
+   def initialize(first_node)
+      @first_node = first_node
+   end
+end
+
+node_list = LinkedList.new(node_1)
+```
+
+Our linked list points to the head and we can use it to store our created list.
+When it comes to reading, linked lists can't directly access data like arrays
+with an index. Instead we follow the pointers resulting in $$\Theta(N)$$ the
+same is true for searching a linked list. Linked lists excel at insertion where
+it only takes $$\Theta(1)$$. We simply add it at the front and update the
+references. In the worst case, linked lists will also take $$\Theta(N)$$ when
+inserted at the end of the list.
+
+> Inserting at the beginning would mean to shift all items in an array. For
+> arrays inserting at the end is thus the opposite of linked lists.
+
+Deletion is equally efficient as insertion. Deleting at the beginning is the
+fastest while deleting at the end is the slowest. All we have to do is to
+update the pointers to the next block skipping the deleted node. Thus a linked
+list is a great data structure for algorithms that insert/delete a lot.
+
+Linked lists comes in different variant. One variant is a double linked list
+where each node has a reference to the previous and next node. This way we can
+insert/delete at the end in $$\Theta(1)$$. Double linked lists are a great
+underlying data structure for queues.
+
 ## Binary Search Trees
 
 ## Heaps
