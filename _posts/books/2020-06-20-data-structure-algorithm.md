@@ -674,6 +674,48 @@ underlying data structure for queues.
 
 ## Binary Search Trees
 
+We can sort arrays with quick sort however if we sort frequently,
+$$\Theta(Nlog_2N)$$ is still slow. While arrays are good and simple to keep
+data, insertion and deletion makes arrays relative slow $$\Theta(N/2)$$ on
+average.
+
+Binary search trees are great at storing ordered data while having fast search,
+insertion and deletion. A tree is a node based data structure were each node can
+have links to multiple nodes. Each node can branch out and have descendents and
+ancestors. The depth of a tree is measured in levels.
+
+> A balanced tree will have the same number of nodes on the nodes subtrees.
+
+A binary search tree of a tree where each node has `0,1 or 2` children. The left
+nodes hold values less than the parent node and the right most nodes hold values
+greater than the parent node.
+
+Searching is very fast with a binary search tree.
+
+1. create a current node
+2. inspect current node
+3. if found value we are done
+4. if the value is less than our search move to the left subtree
+5. if the value is greater than our search move to the right subtree
+6. Repeat 1-5 until we find the value
+
+> Notice how every steps eliminates half of the results. Thus resulting in
+> $$\Theta(log_2N)$$. The efficiency of any algorithms that halfs the results
+> with each step is about the same.
+
+Binary search trees excel at insertion as well. We traverse the tree looking for
+a node wihtout children to attach it. We perform the same steps as when
+searching plus 1 for actually inserting $$\Theta(log_2N)$$.
+
+> The power of a binary search tree is harnest only when it is balanced. A
+> highly imbalanced tree will perform $$\Theta(N)$$ given that all values line
+> up on one side.
+
+When deleteting we remove the node and replace it with its child if it has one.
+If the node has two children we go to the right node and then follow all the
+left nodes until you reach the bottom. The final efficiency is also
+$$\Theta(log_2N)$$.
+
 ## Heaps
 
 ## It doesn't hurt to try
