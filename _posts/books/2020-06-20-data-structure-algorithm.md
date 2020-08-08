@@ -718,6 +718,57 @@ $$\Theta(log_2N)$$.
 
 ## Heaps
 
+Another data structure is a heap to keep track of the greatest and smalles item
+in a dataset. We can look at a **priority queue** to contrast and appreciate
+what a heap does. A priority queue reads and deletes like a normal queue but
+when we insert data we make sure the data remains sorted. This means we don't
+strictly use FIFO.
+
+We can implement a priority queue using an ordered array. When we insert data,
+we mantain the order and we can only remove data from the end of the array. If
+we shift the beginning to the end, insertion takes $$\Theta(N)$$ and deletion
+$$\Theta(1)$$.
+
+A heap, in our case a binary heap, is a kind of binary tree. It comes in two
+variants, a max-heap and a min-heap. Both need a heap condition. The conditions
+for a max-heap are that each node must be greater than each of its decendants
+and the tree must be complete. The opossite would be known as a min-heap.
+
+> A complete tree is a filled tree with no missing nodes.
+
+The heap condition specifies that a heap has to be ordered in a certain way.
+Unlike binary search trees, heaps are weakly ordered. The root value of a heap
+will always have the highest value. Every heap has a last node, the next most
+node at the bottom. When we insert we follow 4 step.
+
+1. Create a Node at the right most spot in the bottom
+2. Compare the node to the root
+3. Swap if it is greater thant the parent node
+4. Repeat step 3 until no parent node is greater
+
+When deleting nodes in our heap we follow 2 steps.
+
+1. move last node to where the root was
+2. trickle the root node down
+
+> Trickle down means we comapre the root to its children and swap it as long as
+> there are greater children.
+
+Both insertion and deletion take $$\Theta(log_2N)$$. Arrays take $$\Theta(1)$$
+for deletion and $$\Theta(N)$$ for insertion making heaps the better choice for
+the average case.
+
+A key part of a heaps efficiency is to find the last node. We can implement a
+heap with an array which allows us to access the end easy. Traversing the tree
+in an array becomes easy as well. We can find any node based on the index.
+
+- Left Node: `(index*2)+1`
+- Right Node: `(index*2)+2`
+- Parent Node: `(index-1)/2`
+
+We can use this simple forumla to convert an array into a tree. This is what
+makes heaps a great fit for priority queue.
+
 ## It doesn't hurt to try
 
 ## Graphs
