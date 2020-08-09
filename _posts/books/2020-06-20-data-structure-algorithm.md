@@ -771,6 +771,43 @@ makes heaps a great fit for priority queue.
 
 ## It doesn't hurt to try
 
+Data completion functions usually rely on efficient data structures to quickly
+query dictionaries. An efficient way to build this would be with tries. Tries
+are a kind of tree ideal for word based features. The word comes from retrieval.
+Trie is a collection of nodes that points to other nodes And it can have more
+than two children unlike binary trees. We could implement it like a hash table
+that stores keys. Each child is another trie node.
+
+If we store the word each character would become a note. At the end we place a
+hash with an "*" to indicate that this is the end and thus a word.
+`H -> E -> L -> L -> O -> *`. The purpose of the Asterix is to mark a word as
+some words contain other words.
+
+There are two main ways of searching. First we can search whole words or for
+prefix. For prefix we have 6 steps.
+
+1. Begin with a current node
+2. Iterate each character of our string
+3. For each character we see if a child with that character exists
+4. If not return none
+5. Else update the current node and repeat 2
+6. When we reach the end of the string we finished our search
+
+Search takes as many steps as the word has characters. Hash look up takes
+$$\Theta(1)$$ but it isn't right for tries. $$\Theta(N)$$ is not right either
+since we don't iterate the whole data set. Thus most call it $$\Theta(K)$$ where
+K is the number of characters. For insertion we do also 6 steps where 1-3 are
+the same as for search.
+
+4. If it has a child update the current node and repeat step 2
+5. Else create a child note and update the current node
+6. At the final character we add "*"
+
+So far we have only used the "*" has a key to indicate the end of a word.
+In fact, we can use the value to store the popularity of any query. This way the
+auto completion suggestion has a way to rank suggestions based on a popularity
+score.
+
 ## Graphs
 
 ## Space Constraints
