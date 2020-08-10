@@ -810,6 +810,78 @@ score.
 
 ## Graphs
 
+The graph is a data structure that specializes in relationships. Trees and
+graphs look alike both consist of nodes.
+
+> All trees are graphs but not all graphs are trees
+
+For a graph to be a tree it cannot have cycles and all nodes must be connected.
+A cycle happens in graphs when nodes reference each other circularly. Graphs can
+have unconnected nodes. When talking about graphs each node is called a vertice.
+The lines that connect vertices are called edges. Connected vertices are called
+adjecent. We can implement a graph with a has table giving us $$\Theta(1)$$ read
+speed. A graph that shows relations that aren't mutual are called directed
+graphs.
+
+> A simple approach to storing our graph is using an array this is called an
+> adjecent list but we can use a 2D array and create an adjacent matrix.
+
+When searching in the graph it's important to note that they have to be
+connected somehow. Usually it consists in finding a path from one vertice to
+another. There are two approaches to search in a graph, breath first (BFS) and
+depth first search (DFS). Both can be used to find the vertice or to traverse
+the graph.
+
+> Keep in mind we can run into cycles thus we must keep track of visited
+> vertices.
+
+DFS follos 5 steps.
+
+1. Start at a random vertice
+2. Add it to the visited hash table
+3. Iterate the current vertices adjecents
+4. Ignore any previously visited vertices
+5. If the vertice hasn't been visited, repeat DFS on it.
+
+BFS doesn't use recursion but rather uses a queue and follows 9 steps.
+
+1. Start a any vertice - call it starting vertice
+2. Add it to the visited hash table
+3. Add the vertice to the queue
+4. Start a loop that runs while the queue isn't empty
+5. In the loop, remove the first vertice (current vertice)
+6. Iterate all adjecents of the current vertice
+7. If an adjacent was visited, ignore it
+8. Else add it to the visited hash table and queue
+9. Repeat the loop starting from step 4 until the queue is empty.
+
+Depending on what we are searching DFS or BFS can be better. DFS immediately
+searches the furthest away from the starting vertice while BFS searches on the
+closest adjacent first. If we look for a persons close relations, BFS is better.
+
+To calculate the efficiency we have to take into consideration that each vertice
+has adjacents and the number of vertices. Big O calls those V and E. V stands
+for vertices and E for edges. Thus the resulting efficiency is $$\Theta(V+E)$$.
+
+> Keep in mind that adjacents can be traversed twice thus a more accurate
+> performance is $$\Theta(V+2E)$$ but we drop constants.
+
+Another form of a graph is a weighted graph which adds information to the edges
+of the graph. For example, a graph that connects cities could at the distance
+between them as extra information. This data can be used to calculate the
+shortest path between vertices. The most common algorithm for this is the
+Dijkstra's algorithm. The algorithm finds the shortest path to its adjacent and
+so on storing the distances.
+
+1. Start at Starting City
+2. Check distance to adjacent cities
+3. If the distance is the shortes we store it as the shortest or previous shortest
+4. Visit the closest city and make it the current city 
+5. Repeat 2-4.
+
+The efficiency ends up being $$\Theta(N^2)$$ given we check each vertice and its
+vertices.
+
 ## Space Constraints
 
 ## Techniques for code optimization
