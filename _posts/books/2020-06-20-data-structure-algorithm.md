@@ -876,12 +876,42 @@ so on storing the distances.
 1. Start at Starting City
 2. Check distance to adjacent cities
 3. If the distance is the shortes we store it as the shortest or previous shortest
-4. Visit the closest city and make it the current city 
+4. Visit the closest city and make it the current city
 5. Repeat 2-4.
 
 The efficiency ends up being $$\Theta(N^2)$$ given we check each vertice and its
 vertices.
 
 ## Space Constraints
+
+The amount of memory an algorithm uses is called a space complexity. This is
+important when working limited memory such as old devices. Unfortunely, not all
+algorithms are fast and memory efficient. We can use Big O to analyze the space
+complexity of an algorithm by focusing on the number of memory units required
+to implement an algorithm. We can understand this with a simple example.
+
+```python
+def upCase(array):
+   newArray = []
+   for i in array:
+      newArray.append(i.uppercase())
+   return newArray
+```
+
+Here we take an array and copy the uppercased items to a `newArray`. The memory
+consumption is $$\Theta(N)$$ based on the size of the array.
+
+```python
+def upCase(array):
+   for i in array:
+      array[i] = array[i].uppercase()
+   return array
+```
+
+This time we modify the array in place thus the memory consumption is constant
+$$\Theta(1)$$
+
+> A recursive algorithm takes a unit of memory for each recursive call which
+> makes it very inefficient when it comes to memory consumption.
 
 ## Techniques for code optimization
