@@ -561,8 +561,8 @@ import { Motion, spring } from 'react-motion'
 return () {
   <>
     <Motion
-      defaultStyle={{opacity: 0.01}}
-      style={{opacity: spring(1)}}
+      defaultStyle={\{opacity: 0.01\}}
+      style={\{opacity: spring(1)\}}
     >
       {interpolatinStyle => (
         <h1 style={interpolatingStyle}>Hello</h1>
@@ -873,7 +873,7 @@ props as a group we can pass them down in a prop. We can than spread that single
 prop rather than the whole prop object.
 
 ```jsx
-<Home hello="world" domProps={{ className: "hello-world" }} />
+<Home hello="world" domProps={\{ className: "hello-world" \}} />
 
 const Home = (props) => (
   <div {...props.domProps}>

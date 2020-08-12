@@ -15,7 +15,28 @@ them enables you to write code that runs faster and more efficiently, which is
 particularly important for today's web and mobile apps. We will cover data
 structures and algorithms which can be used daily in production code.
 
-## Why Data Structures Matter
+- [Data Structures are important](#data-structures-are-important)
+- [Algorithms are important](#algorithms-are-important)
+- [Big O Notation](#big-o-notation)
+- [Speeding up Code](#speeding-up-code)
+- [Optimizing Code](#optimizing-code)
+- [Looking at efficiency in an optimistic scenario](#looking-at-efficiency-in-an-optimistic-scenario)
+- [Apply Big O to common algorithms](#apply-big-o-to-common-algorithms)
+- [Blazing fast loopup with Hash Tables](#blazing-fast-loopup-with-hash-tables)
+- [Reinventing the Array with Stacks and Queues](#reinventing-the-array-with-stacks-and-queues)
+- [Why Recursion is great](#why-recursion-is-great)
+- [Writing Recursion](#writing-recursion)
+- [Improve Recursion performance with Dynamic Programming](#improve-recursion-performance-with-dynamic-programming)
+- [Recursive Algorithms are awesome](#recursive-algorithms-are-awesome)
+- [Nodes are the key to trees](#nodes-are-the-key-to-trees)
+- [Binary Search Trees pick two](#binary-search-trees-pick-two)
+- [Going deeper into trees with Heaps](#going-deeper-into-trees-with-heaps)
+- [Fast text lookup with tries](#fast-text-lookup-with-tries)
+- [Graphs are not trees](#graphs-are-not-trees)
+- [Understanding memory consumption with space complexity](#understanding-memory-consumption-with-space-complexity)
+- [Optimizating our code base](#optimizating-our-code-base)
+
+## Data Structures are important
 
 Progamming evolves around data. Data is a broad term that refers to all types of
 information. Data Structures refer to how data is organized. Organization of
@@ -44,7 +65,7 @@ array. Insertion requires an extra step to check if an item is already in the
 set. It takes 2N+1 steps. 1N to check if the item exists, 1N to shift the other
 items and 1 step to insert the item.
 
-## Why Algorithms Matter
+## Algorithms are important
 
 > An algorithm is simply a particular process of solving a problem.
 
@@ -97,7 +118,7 @@ For binary search this means
 
 As we saw big O allows us to compare algorithms and pick them based on speed.
 Sorting algorithms have been the focus of computer science over the past years.
-A common sorting algorithm is **bubble sort**.
+A common sorting algorithm is **bubble sort**:
 
 1. pick 2 itms and check if they are in order
 2. if out of order swap them
@@ -106,8 +127,8 @@ A common sorting algorithm is **bubble sort**.
 5. repeat until sorted
 
 Bubble sort does comparisons and swaps. We do multiple comparisons and swaps to
-sort a list. In fact, exponential in relation to the number of items
-$$\Theta(N^2)$$.
+sort a list. In fact, exponential in relation to the number of
+items $$\Theta(N^2)$$.
 
 If we were to check if a list has duplicate values we could use a nested for
 loop to check each item. However, this takes $$\Theta(N^2)$$ time. All nested
@@ -132,13 +153,17 @@ we can skip the first item because it is already sorted.
 
 If we look at the performance we do
 
-$$(N+1) + (N-2) + (N-3)\ ...\ +1$$
+$$
+(N+1) + (N-2) + (N-3)\ ...\ +1
+$$
 
 As for swaps we do 0 to 1 swap each time. In comparison, for bubble sort we have
 to make 1 swap for each comparison. This makes bubble sort take twice as many
 steps as selection sort.
 
-$$Selection\ Sort:\ \Theta(\frac{n^2}{2})\ or \Theta(n^2)$$
+$$
+Selection\ Sort:\ \Theta(\frac{n^2}{2})\ or \Theta(n^2)
+$$
 
 > Big O ignores constants thus we remove the division. The resulting big O
 > notation is the same for bubble sort. Although, as we saw, selection sort
@@ -149,12 +174,12 @@ On the long run, constants don't play such an important role because different
 classifications will eventually perform differently. Thus, the purpose of Big O
 is to classify algorithms.
 
-$$\Theta(n^2)$$ will be slower than $$\Theta(log_2n)$$. That is why we can
+Remember $$\Theta(n^2)$$ will be slower than $$\Theta(log_2n)$$. That's why we
 ingore the constant. Big O helps us classify different algorithms into different
 classes. If two algorithms fall under the same category, we have to do further
 analysis by looking at the amount of steps it takes for each algorithm.
 
-## Optimizing Optimisticly
+## Looking at efficiency in an optimistic scenario
 
 When evaluating the efficiency of an algorithm, we focuse on the number of steps
 in the worst case scenario. Thus, the result turns out good most of the time.
@@ -191,7 +216,9 @@ The algorithm uses 4 types of steps: remove, compare, shift and insert. For
 comparison we do compare all numbers in the worst case but we only compare one
 time in the first run, two times in the second and so on.
 
-$$1 + 2 + 3 + ... + (N-1)$$
+$$
+1 + 2 + 3 + ... + (N-1)
+$$
 
 | Array Size | # of Comparisons |
 | ---------- | ---------------- |
@@ -201,20 +228,28 @@ $$1 + 2 + 3 + ... + (N-1)$$
 
 Looking at the table it becomes apparent that the speed is about
 
-$$\Theta(N^2/2)$$
+$$
+\Theta(N^2/2)
+$$
 
-$$\frac{10^2}{2} = 50$$
+$$
+\frac{10^2}{2} = 50
+$$
 
 Moving on to shift, in the worst case we have to shift each time to sort a
-reversed ordered array resulting in as many shifts as comparisons
-$$\Theta(N^2/2)$$
+reversed ordered array resulting in as many shifts as
+comparisons $$\Theta(N^2/2)$$
 
 As for removing and inserting, we remove and insert in each pass through once
 resulting in $$\Theta(N-1)$$. If we combine all the notations and simply we get.
 
-$$(N^2/2) + (N^2/2) + (N-1) + (N-1)$$
+$$
+(N^2/2) + (N^2/2) + (N-1) + (N-1)
+$$
 
-$$(N^2) + (N-1)$$
+$$
+(N^2) + (N-1)
+$$
 
 > So far, we only removed constants from Big O notation but another rule states
 > that we only take into account the the highest order of N when we have
@@ -247,7 +282,7 @@ we get a bigger picture.
 In short, if data is mostly sorted, insertion is the best option. For a reversed
 ordered array selection sort of the better option.
 
-## Big Oh in everyday code
+## Apply Big O to common algorithms
 
 Now we will look at production code to determine how we can optimize and
 analyze the efficiency of differnt algorithms under different scenarios. The
@@ -278,9 +313,9 @@ notation is $$\Theta(N)$$.
 > the power of 1. 1 for loop = $$\Theta(N)$$, 2 for loops $$\Theta(N^2)$$, 3 for
 > loops $$\Theta(N^3)$$
 
-It is also worthwhile to note that whenever we have an algorithm that performs
-$$(N-1)+(N-2)+(N-3)...+(N-M)$$ it always turns out to be about $$\Theta(N^2/2)$$
-or $$\Theta(N^2)$$.
+It is also worthwhile to note that whenever we have an algorithm that
+performs $$(N-1)+(N-2)+(N-3)...+(N-M)$$ it always turns out to be
+about $$\Theta(N^2/2)$$ or $$\Theta(N^2)$$.
 
 Now we will look at algorithms that work with multiple datasets. For that, lets
 create an algorithm that computes the product of even numbers from two arrays.
@@ -308,10 +343,10 @@ becomes apparant that we have to express it as $$\Theta(N*M)$$. With 2 distinct
 datasets that have to interact we identify both sources seperatly in terms of
 Big O. Big O $$\Theta(N*M)$$ in this case lies in a specific range. If N is the
 same size as M we get $$\Theta(N^2)$$. If one of the two is smaller we can
-express it with a single letter since we can ignore the other one resulting in
-$$\Theta(N)$$.
+express it with a single letter since we can ignore the other one resulting
+in $$\Theta(N)$$.
 
-## Hash Tables
+## Blazing fast loopup with Hash Tables
 
 Assuming we want to build a search program, we ocul use an array that stores
 sub arrays with the data. The performance would be $$\Theta(N)$$ for an
@@ -357,7 +392,7 @@ archive this, we can adjust teh ratio of data to cells also called the
 **load factor**. In general terms for every 7 keys there should be 10 cells
 resulting in a load factor of 0.7 to avoid collisions and save space.
 
-## Stacks and Queues
+## Reinventing the Array with Stacks and Queues
 
 Thus far, our focus has been performance but beyond that data structures allow
 us to create simpler and easier to read code.
@@ -394,7 +429,7 @@ different oder, FIFO. They work with 3 restrictions.
 > Queues are great for processing asynchronous requests they can keep track of
 > the process in the order they were received.
 
-## Recursion
+## Why Recursion is great
 
 Recursion allows us to tap into complexer algorithms. Specifically it can be
 used to solve problems in a simpler way.
@@ -490,7 +525,7 @@ the other hand works only with recursion which makes it a prefered choice for
 writing recursion. Using this approach, we essentially pass the problem to the
 next function call as we saw with factorial.
 
-## Dynamic Programming
+## Improve Recursion performance with Dynamic Programming
 
 While recursion is great at solving certain problems, it is also usually slow as
 it leads the slowest category of algorithms - $$\Theta(2^n)$$. However, we can
@@ -556,7 +591,7 @@ instead like a loop.
 The important thing to note about recursion is to only use it where it makes
 sense. Preferably in a top-down approach.
 
-## Recursive Algorithms
+## Recursive Algorithms are awesome
 
 Most modern programming languages already implement the sorting algorithms we
 learned so far and it is usually quicksort. Quicksort shows us how to improve
@@ -586,16 +621,16 @@ Now that we know how partioning works, we can tackle Quicksort which follows
 
 The efficiency of quicksort depends on two operations - comparison and swaps.
 Each partition has N comparisons and at most N/2 swaps. For an average case we
-swap half the time of N/4. Thus our efficiency becomes
-$$\Theta(N+(N/4)) = \Theta(1.25N)$$ or $$\Theta(N)$$
+swap half the time of N/4. Thus our efficiency
+becomes $$\Theta(N+(N/4)) = \Theta(1.25N)$$ or $$\Theta(N)$$
 
 Quicksort relies on several partitions and each partition is smaller than the
 previous. We can see a logarithmic increase which depends on the number of itmes
 in the original array. In other words $$N*log_2N$$.
 
 In the worst case, the values end up on the only one side of the pivot which
-means all comparisons and swaps are conducted on one side resulting in
-$$\Theta(N^2)$$.
+means all comparisons and swaps are conducted on one side resulting
+in $$\Theta(N^2)$$.
 
 If our goal is to find a value in an unsorted array without sorting it,
 Quickselect is the better option. We can partition the arary and instead of
@@ -605,10 +640,10 @@ to how binary search works.
 We end up doing $$(N/2) + (N/4) + (N/8) + 2$$ or $$\Theta(N)$$.
 
 Sorting is commonly used as a key for other algorithms. While quicksort is one
-of the most popular ones, merge sort is another popular sorting algorithm with
-$$\Theta(Nlog_2N)$$.
+of the most popular ones, merge sort is another popular sorting algorithm
+with $$\Theta(Nlog_2N)$$.
 
-## Nodes
+## Nodes are the key to trees
 
 Nodes are pieces of data that are dispersed through the memory. These node based
 structures provide a number of performance advantages.
@@ -672,12 +707,12 @@ where each node has a reference to the previous and next node. This way we can
 insert/delete at the end in $$\Theta(1)$$. Double linked lists are a great
 underlying data structure for queues.
 
-## Binary Search Trees
+## Binary Search Trees pick two
 
-We can sort arrays with quick sort however if we sort frequently,
-$$\Theta(Nlog_2N)$$ is still slow. While arrays are good and simple to keep
-data, insertion and deletion makes arrays relative slow $$\Theta(N/2)$$ on
-average.
+We can sort arrays with quick sort however if we sort
+frequently, $$\Theta(Nlog_2N)$$ is still slow. While arrays are good and simple
+to keep data, insertion and deletion makes arrays relative slow $$\Theta(N/2)$$
+on average.
 
 Binary search trees are great at storing ordered data while having fast search,
 insertion and deletion. A tree is a node based data structure were each node can
@@ -699,8 +734,8 @@ Searching is very fast with a binary search tree.
 5. if the value is greater than our search move to the right subtree
 6. Repeat 1-5 until we find the value
 
-> Notice how every steps eliminates half of the results. Thus resulting in
-> $$\Theta(log_2N)$$. The efficiency of any algorithms that halfs the results
+> Notice how every steps eliminates half of the results. Thus resulting
+> in $$\Theta(log_2N)$$. The efficiency of any algorithms that halfs the results
 > with each step is about the same.
 
 Binary search trees excel at insertion as well. We traverse the tree looking for
@@ -713,10 +748,10 @@ searching plus 1 for actually inserting $$\Theta(log_2N)$$.
 
 When deleteting we remove the node and replace it with its child if it has one.
 If the node has two children we go to the right node and then follow all the
-left nodes until you reach the bottom. The final efficiency is also
-$$\Theta(log_2N)$$.
+left nodes until you reach the bottom. The final efficiency is
+also $$\Theta(log_2N)$$.
 
-## Heaps
+## Going deeper into trees with Heaps
 
 Another data structure is a heap to keep track of the greatest and smalles item
 in a dataset. We can look at a **priority queue** to contrast and appreciate
@@ -769,7 +804,7 @@ in an array becomes easy as well. We can find any node based on the index.
 We can use this simple forumla to convert an array into a tree. This is what
 makes heaps a great fit for priority queue.
 
-## It doesn't hurt to try
+## Fast text lookup with tries
 
 Data completion functions usually rely on efficient data structures to quickly
 query dictionaries. An efficient way to build this would be with tries. Tries
@@ -793,11 +828,11 @@ prefix. For prefix we have 6 steps.
 5. Else update the current node and repeat 2
 6. When we reach the end of the string we finished our search
 
-Search takes as many steps as the word has characters. Hash look up takes
-$$\Theta(1)$$ but it isn't right for tries. $$\Theta(N)$$ is not right either
-since we don't iterate the whole data set. Thus most call it $$\Theta(K)$$ where
-K is the number of characters. For insertion we do also 6 steps where 1-3 are
-the same as for search.
+Search takes as many steps as the word has characters. Hash look up
+takes $$\Theta(1)$$ but it isn't right for tries. $$\Theta(N)$$ is not right
+either since we don't iterate the whole data set. Thus most call
+it $$\Theta(K)$$ where K is the number of characters. For insertion we do also
+6 steps where 1-3 are the same as for search.
 
 4. If it has a child update the current node and repeat step 2
 5. Else create a child note and update the current node
@@ -808,7 +843,7 @@ In fact, we can use the value to store the popularity of any query. This way the
 auto completion suggestion has a way to rank suggestions based on a popularity
 score.
 
-## Graphs
+## Graphs are not trees
 
 The graph is a data structure that specializes in relationships. Trees and
 graphs look alike both consist of nodes.
@@ -882,7 +917,7 @@ so on storing the distances.
 The efficiency ends up being $$\Theta(N^2)$$ given we check each vertice and its
 vertices.
 
-## Space Constraints
+## Understanding memory consumption with space complexity
 
 The amount of memory an algorithm uses is called a space complexity. This is
 important when working limited memory such as old devices. Unfortunely, not all
@@ -914,7 +949,7 @@ $$\Theta(1)$$
 > A recursive algorithm takes a unit of memory for each recursive call which
 > makes it very inefficient when it comes to memory consumption.
 
-## Techniques for code optimization
+## Optimizating our code base
 
 The prerequisit for optimizing our code is to be able to determine it's current
 efficiency. Then we can come up with the best imaginable Big O our algorithm
