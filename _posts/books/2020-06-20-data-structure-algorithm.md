@@ -672,7 +672,7 @@ node_1.next_node = node_2
 ```
 
 > Ruby doens't allow us to manipulate memory addresses directly. Instead we
-> link objects but the result is the same 
+> link objects but the result is the same
 
 ```ruby
 class LinkedList
@@ -834,6 +834,9 @@ either since we don't iterate the whole data set. Thus most call
 it $$\Theta(K)$$ where K is the number of characters. For insertion we do also
 6 steps where 1-3 are the same as for search.
 
+1. Begin with a current node
+2. Iterate each character of our string
+3. For each character we see if a child with that character exists
 4. If it has a child update the current node and repeat step 2
 5. Else create a child note and update the current node
 6. At the final character we add "*"
