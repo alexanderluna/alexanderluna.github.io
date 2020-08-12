@@ -915,3 +915,25 @@ $$\Theta(1)$$
 > makes it very inefficient when it comes to memory consumption.
 
 ## Techniques for code optimization
+
+The prerequisit for optimizing our code is to be able to determine it's current
+efficiency. Then we can come up with the best imaginable Big O our algorithm
+could never beat. If the Big O of our current algorithm and the best possible
+Big O doesn't match we can try to optimize our code.
+
+> Keep in mind that you can rarely archive the best possible Big O but you can
+> usually at least get something in between
+
+A quick way of optimizing our is to use hash tables where possible instead of
+arrays. As we know, lookup is $$\Theta(1)$$ compared to $$\Theta(N)$$. Another
+technique involves finding patterns in our code and apply simplified algorithms
+to solve the pattern. Usually we can work out a solution that uses recursion.
+This way we can then apply dynamic programming to optimize it.
+
+We can also use greedy algorithms to optimize. This means in each step we choose
+the best possible option at the moment in time. It sounds pretty greedy hence
+the name but as simple as it sound it tends to render good results.
+
+Finally, we should consider changing the data structure because usually we
+handle data in an array but a queue, heap, hash table, tree or graph might
+actually be the better fit to store and operate on our data.
