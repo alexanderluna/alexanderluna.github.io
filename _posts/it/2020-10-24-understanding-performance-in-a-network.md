@@ -24,7 +24,7 @@ data was requested and the time it arrives. Latency is what makes the network
 worse and feel slow.
 
 We measure speed using bits and bytes. Both are usually confused
-1 bit = 8 Bytes (B = Byte and b = bit). The most commonly used unit to describe
+1 Byte = 8 bits (B = Byte and b = bit). The most commonly used unit to describe
 speed is the bit (Kb, Mb, Gb). It almost always uses the decimal and not the
 binary versions. Baud measures the signaling rate of the number of times that
 the signal changes value in each second. Don't confuse it with BPS
