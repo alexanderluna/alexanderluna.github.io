@@ -85,3 +85,82 @@ weight = weight - (alpha * direction_and_amount)
 
 > Make sure you understand our small neural network and how it works is the
 > basis for all other models.
+
+## Improving and getting deeper with Gradient Descent
+
+Gradient Descent also work with multiple inputs.
+
+```python
+delta = prediction - goal
+weighted_delta = element_multiplication(delta, input)
+```
+
+Once we calculate our delta we loop over all inputs and multiply the delta with
+each input.
+
+```python
+alpha = 0.01
+for index in range(len(weights)):
+  weights[index] -= alhpa * weighted_delta[index]
+```
+
+Once we have our `weighted_delta` we can update the actual weight based on the
+learning speed alpha. Keep in mind that delta measures how much a node value is
+different. `weighted_delta` is an estimate of the direction and amount to move
+the weight to reduce a nodes delta.
+
+```python
+def neural_network(input, weights):
+  output = 0
+  for index in range(len(input)):
+    output += (input[i] * weights[i])
+  return output
+```
+
+Our neural network multiplies each input with its corresponding weight when
+learning. Each input is multiplied with the delta to determine how much the
+weight has to change. Then we use the difference for each input to update the
+corresponding weight on it. We repeat this process for each iteration.
+
+> Each input is mapped to it's weight so that each weight has its own learning
+> curve. Given that the error (delta) is shared once one weight finds the
+> bottom of the curve all find it.
+
+Each weight with its learning curve is a 2D slice of an N-dimensional shape. N
+being the number of weights + error. This shape is also known as the error
+plane. The goal of a neural network is to find the bottom of the error plane.
+
+Just like a neural network can predict with multiple inputs it can also make
+multiple predictions using only one input. We calculate each delta the same way
+and multiply them all by the same input.
+
+```python
+weights = [0.3, 0.2, 0.1]
+prediction = neural_network(input, weights)
+
+error = [0,0,0]
+delta = [0,0,0]
+
+for index in range(len(goal)):
+  error[index] = (prediction[index] - goal[index])**2
+  delta[index] = (prediction[index] - goal[index])
+
+weighted_delta = element_multiplication(input, weights)
+alpha = 0.1
+for index in range(len(weights)):
+  weights[index] -= (weighted_delta[index] * alpha)
+```
+
+We can also generate multiple outputs with multiple inputs. For that we store
+our weights in a matrix. We do matrix multiplication to multiply each input
+with the array of weights that correspond to the output.
+
+```python
+for index in range(len(input)):
+  output[index] = weighted_sum(input, weights[index])
+return output
+```
+
+`weighted_sum` is a dot product or a measurement of similarity between two
+vectors. In other words, if an input is similar to the weight it outputs a high
+score and vicaversa.
