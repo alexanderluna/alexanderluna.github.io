@@ -3,10 +3,6 @@ title: The brief History of Video Games and Team Roles
 image: /assets/img/game-dev
 categories:
   - books
-  - ruby
-  - python
-  - javascript
-  - java
   - csharp
 ---
 

@@ -3,10 +3,6 @@ title: Writing your Game Story
 image: /assets/img/rake
 categories:
   - books
-  - ruby
-  - python
-  - javascript
-  - java
   - csharp
 ---
 

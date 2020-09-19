@@ -3,10 +3,6 @@ title: Coming up with a Game Idea
 image: /assets/img/phpmyadmin
 categories:
   - books
-  - ruby
-  - python
-  - javascript
-  - java
   - csharp
 ---
 

@@ -3,10 +3,6 @@ title: Crafting a Game Design Document
 image: /assets/img/mac-address
 categories:
   - books
-  - ruby
-  - python
-  - javascript
-  - java
   - csharp
 ---
 
