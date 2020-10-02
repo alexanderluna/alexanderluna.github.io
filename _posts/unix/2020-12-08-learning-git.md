@@ -122,6 +122,45 @@ us to stage the change and finally commit our change. `git rm` on the other
 hand, will automatically remove and stage the change in one command ready to be
 commited.
 
+## Ignoring files
+
+While most of the time we want to keep track of all changes, it so happens that
+certain files should be kept secret, some folders can be easily reproduced and
+sometimes the files/folders are simply too big. Thus, we can tell git to ignore
+certain files using the `.gitignore` file. Inside of it, we can list files and
+folders we don't want git to track. The power and convenienc of `.gitignore` is
+that we can use pattern matching to selectivly choose which files to track.
+Maybe we don't want to track html files inside a folder but everything else. We
+can tell git to ignore html files inside a particular folder with a simple
+pattern: `folder/*.html`.
+
+```.gitignore
+# ignore all html files
+*.html
+
+# ignore html files in tmp folder
+tmp/*.html
+
+# ignore html files in all folders but track root level html files
+*/*.html
+```
+
+It is even possible to nest `.gitignore` files in our poject. This allows us to
+negate exlusions on a folder by folder basis if we want or we can create very
+complex ignore conditions. If there are certain files we want to ignore always,
+we can use the global `.gitignore` which will apply to all projects.
+
+```bash
+# returns globaly ignored files unless empty
+git config --global core.excludesfile
+
+# create global gitignore file
+touch ~/.gitignore_global
+
+# configure git to use the global gitignore file
+git config --global core.excludesfile ~/.gitignore_global
+```
+
 ## Pull Request
 
 Assuming we created a fork of an existing remote repository, this means our
