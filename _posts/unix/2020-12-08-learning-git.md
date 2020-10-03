@@ -35,8 +35,11 @@ draft.
 # create a new branch
 git branch changing-the-project
 
-# list all branches
+# list all local branches
 git branch
+
+# list all local and remote branches
+git branch --all
 
 * master
 changing-the-project
@@ -44,14 +47,41 @@ changing-the-project
 # switch to a branch
 git checkout changing-the-project
 
+# create and switch to new branch in one step
+git checkout -b my-new-branch
+
 # note the asterix marks the current branch
 git branch
 master
 * changing-the-project
+
+# delete a branch
+git branch -d changing-the-project
 ```
 
 > Git does not keep track of empty directories by default. If you want to still
 > keep track of them, you have to create an empty `.keep` file in the directory.
+
+Git keeps track of changes in our code thorugh commits as we will see later.
+This means that creating a branch is as simple as setting a specific commit as
+the branch off point and from there on all commits align on the new branch.
+Sometimes, our team might create a branch on the remote repository. Git will not
+automatically download and keep track of branches.
+
+```bash
+# download and track a remote branch
+git checkout --track origin/some-remote-branch
+
+# does the same but shorter
+git checkout some-remote-branch
+```
+
+> `origin` is the default alias for the location of the remote repository.
+
+```bash
+# show where origin is location on the web
+git remote -v
+```
 
 ## Commit changes
 
@@ -89,8 +119,26 @@ Git has a build in command to keep track of previous commits through a log.
 # show previous commits
 git log
 
-## show previous commits with acutual difference between commits
+# show only the 3 latest commits
+git log -3
+
+# show logs in a compact view
+git log --oneline
+
+# show previous commits with acutual difference between commits
 git log -p
+
+# show a graphical reprensentation of the log
+git log --graph
+
+# show complete history
+git log --online --all
+
+# search git log by author
+git log --author=alexanderluna --oneline
+
+# search git log thorugh grep
+git log --grep=searchterm --oneline
 ```
 
 ## Undoing Staged changes
@@ -134,7 +182,7 @@ Maybe we don't want to track html files inside a folder but everything else. We
 can tell git to ignore html files inside a particular folder with a simple
 pattern: `folder/*.html`.
 
-```.gitignore
+```gitignore
 # ignore all html files
 *.html
 
