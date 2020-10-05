@@ -151,6 +151,25 @@ benefit of adding this extra step, is that we can undo any changes.
 git reset HEAD README.md
 ```
 
+## Merging
+
+Once we are done with our branch and commited our changes, we use merge to
+combine our changes with those of other branches. Usually we have a master
+branch which acts as the main development line and developers will branch off
+master to introduce changes.
+
+```bash
+# create a branch, do a change and commit it
+git checkout new-change -b
+touch README.md
+git add README.md
+git commit -m "Add README.md"
+
+# switch back to master and merge the branch
+git checkout master
+git merge new-change
+```
+
 ## Moving and Deleting files
 
 While it is possible to move files in a git repository using the bash `mv`
@@ -182,7 +201,7 @@ Maybe we don't want to track html files inside a folder but everything else. We
 can tell git to ignore html files inside a particular folder with a simple
 pattern: `folder/*.html`.
 
-```gitignore
+```bash
 # ignore all html files
 *.html
 
@@ -209,6 +228,30 @@ touch ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 ```
 
+## Staying in sync with the cloud
+
+A big part of collaboration is to keep our changes in sync with the cloud. After
+commiting our changes locally, we have to thus push our changes to the cloud.
+
+```bash
+# send our master branch to the origin (remote repository)
+git push origin master
+```
+
+Similar to pushing changes to the cloud we also have to sometimes pull changes
+from the cloud. Perhaps a collaborator contributed some commits.
+
+```bash
+# fetch changes from origin
+git fetch
+
+# merge the fetched changes
+git merge
+
+# fetch and merge changes from origin (remote repository) in one step
+git pull origin
+```
+
 ## Pull Request
 
 Assuming we created a fork of an existing remote repository, this means our
@@ -216,3 +259,29 @@ repository has changes the original does not have. We can contribute our changes
 to the original remote repository by creating a pull request. This notifies the
 owner of the repository that you want to contribute your changes to the original
 repository. The owner can then merge or reject our pull request.
+
+## Creating a Repository First
+
+In order to work with git, we don't a cloud to begin with. Instead we can start
+by creating an empty git repository locally and setup everything as we progress.
+
+```bash
+git init
+```
+
+Two common starting points for any repository are the license file and a
+`README.md`. The license file communicates to our developers how you want them
+to interact with your project while the README is there to give details about
+the project itself and how to use it, configure it, etc. Once we are ready to
+connect our local repository to the cloud, we can go ahead and create a remote
+repository. Instead of cloning the remote repository, we want to add the remote
+repository to our local one.
+
+```bash
+# add an origin (remote repository)
+git remote add origin https://github.com/some-repo.git
+
+# push our changes to the origin
+# -u stands for --push-upstream or track local branches to remote ones
+git push -u origin master
+```
