@@ -31,7 +31,7 @@ has similarities to the OSI model but is often used when discussing the suit.
 
 The OSI model divides functions into layers. The lower layers are concrete
 hardware specific functions while upper layers are more abstract. The four lower
-layers have clear boundries and functionality while the three higher layers are
+layers have clear boundaries and functionality while the three higher layers are
 sometimes even treated as one - TCP/IP.
 
 | OSI Layer | Layer Name   | Network Layer |
@@ -63,6 +63,6 @@ recipient.
 L4 (PDU) -> L3 (SDU) -> L3 (PDU) -> L2 (SDU)
 ```
 
-In the OSI model routing occurs when data is sent through an intermmediate
+In the OSI model routing occurs when data is sent through an intermediate
 system like a router. That receives data and passes it upt to layer 4 (Network)
 where it is repackaged and send out via the layer 2 (Data Link) interface.
