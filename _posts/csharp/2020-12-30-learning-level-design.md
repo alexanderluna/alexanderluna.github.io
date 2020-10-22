@@ -1,5 +1,5 @@
 ---
-title: Learning Level Design
+title: Learning Game Level Design
 image: /assets/img/game-dev
 categories:
   - books
