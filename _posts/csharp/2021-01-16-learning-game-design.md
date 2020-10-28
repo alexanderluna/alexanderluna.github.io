@@ -698,6 +698,37 @@ search for the key. However you decide to introduce/use your puzzles, show the
 reward for solving it in advance to motivate the player to solve it.
 
 ## Creating Multiplayer modes
+
+Multiplayer games allow more people to join the fun. From head to head to Ad hoc
+Wifi and MMOs you have a lot of options to choose from. Once you picked a
+multiplayer mode, you have to decide how player should play the game. They can
+play together or against each other. Each play style will allow for different
+game play. Some common competitive multiplayer game styles are:
+
+- death matches
+- territory control
+- capture the flag
+- team work
+
+Now that we have a game styler we have to set the number of player for our game.
+A fight type of game us usually designed for 2-4 players while a social
+game/action game build around 4-8 players. Finally you have your FPS and MMO
+games which can range from 10 to 1000 players. If you go down the MMO game
+route, you will want to add a customization component to your game so players
+can express themselves. A chat feature will allow your players to develop
+strategies and an economic system is key to buy weapons and exchange items. A
+clan or guild type of system will allow your players to organize into more
+complex groups and socialize. MMOs build heavily on socializing.
+
+While we covered level design previously, there are some caveats when it comes
+to multiplayer levels. Your level will have many objects and locations. Create
+memorable locations to help players better understand the map and navigate with
+confidence. MMO games build around the idea of teams and thus players will play
+different roles within the team. Create a level that makes this possible.
+Consider adding exposure areas without cover to push players to take risk to
+win. If you have a spawn system set it up so players can leave the spawn safely
+and hard for enemies to stay in that area too long.
+
 ## Adding Power-ups
 ## Monetizing your Game
 ## A Primer on Music
