@@ -697,6 +697,38 @@ the game. A common puzzle is to show your player a door and then send them to
 search for the key. However you decide to introduce/use your puzzles, show the
 reward for solving it in advance to motivate the player to solve it.
 
+## Adding Power-ups
+
+Power-ups are part of every game. Their effect is immediately. In order to
+create power ups, we have to answer some questions like the purpose, look,
+effect, trade off and how to the power up will be communicated to the player.
+Generally speaking there are four types of power ups:
+
+- defensive
+- offensive
+- movement
+- game changer
+
+Defensive power up help the player survive. Common defensive power ups are
+health up, extra life and invulnerability. Offensive power ups on the other
+hand, help the player defeat enemies quicker like ammo buff or player buffs.
+Movement power ups as the name says it, improves or adds moves to the player.
+The game changer power ups change the game dynamics like pac-man eating enemies.
+Power ups are there to aid the player in finishing the game. Other ways to of
+archiving this is by dynamically adjusting the difficulty based on the players
+HP or amount of players that have died. Another way is to allow the player to
+adjust the difficulty manually. Even a single feature like auto-saving can help
+the player concentrate on the game more.
+
+Other ways of keeping players playing is by rewarding them. Appeal to the greet
+of the player. Create a gallery for achievements and trophies. The player will
+feel motivated to unlock these achievements. Yet another way of keeping your
+players motivated is by having an economy system in place where the player gets
+money. Everybody likes the idea of being rich thus an economic system is
+crucial. Create a store where players can spend the earned money on upgrades and
+new weapons as well as pure cosmetic items to allow the players to customize
+their characters.
+
 ## Creating Multiplayer modes
 
 Multiplayer games allow more people to join the fun. From head to head to Ad hoc
@@ -729,7 +761,6 @@ Consider adding exposure areas without cover to push players to take risk to
 win. If you have a spawn system set it up so players can leave the spawn safely
 and hard for enemies to stay in that area too long.
 
-## Adding Power-ups
 ## Monetizing your Game
 ## A Primer on Music
 ## When to use Cut-scenes
