@@ -784,4 +784,17 @@ give your player a competitive advantage. Build these things into your
 monetization plan.
 
 ## A Primer on Music
+
+Music in games adds a distinct feeling. You have two main ways of acquiring
+music. You can buy a license for your game ranging from a couple years to life
+time or compose original music. Needless to say, it will be helpful to learn
+about music separately to be able to communicate effectively with the music
+director. At its core, you will to have identify which kind of tracks your game
+will need like background music, forrest music or spooky music.
+
+A dynamic score breaks the song into themes like fight, sad and relaxed. Your
+music should add feeling to the game thus it should be more exciting than the
+on-screen events. Walking should not just be boring but fun and fighting scenes
+should become more dramatic and thrilling.
+
 ## When to use Cut-scenes
