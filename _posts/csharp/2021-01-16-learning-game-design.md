@@ -762,5 +762,26 @@ win. If you have a spawn system set it up so players can leave the spawn safely
 and hard for enemies to stay in that area too long.
 
 ## Monetizing your Game
+
+Monetization is the strategy to make players pay more than the initial purchase
+price. Some common monetization techniques include:
+
+- pay to play (great for online transactions)
+- advertisement
+- virtual items (guns, camouflage, clothes)
+
+In order to make your game profitable you will need a monetization plan. A
+trial-model gives the player a limited game and encourages them to buy the full
+game. In a similar way the freemium model lets the player play the game for free
+but will eventually hit a block at which point the player has to purchase the
+game. The free to play model allows players to download the game and offers
+upgrades (payable) along the way. You can also use a subscription model
+requiring recurring payments to keep playing or getting upgrades.
+
+Two common things players will pay for is progress and exclusive items. Progress
+allows the player to save time by skipping lengthy events. Exclusive items will
+give your player a competitive advantage. Build these things into your
+monetization plan.
+
 ## A Primer on Music
 ## When to use Cut-scenes
