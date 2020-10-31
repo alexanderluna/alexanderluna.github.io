@@ -834,3 +834,8 @@ Always remember making games is hard work. Tackle one problem at the time,
 compare with other games and take feedback. Delays are expected along the way so
 plan ahead and move along. Don't get discouraged by these temporary setbacks and
 you will make a great game.
+
+### Reference Material
+
+> All this information and much more came from - Level Up The Guide to Great
+> Video Game Design by Scott Rogers
