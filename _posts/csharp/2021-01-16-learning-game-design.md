@@ -798,3 +798,39 @@ on-screen events. Walking should not just be boring but fun and fighting scenes
 should become more dramatic and thrilling.
 
 ## When to use Cut-scenes
+
+A cut-scene is an animated sequence for story purposes. Most players don't like
+cut-scenes and thus it is best to only use them when you can't tell the story
+without game play. There are different ways to add cut-scenes from movies to
+animations and cinematic animations for a dramatic feeling. Although screen
+writing is a whole field by itself, there are some common rules you can follow:
+
+- outline and breakdown the story into scenes
+- pick which scenes will be cut-scenes and which will be game play
+- create your dialogues for each scene
+
+You next step will be to hire a voice director to cast voice actors for each
+character in your game. Voice actors come in various degrees of expertise and
+there is a big difference in quality which makes it specially useful to have a
+voice director.
+
+## Publishing your game
+
+While everything we covered will make you a better game designer, the key part
+is the publisher and money to finance your game. Essentially, an investor. You
+will have to create a summary of your game with all the highlights of it. You
+will need a presentation containing:
+
+- title page
+- company profile
+- visual summary of your GDD (simplified for your audience)
+
+Even before you present your game idea you should research the publisher to make
+sure you fit into their genres. Learn you project, it will be your selling point
+so be prepared to answer questions. Although a game demo can be overkill at this
+point, having one allows your determination and gives publishers a better idea.
+
+Always remember making games is hard work. Tackle one problem at the time,
+compare with other games and take feedback. Delays are expected along the way so
+plan ahead and move along. Don't get discouraged by these temporary setbacks and
+you will make a great game.
