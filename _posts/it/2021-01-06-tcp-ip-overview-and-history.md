@@ -17,3 +17,14 @@ in version 4 hence the first real version of IP is 4.
 TCP/IP isn't the only internetworking protocol but the universally accepted
 standard. It's open standard, route friendly design and scalability gave it a
 low entry barrier and wide success.
+
+TCP/IP provides many services to other protocols and end users. Those services
+operate primarily in a client/server structural model. This is different from a
+peer network in that clients create requests and servers respond to those
+requests with data.
+
+The client/server role is a recurring theme in TCP/IP as it is used to describe
+a hardware role that functions as a server or client, as a software role it
+tells whether a software component functions as a client or server and as a
+transactional role when servers communicate with each other in certain
+protocols.
