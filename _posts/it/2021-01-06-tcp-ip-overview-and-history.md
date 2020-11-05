@@ -28,3 +28,19 @@ a hardware role that functions as a server or client, as a software role it
 tells whether a software component functions as a client or server and as a
 transactional role when servers communicate with each other in certain
 protocols.
+
+The TCP/IP model actually describes the architecture without using the OSI
+model. It essentially compresses the OSI model's top 6 layers down into 4
+layers. At the bottom we have the network interface layer and it is the place
+that allows TCP/IP to run on. Next comes the internet layer, which is
+responsible for logical devise addressing, routing and data packaging. Then
+comes the host-to-host transport layer which handles the internetwork
+communication. Finally there is the application layer, which compresses layer
+5-7 of the OSI model and describes the blurriness of these layers in the OSI
+model well. In summary the TCP/IP model looks as follows compared to the OSI
+model.
+
+1. Network Interface (layer 2)
+2. Internet (layer 3)
+3. Host-to-Host Transport (layer 4)
+4. Application (layer 5-7)
