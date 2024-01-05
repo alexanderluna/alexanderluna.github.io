@@ -1,15 +1,13 @@
-# Personal Blog
+# Programming Dungeon
 
-This is my personal blog repository build with Jekyll.
+> Hugo is a framework to build fast and organized content sites.
 
 ## Installation
 
-```bash
-git clone git@github.com:Mycroft1891/Mycroft1891.github.io.git
-cd Mycroft1891.github.io/
+```sh
+brew install hugo
 
-bundle install
-npm install
+hugo new site SITE_NAME
 
-npm start
+hugo server
 ```
